@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_share_photo_paths",
+  "info": {
+    "displayName": "photo_path",
+    "icon": "photo-video",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "photo_path": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category_title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categoriesses",
+  "info": {
+    "singularName": "categoriess",
+    "pluralName": "categoriesses",
+    "displayName": "categoriess"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category_title": {
+      "type": "string"
+    },
+    "photo_path": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "single_categories",
+  "info": {
+    "singularName": "single-category",
+    "pluralName": "single-categories",
+    "displayName": "SingleCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "dynamiczone",
+      "components": [
+        "share.photo-path"
+      ]
+    }
+  }
+}
