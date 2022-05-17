@@ -4,7 +4,8 @@
   "info": {
     "singularName": "categoriess",
     "pluralName": "categoriesses",
-    "displayName": "categoriess"
+    "displayName": "categoriess",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,22 @@
       "type": "string"
     },
     "photo_path": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "promotions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::promotion.promotion",
+      "mappedBy": "categoriess"
     }
+    
   }
 }

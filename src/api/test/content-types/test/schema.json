@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tests",
+  "info": {
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "TEST"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CONTENT_TYPE": {
+      "type": "enumeration",
+      "enum": [
+        "NORMAL",
+        "AAAA"
+      ]
+    }
+  }
+}

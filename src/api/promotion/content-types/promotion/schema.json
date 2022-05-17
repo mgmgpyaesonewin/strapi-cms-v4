@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions",
+  "info": {
+    "singularName": "promotion",
+    "pluralName": "promotions",
+    "displayName": "promotion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "promotion_title": {
+      "type": "string"
+    },
+    "action_link_ios": {
+      "type": "string"
+    },
+    "action_link_android": {
+      "type": "string"
+    },
+    "hasDetails": {
+      "type": "boolean"
+    },
+    "photo_path": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoriess": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoriess.categoriess",
+      "inversedBy": "promotions"
+    },
+    "promotion_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::promotion-type.promotion-type",
+      "inversedBy": "promotions"
+    }
+  }
+}
