@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_share_promotions",
+  "info": {
+    "displayName": "PromotionComponents",
+    "icon": "project-diagram",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "promotion_title": {
+      "type": "string"
+    },
+    "action_link_ios": {
+      "type": "string"
+    },
+    "action_link_android": {
+      "type": "string"
+    },
+    "hasDetails": {
+      "type": "boolean"
+    },
+    "photo_path": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categoriess": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoriess.categoriess"
+    },
+    "promotion_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::promotion-type.promotion-type"
+    }
+  }
+}

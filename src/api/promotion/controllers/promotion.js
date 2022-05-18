@@ -36,5 +36,6 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
             return { status, responseMap };
 
         }
+        return data;
     }
 }));
