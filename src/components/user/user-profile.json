@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_user_user_profiles",
+  "info": {
+    "displayName": "user_profile",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    
+    "profile": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

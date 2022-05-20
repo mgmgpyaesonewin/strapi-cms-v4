@@ -10,10 +10,19 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "category_title": {
-      "type": "string"
+    "category_title1": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "photo_path": {
       "type": "media",
@@ -24,7 +33,12 @@
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "promotions": {
       "type": "relation",
@@ -32,6 +46,5 @@
       "target": "api::promotion.promotion",
       "mappedBy": "categoriess"
     }
-    
   }
 }

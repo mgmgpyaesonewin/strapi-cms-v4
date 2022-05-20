@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_user_complete_profiles",
+  "info": {
+    "displayName": "UserProfileComplete",
+    "icon": "user-cog",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "profile_complete": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.user-profile"
+    },
+    "label": {
+      "type": "string"
+    },
+    "emoji": {
+      "type": "component",
+      "repeatable": false,
+      "component": "user.user-profile"
+    },
+    "sort": {
+      "type": "integer"
+    }
+  }
+}

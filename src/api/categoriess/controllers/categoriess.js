@@ -14,6 +14,7 @@ module.exports = createCoreController('api::categoriess.categoriess',({ strapi }
         let status = 'success';
         ctx.query = { ...ctx.query, local: 'en' }
         const { data, meta } = await super.find(ctx);
+        return {data,meta};
        
         // let responseMap=[];
 

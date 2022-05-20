@@ -1,5 +1,5 @@
 {
-  "/single-promotion": {
+  "/homepage": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinglePromotionListResponse"
+                "$ref": "#/components/schemas/HomepageListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Single-promotion"
+        "Homepage"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/single-promotion"
+      "operationId": "get/homepage"
     },
     "put": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinglePromotionResponse"
+                "$ref": "#/components/schemas/HomepageResponse"
               }
             }
           }
@@ -214,16 +214,16 @@
         }
       },
       "tags": [
-        "Single-promotion"
+        "Homepage"
       ],
       "parameters": [],
-      "operationId": "put/single-promotion",
+      "operationId": "put/homepage",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SinglePromotionRequest"
+              "$ref": "#/components/schemas/HomepageRequest"
             }
           }
         }
@@ -294,10 +294,91 @@
         }
       },
       "tags": [
-        "Single-promotion"
+        "Homepage"
       ],
       "parameters": [],
-      "operationId": "delete/single-promotion"
+      "operationId": "delete/homepage"
+    }
+  },
+  "/homepage/localizations": {
+    "post": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomepageLocalizationResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Homepage"
+      ],
+      "parameters": [],
+      "operationId": "post/homepage/localizations",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HomepageLocalizationRequest"
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_share_services",
+  "info": {
+    "displayName": "Service",
+    "icon": "user-secret",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service_name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "deeplink": {
+      "type": "string"
+    },
+    "isWebLink": {
+      "type": "boolean"
+    },
+    "service_sort": {
+      "type": "integer"
+    }
+  }
+}

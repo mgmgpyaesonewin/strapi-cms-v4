@@ -4,19 +4,28 @@
   "info": {
     "singularName": "test",
     "pluralName": "tests",
-    "displayName": "TEST"
+    "displayName": "TEST",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "CONTENT_TYPE": {
-      "type": "enumeration",
-      "enum": [
-        "NORMAL",
-        "AAAA"
-      ]
+    "user_profile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "promotion": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.promotion"
     }
   }
 }
