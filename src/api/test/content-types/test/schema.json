@@ -12,20 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user_profile": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "name": {
+      "type": "string"
     },
-    "promotion": {
-      "type": "component",
-      "repeatable": true,
-      "component": "share.promotion"
+    "description": {
+      "type": "string"
     }
   }
 }
