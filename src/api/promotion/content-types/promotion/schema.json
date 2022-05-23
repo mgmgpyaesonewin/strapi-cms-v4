@@ -13,16 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "promotion_title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {}
     },
     "action_link_ios": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {}
     },
     "action_link_android": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {}
     },
     "hasDetails": {
-      "type": "boolean"
+      "type": "boolean",
+      "pluginOptions": {}
     },
     "photo_path": {
       "type": "media",
@@ -33,7 +37,8 @@
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "pluginOptions": {}
     },
     "categoriess": {
       "type": "relation",

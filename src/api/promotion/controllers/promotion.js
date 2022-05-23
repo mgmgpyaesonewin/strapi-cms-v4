@@ -1,6 +1,9 @@
 'use strict';
 
 const { default: entityService } = require('@strapi/strapi/lib/services/entity-service');
+//const appWithTranslation =require('@strapi/plugin-i18n');
+
+
 
 /**
  *  promotion controller
@@ -13,10 +16,8 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
         let status = "success";
 
         const { data, meta } = await super.find(ctx);
-        //return data;
         let param = ctx.request.querystring;
-        console.log(param);
-        let isInclude = param.includes("populate=deep");
+         let isInclude = param.includes("populate=deep");
 
         if (isInclude) {
             let responseMap = [];
@@ -44,6 +45,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
     },
     async indexTest(ctx, next) {
         let status = 200;
+
         let { id } = ctx.params;
         const entries = await strapi.entityService.findMany('api::promotion.promotion', {
             populate: 'deep',
@@ -52,14 +54,14 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
                     category_id: id
                 },
             },
+            //locale: ctx.query.locale
         });
 
         let responseMap = [];
         entries.map((value, index) => {
             let photoArr = value.photo_path;
-            console.log(photoArr);
             let photo = photoArr.slice(0, 1).shift();
-            console.log(value);
+
             responseMap.push({
                 "promotion_id": value.id,
                 'promotion_title': value.promotion_title,
@@ -73,8 +75,9 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
             });
         });
+
         return { status, responseMap };
-       
+
     }
 
 
