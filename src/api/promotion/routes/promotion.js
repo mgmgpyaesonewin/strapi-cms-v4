@@ -30,7 +30,16 @@ const myExtraRoutes = [
           policies: [],
           middlewares: [],
         },
-    }
+    },
+    {
+      method: 'GET',
+      path: '/promotions/categories/:id',
+      handler: 'promotion.indexTest',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+  }
   ];
 //   module.exports = {
 //   defaultRouter,

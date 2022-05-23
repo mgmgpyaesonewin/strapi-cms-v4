@@ -1,9 +1,6 @@
 'use strict';
 
 const { default: entityService } = require('@strapi/strapi/lib/services/entity-service');
-//const appWithTranslation =require('@strapi/plugin-i18n');
-
-
 
 /**
  *  promotion controller
@@ -14,22 +11,29 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::promotion.promotion', ({ strapi }) => ({
     async find(ctx) {
         let status = "success";
-
+        let types = ['NORMAL', 'SPECIAL'];
         const { data, meta } = await super.find(ctx);
-        let param = ctx.request.querystring;
-         let isInclude = param.includes("populate=deep");
 
-        if (isInclude) {
+        var finalData;
+        if (types.includes(ctx.query.promotionType)) {
+          finalData= data.filter(function(filterType) {
+                return filterType.attributes.promotion_type.data.attributes.type_title == ctx.query.promotionType;
+              });
+        }
+        else{
+            finalData = data;
+        }
+        let param = ctx.request.querystring;
+        if (ctx.query.populate) {
             let responseMap = [];
-            data.map((value, index) => {
+            finalData.map((value, index) => {
                 let photoArr = value.attributes.photo_path.data;
                 let photo = photoArr.slice(0, 1).shift();
-                console.log(value.attributes.categoriess.data);
+              
                 responseMap.push({
                     "promotion_id": value.id,
                     "photo_path": photo.attributes.url,
                     "promotion_type": value.attributes.promotion_type.data.attributes.type_title,
-                    // "category_id": value.attributes.categoriess.data.id,
                     "category_id": value.attributes.categoriess.data.attributes.category_id,
                     "hasDetails": value.attributes.hasDetails,
                     "category_title": value.attributes.categoriess.data.attributes.category_title,
