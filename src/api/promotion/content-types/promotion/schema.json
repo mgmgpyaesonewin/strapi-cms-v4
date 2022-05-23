@@ -16,10 +16,10 @@
       "type": "string"
     },
     "action_link_ios": {
-      "type": "string"
+      "type": "text"
     },
     "action_link_android": {
-      "type": "string"
+      "type": "text"
     },
     "hasDetails": {
       "type": "boolean"

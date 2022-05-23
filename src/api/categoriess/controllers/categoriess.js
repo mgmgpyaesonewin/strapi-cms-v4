@@ -14,7 +14,7 @@ module.exports = createCoreController('api::categoriess.categoriess',({ strapi }
         let status = 'success';
         ctx.query = { ...ctx.query, local: 'en' }
         const { data, meta } = await super.find(ctx);
-        return {data,meta};
+        //return {data,meta};
        
         // let responseMap=[];
 
@@ -34,15 +34,17 @@ module.exports = createCoreController('api::categoriess.categoriess',({ strapi }
 
             let photoArr = value.attributes.photo_path.data;
             let photo = photoArr.slice(0, 1).shift();
+            console.log(value);
 
             return {
-                'category_id': value.id,
+                'category_id': value.attributes.category_id,
+                //'category_id': value.id,
                 'category_title': value.attributes.category_title,
                 'photo_path': photo.attributes.formats.thumbnail.url
             }
         });
 
-        return {status,responseMap,meta};
+        return {status,responseMap};
 
        
       },

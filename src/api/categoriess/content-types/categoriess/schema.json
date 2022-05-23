@@ -4,7 +4,7 @@
   "info": {
     "singularName": "categoriess",
     "pluralName": "categoriesses",
-    "displayName": "categoriess",
+    "displayName": "category",
     "description": ""
   },
   "options": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "category_title1": {
+    "category_title": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -45,6 +45,14 @@
       "relation": "oneToMany",
       "target": "api::promotion.promotion",
       "mappedBy": "categoriess"
+    },
+    "category_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer"
     }
   }
 }
