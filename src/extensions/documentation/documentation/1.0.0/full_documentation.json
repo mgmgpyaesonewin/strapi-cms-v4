@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-05-31T08:01:43.244Z"
+    "x-generation-date": "2022-05-31T09:12:45.875Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1767,6 +1767,18 @@
                             }
                           }
                         },
+                        "promotion_code": {
+                          "type": "string"
+                        },
+                        "isExternal": {
+                          "type": "boolean"
+                        },
+                        "external_deeplink": {
+                          "type": "string"
+                        },
+                        "position": {
+                          "type": "integer"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -3479,6 +3491,18 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "promotion_code": {
+                                    "type": "string"
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean"
+                                  },
+                                  "external_deeplink": {
+                                    "type": "string"
+                                  },
+                                  "position": {
+                                    "type": "integer"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -5218,6 +5242,18 @@
                                       }
                                     }
                                   }
+                                },
+                                "promotion_code": {
+                                  "type": "string"
+                                },
+                                "isExternal": {
+                                  "type": "boolean"
+                                },
+                                "external_deeplink": {
+                                  "type": "string"
+                                },
+                                "position": {
+                                  "type": "integer"
                                 },
                                 "createdAt": {
                                   "type": "string",
@@ -10226,53 +10262,11 @@
           "data": {
             "type": "object",
             "properties": {
-              "promotion_title": {
-                "type": "string"
-              },
-              "action_link_ios": {
-                "type": "string"
-              },
-              "action_link_android": {
-                "type": "string"
-              },
-              "hasDetails": {
+              "isExternal": {
                 "type": "boolean"
               },
-              "photo_path": {
-                "type": "array",
-                "items": {
-                  "oneOf": [
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
-                  "example": "string or id"
-                }
-              },
-              "categoriess": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
-              },
-              "promotion_type": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
+              "position": {
+                "type": "integer"
               }
             }
           }
@@ -11818,6 +11812,18 @@
                                                   }
                                                 }
                                               },
+                                              "promotion_code": {
+                                                "type": "string"
+                                              },
+                                              "isExternal": {
+                                                "type": "boolean"
+                                              },
+                                              "external_deeplink": {
+                                                "type": "string"
+                                              },
+                                              "position": {
+                                                "type": "integer"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -11952,6 +11958,18 @@
                           }
                         }
                       }
+                    },
+                    "promotion_code": {
+                      "type": "string"
+                    },
+                    "isExternal": {
+                      "type": "boolean"
+                    },
+                    "external_deeplink": {
+                      "type": "string"
+                    },
+                    "position": {
+                      "type": "integer"
                     },
                     "createdAt": {
                       "type": "string",
@@ -13567,6 +13585,18 @@
                                                 }
                                               }
                                             },
+                                            "promotion_code": {
+                                              "type": "string"
+                                            },
+                                            "isExternal": {
+                                              "type": "boolean"
+                                            },
+                                            "external_deeplink": {
+                                              "type": "string"
+                                            },
+                                            "position": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -13701,6 +13731,18 @@
                         }
                       }
                     }
+                  },
+                  "promotion_code": {
+                    "type": "string"
+                  },
+                  "isExternal": {
+                    "type": "boolean"
+                  },
+                  "external_deeplink": {
+                    "type": "string"
+                  },
+                  "position": {
+                    "type": "integer"
                   },
                   "createdAt": {
                     "type": "string",
@@ -15009,6 +15051,18 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "promotion_code": {
+                                    "type": "string"
+                                  },
+                                  "isExternal": {
+                                    "type": "boolean"
+                                  },
+                                  "external_deeplink": {
+                                    "type": "string"
+                                  },
+                                  "position": {
+                                    "type": "integer"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -16362,6 +16416,18 @@
                                       }
                                     }
                                   }
+                                },
+                                "promotion_code": {
+                                  "type": "string"
+                                },
+                                "isExternal": {
+                                  "type": "boolean"
+                                },
+                                "external_deeplink": {
+                                  "type": "string"
+                                },
+                                "position": {
+                                  "type": "integer"
                                 },
                                 "createdAt": {
                                   "type": "string",

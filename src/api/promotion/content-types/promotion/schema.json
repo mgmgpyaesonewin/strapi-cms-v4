@@ -51,6 +51,22 @@
       "relation": "manyToOne",
       "target": "api::promotion-type.promotion-type",
       "inversedBy": "promotions"
+    },
+    "promotion_code": {
+      "type": "string",
+      "unique": true
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "external_deeplink": {
+      "type": "string"
+    },
+    "position": {
+      "type": "integer",
+      "required": true
     }
   }
 }
