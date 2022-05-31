@@ -4,77 +4,39 @@
  *  categoriess controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const {createCoreController} = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::categoriess.categoriess',({ strapi }) =>  ({
+module.exports = createCoreController('api::categoriess.categoriess', ({strapi}) => ({
 
-  
-    async find(ctx) {
-       
-        let status = 'success';
-        ctx.query = { ...ctx.query, local: 'en' }
-        const { data, meta } = await super.find(ctx);
-        //return {data,meta};
-       
-        // let responseMap=[];
 
-        // data.forEach((value, index) => {
-        //     let photoArr = value.attributes.photo_path.data;
-        //     let photo = photoArr.slice(0, 1).shift();
-        
-        //     responseMap.push({
-        //         'category_id': value.id,
-        //         'category_title': value.attributes.category_title,
-        //         'photo_path': photo.attributes.formats.thumbnail.url
-                
-        //     });
-        // });
+  async find(ctx) {
 
-        let responseMap = data.map((value, index) => {
+    let status = 'success';
+    ctx.query = {...ctx.query, local: 'en'}
+    const {data, meta} = await super.find(ctx);
+    const entries = await strapi.entityService.findMany('api::categoriess.categoriess', {
+      populate: 'deep',
+      sort: {position: 'asc'},
+      locale: ctx.query.locale
+    });
 
-            let photoArr = value.attributes.photo_path.data;
-            let photo = photoArr.slice(0, 1).shift();
-            console.log(value);
 
-            return {
-                'category_id': value.attributes.category_id,
-                //'category_id': value.id,
-                'category_title': value.attributes.category_title,
-                'photo_path': photo.attributes.formats.thumbnail.url
-            }
-        });
+    let responseMap = entries.map((value, index) => {
+      let photoArr = value.photo_path;
+      let photo = photoArr.slice(0, 1).shift();
 
-        return {status,responseMap};
+      return {
+        'category_id': value.category_id,
+        //'category_id': value.id,
+        'category_title': value.category_title,
+        'photo_path': photo.url,
+        'position': value.position
+      }
+    });
 
-       
-      },
-    
+    return {status, responseMap};
 
-    /*
-      async find(ctx) {
-         
-        // some custom logic here
-        ctx.query = { ...ctx.query, local: 'en' }
-        const { data, meta } = await super.find(ctx);
-        //console.log(,data);
-        let responseMap=[];
 
-        
-        data.forEach(function callback(value, index) {
-            let photoArr = value.attributes.photo_path.data;
-            let photo = photoArr.slice(0, 1).shift();
-           // console.log(photo);
-            //console.log(photo.attributes.formats.thumbnail.url,"first");
-            
-            responseMap.push({
-                'category_id': value.id,
-                'category_title': value.attributes.category_title,
-                'photo_path': photo.attributes.formats.thumbnail.url
-                
-            });
-        });
-          return {responseMap,meta};
+  },
 
-      },
-     */
 }));

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-05-31T09:12:45.875Z"
+    "x-generation-date": "2022-05-31T09:26:34.973Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -89,42 +89,8 @@
       "CategoriessLocalizationRequest": {
         "type": "object",
         "properties": {
-          "category_title": {
-            "type": "string"
-          },
-          "photo_path": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "string"
-                }
-              ],
-              "example": "string or id"
-            }
-          },
-          "promotions": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "string"
-                }
-              ],
-              "example": "string or id"
-            }
-          },
-          "category_id": {
+          "position": {
             "type": "integer"
-          },
-          "locale": {
-            "type": "string"
           }
         }
       },
@@ -134,42 +100,8 @@
           "data": {
             "type": "object",
             "properties": {
-              "category_title": {
-                "type": "string"
-              },
-              "photo_path": {
-                "type": "array",
-                "items": {
-                  "oneOf": [
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
-                  "example": "string or id"
-                }
-              },
-              "promotions": {
-                "type": "array",
-                "items": {
-                  "oneOf": [
-                    {
-                      "type": "integer"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
-                  "example": "string or id"
-                }
-              },
-              "category_id": {
+              "position": {
                 "type": "integer"
-              },
-              "locale": {
-                "type": "string"
               }
             }
           }
@@ -1367,6 +1299,9 @@
                                     "category_id": {
                                       "type": "integer"
                                     },
+                                    "position": {
+                                      "type": "integer"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -1833,6 +1768,9 @@
             }
           },
           "category_id": {
+            "type": "integer"
+          },
+          "position": {
             "type": "integer"
           },
           "createdAt": {
@@ -3092,6 +3030,9 @@
                                               "category_id": {
                                                 "type": "integer"
                                               },
+                                              "position": {
+                                                "type": "integer"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -3558,6 +3499,9 @@
                       }
                     },
                     "category_id": {
+                      "type": "integer"
+                    },
+                    "position": {
                       "type": "integer"
                     },
                     "createdAt": {
@@ -4843,6 +4787,9 @@
                                             "category_id": {
                                               "type": "integer"
                                             },
+                                            "position": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -5309,6 +5256,9 @@
                     }
                   },
                   "category_id": {
+                    "type": "integer"
+                  },
+                  "position": {
                     "type": "integer"
                   },
                   "createdAt": {
@@ -11880,6 +11830,9 @@
                                 "category_id": {
                                   "type": "integer"
                                 },
+                                "position": {
+                                  "type": "integer"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -13653,6 +13606,9 @@
                               "category_id": {
                                 "type": "integer"
                               },
+                              "position": {
+                                "type": "integer"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -14650,6 +14606,9 @@
                                                 }
                                               },
                                               "category_id": {
+                                                "type": "integer"
+                                              },
+                                              "position": {
                                                 "type": "integer"
                                               },
                                               "createdAt": {
@@ -16015,6 +15974,9 @@
                                               }
                                             },
                                             "category_id": {
+                                              "type": "integer"
+                                            },
+                                            "position": {
                                               "type": "integer"
                                             },
                                             "createdAt": {
