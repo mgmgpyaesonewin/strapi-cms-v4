@@ -16,11 +16,11 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
         var finalData;
         if (types.includes(ctx.query.promotionType)) {
-          finalData= data.filter(function(filterType) {
+            finalData = data.filter(function (filterType) {
                 return filterType.attributes.promotion_type.data.attributes.type_title == ctx.query.promotionType;
-              });
+            });
         }
-        else{
+        else {
             finalData = data;
         }
         let param = ctx.request.querystring;
@@ -29,7 +29,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
             finalData.map((value, index) => {
                 let photoArr = value.attributes.photo_path.data;
                 let photo = photoArr.slice(0, 1).shift();
-              
+
                 responseMap.push({
                     "promotion_id": value.id,
                     "photo_path": photo.attributes.url,
@@ -82,32 +82,40 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
         return { status, responseMap };
 
+    },
+
+
+    async findOne(ctx) {
+        let status = "success";
+        const { id } = ctx.params;
+        const { query } = ctx;
+
+        const entity = await strapi.service('api::promotion.promotion').findOne(id, query);
+        console.log(entity);
+
+        if (ctx.query.populate) {
+
+
+            const responseMap = {
+                promotion_id: entity.id,
+                photo_path: entity.photo_path[0].url,
+                promotion_type: entity.promotion_type.type_title,
+                category_id: entity.categoriess.category_id,
+                category_title: entity.categoriess.category_title,
+                hasDetails: entity.hasDetails,
+
+                action_link_ios: entity.action_link_ios,
+                action_link_android: entity.action_link_android,
+                promotion_title: entity.promotion_title,
+            };
+            return { status, responseMap };
+
+
+        }
+        else {
+            return entity;
+        }
+
     }
 
-
-
-    /*
-    async indexTest(ctx, next) {
-         let status = 200;
-         console.log("promoiton index");
-         const entries = await strapi.db.query('api::promotion.promotion').findMany({
-
-            populate: {
-                path: 'deep'
-            },
-             where: {
-
-                 categoriess: {
-                     category_id: 3
-                   },
-
-               },
-
-         });
-
-
-         console.log(entries);
-          ctx.body = entries;
-
-       }  */
 }));
