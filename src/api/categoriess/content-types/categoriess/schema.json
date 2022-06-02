@@ -22,12 +22,13 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
-    "photo_path": {
+    "photo_path_normal": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -52,7 +53,9 @@
           "localized": true
         }
       },
-      "type": "integer"
+      "type": "integer",
+      "required": true,
+      "min": 0
     },
     "position": {
       "pluginOptions": {
@@ -63,6 +66,22 @@
       "type": "integer",
       "min": 0,
       "required": true
+    },
+    "photo_path_selected": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

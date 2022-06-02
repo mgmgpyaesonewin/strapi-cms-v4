@@ -14,7 +14,8 @@
   "attributes": {
     "promotion_title": {
       "type": "string",
-      "pluginOptions": {}
+      "pluginOptions": {},
+      "required": true
     },
     "action_link_ios": {
       "type": "text",
@@ -26,17 +27,16 @@
     },
     "hasDetails": {
       "type": "boolean",
-      "pluginOptions": {}
+      "pluginOptions": {},
+      "required": true,
+      "default": false
     },
     "photo_path": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "pluginOptions": {}
     },
@@ -54,9 +54,10 @@
     },
     "promotion_code": {
       "type": "string",
-      "unique": true
+      "unique": true,
+      "required": true
     },
-    "isExternal": {
+    "is_external": {
       "type": "boolean",
       "default": false,
       "required": true
@@ -66,7 +67,8 @@
     },
     "position": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 1
     }
   }
 }

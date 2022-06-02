@@ -16,7 +16,7 @@ module.exports = createCoreController('api::promotion.promotion', ({strapi}) => 
     let promotionType = ctx.query.promotionType;
     const entries = await strapi.entityService.findMany('api::promotion.promotion', {
       populate: 'deep',
-      sort: {position: 'asc'},
+      //sort: {position: 'asc'},
     });
 
     var finalData;
@@ -46,7 +46,7 @@ module.exports = createCoreController('api::promotion.promotion', ({strapi}) => 
         "promotion_title": value.promotion_title,
         "position": value.position,
         "promotion_code": value.promotion_code,
-        "isExternal": value.isExternal,
+        "is_external": value.is_external,
         "external_deeplink": value.external_deeplink,
 
       });
@@ -88,7 +88,7 @@ module.exports = createCoreController('api::promotion.promotion', ({strapi}) => 
         "action_link_android": value.action_link_android,
         "position": value.position,
         "promotion_code": value.promotion_code,
-        "isExternal": value.isExternal,
+        "is_external": value.is_external,
         "external_deeplink": value.external_deeplink,
 
       });
@@ -117,7 +117,7 @@ module.exports = createCoreController('api::promotion.promotion', ({strapi}) => 
         promotion_title: entity.promotion_title,
         position: entity.position,
         promotion_code: entity.promotion_code,
-        isExternal: entity.isExternal,
+        is_external: entity.is_external,
         external_deeplink: entity.external_deeplink,
       };
       return {status, responseMap};
