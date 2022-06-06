@@ -10,7 +10,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::promotion.promotion', ({ strapi }) => ({
   async find(ctx) {
-    let status = "success";
+    let status = "Success";
     let types = ['NORMAL', 'SPECIAL'];
     const { data, meta } = await super.find(ctx);
     let promotionType = ctx.query.promotionType;
@@ -30,10 +30,10 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
     let responseMap = responseMapping(finalData);
     return { status, responseMap };
-},
+  },
 
   async indexTest(ctx, next) {
-    let status = 200;
+    let status = "Success";
     let { id } = ctx.params;
     const entries = await strapi.entityService.findMany('api::promotion.promotion', {
       populate: 'deep',
@@ -53,7 +53,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
 
   async findOne(ctx) {
-    let status = "success";
+    let status = "Success";
     const { id } = ctx.params;
     const { query } = ctx;
     const entity = await strapi.entityService.findOne('api::promotion.promotion', id, {

@@ -10,7 +10,7 @@ module.exports = createCoreController('api::categoriess.categoriess', ({ strapi 
 
 
   async find(ctx) {
-    let status = 'success';
+    let status = 'Success';
     ctx.query = { ...ctx.query, local: 'en' }
     const { data, meta } = await super.find(ctx);
     const entries = await strapi.entityService.findMany('api::categoriess.categoriess', {
