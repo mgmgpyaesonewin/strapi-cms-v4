@@ -28,7 +28,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
       finalData = entries;
     }
 
-    let responseMap = responseMapping(entries);
+    let responseMap = responseMapping(finalData);
     return { status, responseMap };
 },
 
