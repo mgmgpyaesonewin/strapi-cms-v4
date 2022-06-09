@@ -16,6 +16,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
     let promotionType = ctx.query.promotionType;
     const entries = await strapi.entityService.findMany('api::promotion.promotion', {
       populate: 'deep',
+      publicationState: 'live',
       //sort: {position: 'asc'},
     });
 
@@ -37,6 +38,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
     let { id } = ctx.params;
     const entries = await strapi.entityService.findMany('api::promotion.promotion', {
       populate: 'deep',
+      publicationState: 'live',
       sort: { position: 'asc' },
       filters: {
         categoriess: {
@@ -58,6 +60,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
     const { query } = ctx;
     const entity = await strapi.entityService.findOne('api::promotion.promotion', id, {
       populate: 'deep',
+      publicationState: 'live',
 
     });
 

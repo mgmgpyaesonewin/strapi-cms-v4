@@ -15,6 +15,7 @@ module.exports = createCoreController('api::categoriess.categoriess', ({ strapi 
     const { data, meta } = await super.find(ctx);
     const entries = await strapi.entityService.findMany('api::categoriess.categoriess', {
       populate: 'deep',
+      publicationState: 'live',
       locale: (ctx.query.locale) ? ((ctx.query.locale == 'zw') ? ("my-MM") : (ctx.query.locale)) : 'en'
       // (condition1) ? ((condition2) ? (true block2)  : (else block2) ) : (else block1)
     });
