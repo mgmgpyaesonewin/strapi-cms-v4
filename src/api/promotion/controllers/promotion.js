@@ -64,6 +64,10 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
 
     });
 
+    if (!entity) {
+      return ctx.badRequest('Promotion is not found', { detail: 'just testing'})
+    }
+
     const responseMap = {
       promotion_id: entity.id,
       photo_path: entity.photo_path[0].url,
