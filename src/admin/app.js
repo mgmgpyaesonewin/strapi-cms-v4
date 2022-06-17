@@ -50,6 +50,7 @@ export default {
     theme:{
       colors: {
         buttonPrimary500:"#0090c6",buttonPrimary600:"#0090c6",primary600:"#0090c6",
+        primary700:"#0090c6"
         // neutral100:"#f6f6f9",neutral500:"f6f6f9",neutral600:"#666687",neutral700:"#0090c6",
         // primary700:"#0090c6"
         

@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_on_boardings",
+  "info": {
+    "singularName": "merchant-on-boarding",
+    "pluralName": "merchant-on-boardings",
+    "displayName": "Merchant OnBoarding",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "defaultLangCode": {
+      "type": "enumeration",
+      "enum": [
+        "en",
+        "my"
+      ],
+      "default": "en",
+      "required": true
+    },
+    "isShowSubmitButton": {
+      "type": "boolean",
+      "required": true
+    },
+    "isShowGuestButton": {
+      "type": "boolean",
+      "required": true
+    },
+    "isShowLanguagePickerButton": {
+      "type": "boolean",
+      "required": true
+    },
+    "isShowLogo": {
+      "type": "boolean",
+      "required": true
+    },
+    "logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.logo",
+      "required": true
+    },
+    "submitButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.guest-button"
+    },
+    "guestButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.guest-button"
+    },
+    "indicator": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.indicator",
+      "required": true
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchant-onboarding-page.merchant-onboarding-page"
+    }
+  }
+}

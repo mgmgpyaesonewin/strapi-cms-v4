@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_merchant_guest_buttons",
+  "info": {
+    "displayName": "default",
+    "icon": "check-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    },
+    "labelStyle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.title-style",
+      "required": true
+    },
+    "width": {
+      "type": "string",
+      "required": true
+    },
+    "height": {
+      "type": "string",
+      "required": true
+    },
+    "iconSize": {
+      "type": "string",
+      "required": true
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "isTransparent": {
+      "type": "boolean",
+      "required": true
+    },
+    "isShowIcon": {
+      "type": "boolean",
+      "required": true
+    },
+    "iconUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

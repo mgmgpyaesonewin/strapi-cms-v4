@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_merchant_logos",
+  "info": {
+    "displayName": "logo",
+    "icon": "file-image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "color": {
+      "type": "string",
+      "regex": "^#(?:[0-9a-fA-F]{3,4}){1,2}$",
+      "required": true
+    },
+    "height": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
