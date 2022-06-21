@@ -1,5 +1,5 @@
 {
-  "/mini-apps": {
+  "/wp-mini-apps": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppListResponse"
+                "$ref": "#/components/schemas/WpMiniAppListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Mini-app"
+        "Wp-mini-app"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/mini-apps"
+      "operationId": "get/wp-mini-apps"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppResponse"
+                "$ref": "#/components/schemas/WpMiniAppResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Mini-app"
+        "Wp-mini-app"
       ],
       "parameters": [],
-      "operationId": "post/mini-apps",
+      "operationId": "post/wp-mini-apps",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/MiniAppRequest"
+              "$ref": "#/components/schemas/WpMiniAppRequest"
             }
           }
         }
       }
     }
   },
-  "/mini-apps/{id}": {
+  "/wp-mini-apps/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppResponse"
+                "$ref": "#/components/schemas/WpMiniAppResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Mini-app"
+        "Wp-mini-app"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/mini-apps/{id}"
+      "operationId": "get/wp-mini-apps/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppResponse"
+                "$ref": "#/components/schemas/WpMiniAppResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Mini-app"
+        "Wp-mini-app"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/mini-apps/{id}",
+      "operationId": "put/wp-mini-apps/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/MiniAppRequest"
+              "$ref": "#/components/schemas/WpMiniAppRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Mini-app"
+        "Wp-mini-app"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/mini-apps/{id}"
+      "operationId": "delete/wp-mini-apps/{id}"
     }
   }
 }

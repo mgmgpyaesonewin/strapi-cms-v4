@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "mini_apps",
+  "collectionName": "wp_mini_apps",
   "info": {
-    "singularName": "mini-app",
-    "pluralName": "mini-apps",
+    "singularName": "wp-mini-app",
+    "pluralName": "wp-mini-apps",
     "displayName": "WP Mini App",
     "description": ""
   },
@@ -49,12 +49,6 @@
       "repeatable": true,
       "component": "wp.parameters"
     },
-    "mini_app_category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::mini-app-category.mini-app-category",
-      "inversedBy": "mini_apps"
-    },
     "icon": {
       "type": "media",
       "multiple": false,
@@ -62,6 +56,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "mini_app_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-mini-app-category.wp-mini-app-category",
+      "inversedBy": "mini_apps"
     }
   }
 }

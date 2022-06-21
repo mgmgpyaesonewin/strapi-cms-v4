@@ -1,5 +1,5 @@
 {
-  "/mini-app-categories": {
+  "/wp-mini-app-categories": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppCategoryListResponse"
+                "$ref": "#/components/schemas/WpMiniAppCategoryListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Mini-app-category"
+        "Wp-mini-app-category"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/mini-app-categories"
+      "operationId": "get/wp-mini-app-categories"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppCategoryResponse"
+                "$ref": "#/components/schemas/WpMiniAppCategoryResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Mini-app-category"
+        "Wp-mini-app-category"
       ],
       "parameters": [],
-      "operationId": "post/mini-app-categories",
+      "operationId": "post/wp-mini-app-categories",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/MiniAppCategoryRequest"
+              "$ref": "#/components/schemas/WpMiniAppCategoryRequest"
             }
           }
         }
       }
     }
   },
-  "/mini-app-categories/{id}": {
+  "/wp-mini-app-categories/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppCategoryResponse"
+                "$ref": "#/components/schemas/WpMiniAppCategoryResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Mini-app-category"
+        "Wp-mini-app-category"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/mini-app-categories/{id}"
+      "operationId": "get/wp-mini-app-categories/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MiniAppCategoryResponse"
+                "$ref": "#/components/schemas/WpMiniAppCategoryResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Mini-app-category"
+        "Wp-mini-app-category"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/mini-app-categories/{id}",
+      "operationId": "put/wp-mini-app-categories/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/MiniAppCategoryRequest"
+              "$ref": "#/components/schemas/WpMiniAppCategoryRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Mini-app-category"
+        "Wp-mini-app-category"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/mini-app-categories/{id}"
+      "operationId": "delete/wp-mini-app-categories/{id}"
     }
   }
 }

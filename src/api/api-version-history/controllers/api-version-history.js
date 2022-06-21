@@ -6,7 +6,7 @@
 const axios = require('axios');
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::api-version-history.api-version-history', ({ strapi}) => ({
+module.exports = createCoreController('api::api-version-history.api-version-history', ({ strapi }) => ({
 
     async create(ctx) {
 
@@ -15,7 +15,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         }
 
         if (ctx.request.body.model !== 'api-version-history' || ctx.request.body.model !== 'api-version') {
-            console.log(ctx.request.body);
+           
             const api_versions = await strapi.entityService.findMany('api::api-version.api-version', {
                 filters: {
                     entity: {
@@ -75,36 +75,36 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
             }
 
-
-          axios.post('https://fcm.googleapis.com/fcm/send', {
-            "to":process.env.NOTIFICATION_TO,
-            "notification":{
-              "type":1,
-              "title":"mixpanel testing6876876876",
-              "alert":"test1 mixpanel",
-              "extra":{
-                "paymentRequestId":"310924-1572420543082",
-                "client_id":"4f9b0470bf144ba4b03ccb74a4c81761"
-              },
-              "notification_id":"2",
-              "created_date":"1572443943"
-            },
-            "content_available":true
-          },{
-            headers: {
-              'Authorization':  process.env.NOTIFICATION_TOKEN
-            }
-          })
-            .then(function (response) {
-              console.log("##########",process.env.NOTIFICATION_TO);
-              console.log(response.data);
-              console.log("##########",process.env.NOTIFICATION_TOKEN);
-
+            /*
+            axios.post('https://fcm.googleapis.com/fcm/send', {
+                "to": process.env.NOTIFICATION_TO,
+                "notification": {
+                    "type": 1,
+                    "title": "mixpanel testing6876876876",
+                    "alert": "test1 mixpanel",
+                    "extra": {
+                        "paymentRequestId": "310924-1572420543082",
+                        "client_id": "4f9b0470bf144ba4b03ccb74a4c81761"
+                    },
+                    "notification_id": "2",
+                    "created_date": "1572443943"
+                },
+                "content_available": true
+            }, {
+                headers: {
+                    'Authorization': process.env.NOTIFICATION_TOKEN
+                }
             })
-            .catch(function (error) {
-              console.log(error);
-            });
+                .then(function (response) {
+                    console.log("##########", process.env.NOTIFICATION_TO);
+                    console.log(response.data);
+                    console.log("##########", process.env.NOTIFICATION_TOKEN);
 
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            */
 
 
 

@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "mini_app_categories",
+  "collectionName": "wp_mini_app_categories",
   "info": {
-    "singularName": "mini-app-category",
-    "pluralName": "mini-app-categories",
+    "singularName": "wp-mini-app-category",
+    "pluralName": "wp-mini-app-categories",
     "displayName": "WP Mini App Category",
     "description": ""
   },
@@ -40,7 +40,7 @@
     "mini_apps": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::mini-app.mini-app",
+      "target": "api::wp-mini-app.wp-mini-app",
       "mappedBy": "mini_app_category"
     }
   }
