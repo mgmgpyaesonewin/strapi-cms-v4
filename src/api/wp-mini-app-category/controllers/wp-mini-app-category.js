@@ -9,7 +9,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({ strapi }) => ({
     async find(ctx) {
         const entriesCategories = await strapi.entityService.findMany('api::wp-mini-app-category.wp-mini-app-category', {
-            populate: ['icon'],
+            populate: ['title','icon'],
             publicationState: 'live',
             sort: { position: 'asc' },
         });
