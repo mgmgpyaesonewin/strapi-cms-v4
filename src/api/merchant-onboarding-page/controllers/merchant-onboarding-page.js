@@ -12,9 +12,7 @@ module.exports = createCoreController('api::merchant-onboarding-page.merchant-on
             populate: 'deep',
             
           });
-       
-
-        let pages = entries;
+          let pages = entries;
           return {pages};
     },
 }));

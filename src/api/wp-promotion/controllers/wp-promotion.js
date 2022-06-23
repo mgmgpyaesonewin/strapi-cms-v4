@@ -17,8 +17,7 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({ strap
       const entries = await strapi.entityService.findMany('api::wp-promotion.wp-promotion', {
         populate: 'deep',
         publicationState: 'live',
-        //sort: {position: 'asc'},
-      });
+       });
   
       var finalData;
       if (types.includes(ctx.query.promotionType)) {
@@ -45,9 +44,8 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({ strap
             category_id: id
           },
         },
-        //locale: ctx.query.locale
       });
-  
+      
       let responseMap = responseMapping(entries);
       return { status, responseMap };
   

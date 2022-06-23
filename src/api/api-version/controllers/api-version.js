@@ -9,7 +9,7 @@ const { sanitize } = require('@strapi/utils');
 module.exports = createCoreController('api::api-version.api-version', ({ strapi }) => ({
   async findEntityByName(ctx) {
     let { name } = ctx.params;
-    const entriesCategories = strapi.db.query('api::api-version.api-version').findMany({ // uid syntax: 'api::api-name.content-type-name'
+    const entriesAPI= strapi.db.query('api::api-version.api-version').findMany({
       where: {
         entity: {
           $startsWith: name,
@@ -20,6 +20,6 @@ module.exports = createCoreController('api::api-version.api-version', ({ strapi 
      
     });
      
-    return entriesCategories;
+    return entriesAPI;
   },
 }));

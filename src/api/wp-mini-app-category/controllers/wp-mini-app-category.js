@@ -8,23 +8,47 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({ strapi }) => ({
     async find(ctx) {
-        const entriesCategories = await strapi.entityService.findMany('api::wp-mini-app-category.wp-mini-app-category', {
-            populate: ['title','icon'],
-            publicationState: 'live',
-            sort: { position: 'asc' },
+        const entriesCategories = await strapi.db.query('api::wp-mini-app-category.wp-mini-app-category').findMany({
+            populate: {
+                title: true,
+                icon: true
+            },
+            where: {
+                publishedAt: {
+                    $notNull: true,
+
+                },
+            },
+            orderBy: { position: 'asc' },
+            select: ['id', 'home', 'position']
         });
-
-        const entriesMiniAPP = await strapi.entityService.findMany('api::wp-mini-app.wp-mini-app', {
-            populate: 'deep',
-            publicationState: 'live',
-            sort: { position: 'asc' },
+        entriesCategories.forEach(object => {
+            object.icon = object.icon.url;
         });
+        
+        const entriesMiniAPP = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
+            populate: {
+                title: true,
+                icon: true,
+                deep_link: true,
+                path: true,
+                parameters: true,
+                mini_app_category: true
+            },
+            where: {
+                publishedAt: {
+                    $notNull: true,
 
-
+                },
+            },
+            orderBy: { position: 'asc' },
+            select: ['id', 'is_home', 'include_header', 'position']
+        });
 
         entriesMiniAPP.forEach(object => {
             object.category_id = object.mini_app_category.id;
             object.category_name = object.mini_app_category.name;
+            object.icon = object.icon.url;
             delete object.mini_app_category;
         });
         let finalResult = {

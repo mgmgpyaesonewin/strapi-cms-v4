@@ -17,7 +17,6 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
     const entries = await strapi.entityService.findMany('api::promotion.promotion', {
       populate: 'deep',
       publicationState: 'live',
-      //sort: {position: 'asc'},
     });
 
     var finalData;
@@ -45,7 +44,6 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
           category_id: id
         },
       },
-      //locale: ctx.query.locale
     });
 
     let responseMap = responseMapping(entries);

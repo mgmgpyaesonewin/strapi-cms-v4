@@ -29,13 +29,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                     version: 1
                 }
             };
-
-            const is_api_version_empty = () => {
-                return api_versions.length === 0;
-            };
-
-
-
             if (api_versions.length > 0) {
 
                 api_version.attribute.version = ++api_versions[0].version;
@@ -53,10 +46,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                 where: { entity: api_version.attribute.entity },
 
             });
-
-
-
-
             if (!check_version) {
                 const entry = await strapi.entityService.create('api::api-version.api-version', {
                     data: {
@@ -72,7 +61,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                         version: api_version.attribute.version
                     },
                 });
-
             }
 
             /*
@@ -105,9 +93,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                     console.log(error);
                 });
             */
-
-
-
-        }
+           }
     }
 }));
