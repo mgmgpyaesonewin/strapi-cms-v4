@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_share_titles",
+  "info": {
+    "displayName": "title",
+    "icon": "closed-captioning",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "translation": {
+      "displayName": "translation ",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    },
+    "titleStyle": {
+      "displayName": "titleStyle",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.title-style"
+    }
+  }
+}

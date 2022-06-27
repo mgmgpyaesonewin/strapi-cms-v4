@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_mini_apps",
+  "info": {
+    "singularName": "wp-mini-app",
+    "pluralName": "wp-mini-apps",
+    "displayName": "WP Mini App",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "deep_link": {
+      "displayName": "deep_link",
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.deep-link"
+    },
+    "is_home": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "position": {
+      "type": "integer",
+      "required": true
+    },
+    "include_header": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "path": {
+      "displayName": "path",
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.path"
+    },
+    "parameters": {
+      "displayName": "parameters",
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.parameters"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mini_app_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-mini-app-category.wp-mini-app-category",
+      "inversedBy": "mini_apps"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_merchant_indicators",
+  "info": {
+    "displayName": "indicator",
+    "icon": "bacon",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "required": true,
+      "regex": "^#(?:[0-9a-fA-F]{3,4}){1,2}$"
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true,
+      "regex": "^#(?:[0-9a-fA-F]{3,4}){1,2}$"
+    },
+    "duration": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

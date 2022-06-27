@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_wp_default_labels",
+  "info": {
+    "displayName": "default label",
+    "icon": "grip-vertical"
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "my": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "zw": {
+      "type": "string",
+      "maxLength": 30
+    }
+  }
+}

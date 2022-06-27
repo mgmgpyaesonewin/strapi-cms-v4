@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_wp_deep_links",
+  "info": {
+    "displayName": "deep_link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "is_external": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_webURL": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

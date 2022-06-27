@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "api_versions",
+  "info": {
+    "singularName": "api-version",
+    "pluralName": "api-versions",
+    "displayName": "Api Version"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "entity": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "version": {
+      "type": "biginteger"
+    }
+  }
+}

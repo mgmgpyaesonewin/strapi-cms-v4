@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_share_category_behaviours",
+  "info": {
+    "displayName": "categoryBehaviour",
+    "icon": "allergies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "behaviour": {
+      "type": "enumeration",
+      "enum": [
+        "Horizontal  Scroll ",
+        "Vertical  Scroll ",
+        "Fixed"
+      ]
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.photo-path"
+    },
+    "sort": {
+      "type": "integer"
+    }
+  }
+}

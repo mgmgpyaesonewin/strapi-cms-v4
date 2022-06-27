@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_share_page_designs",
+  "info": {
+    "displayName": "page_design",
+    "icon": "arrow-alt-circle-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundImageUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

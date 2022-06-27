@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_wp_parameters",
+  "info": {
+    "displayName": "parameters",
+    "icon": "audio-description"
+  },
+  "options": {},
+  "attributes": {
+    "query_param": {
+      "type": "text",
+      "required": true
+    },
+    "value_injector": {
+      "type": "enumeration",
+      "enum": [
+        "phone_number",
+        "username",
+        "language_type1",
+        "language_type2",
+        "language_type3",
+        "app_id",
+        "static"
+      ]
+    }
+  }
+}

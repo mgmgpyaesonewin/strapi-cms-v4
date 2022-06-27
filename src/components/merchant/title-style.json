@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_share_title_styles",
+  "info": {
+    "displayName": "titleStyle",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fontWeight": {
+      "type": "integer",
+      "required": true
+    },
+    "fontStyle": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true,
+      "regex": "^#(?:[0-9a-fA-F]{3,4}){1,2}$"
+    },
+    "isTransparent": {
+      "type": "boolean",
+      "required": true
+    },
+    "fontSize": {
+      "type": "string",
+      "required": true
+    },
+    "height": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

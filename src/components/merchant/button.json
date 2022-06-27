@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_merchant_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    },
+    "labelStyle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.title-style"
+    },
+    "height": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "type": "string",
+      "required": true
+    },
+    "iconUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconSize": {
+      "type": "string",
+      "unique": false,
+      "required": true,
+      "regex": "^(\\d[0-9.]).p$"
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true,
+      "regex": "^#(?:[0-9a-fA-F]{3,4}){1,2}$"
+    },
+    "isTransparent": {
+      "type": "boolean",
+      "required": true
+    },
+    "isShowIcon": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

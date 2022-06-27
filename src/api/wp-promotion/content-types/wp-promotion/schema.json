@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_promotions",
+  "info": {
+    "singularName": "wp-promotion",
+    "pluralName": "wp-promotions",
+    "displayName": "WP Promotion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "promotion_title": {
+      "type": "string",
+      "required": true
+    },
+    "photo_path": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hasDetails": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "action_link_android": {
+      "type": "text"
+    },
+    "action_link_ios": {
+      "type": "text",
+      "required": false
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "external_deeplink": {
+      "type": "text"
+    },
+    "promotion_code": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "position": {
+      "type": "integer",
+      "min": 0,
+      "required": true
+    },
+    "wp_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-category.wp-category",
+      "inversedBy": "wp_promotions"
+    },
+    "wp_promotion_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-promotion-type.wp-promotion-type",
+      "inversedBy": "wp_promotions"
+    },
+    "promotion_details": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

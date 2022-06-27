@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "api_version_histories",
+  "info": {
+    "singularName": "api-version-history",
+    "pluralName": "api-version-histories",
+    "displayName": "Api Version History"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "entity": {
+      "type": "string",
+      "required": true
+    },
+    "version": {
+      "type": "biginteger",
+      "required": true,
+      "default": "1"
+    },
+    "response": {
+      "type": "json"
+    }
+  }
+}

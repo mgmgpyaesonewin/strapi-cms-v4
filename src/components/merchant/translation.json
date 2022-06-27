@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_share_translation_s",
+  "info": {
+    "displayName": "translation ",
+    "icon": "language",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "my": {
+      "type": "string",
+      "required": true
+    },
+    "en": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

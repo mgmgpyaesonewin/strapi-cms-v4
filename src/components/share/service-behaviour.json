@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_share_service_behaviours",
+  "info": {
+    "displayName": "ServiceBehaviourWidgets ",
+    "icon": "globe-asia",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "behaviour": {
+      "type": "enumeration",
+      "enum": [
+        "Horizontal  Scroll ",
+        "Vertical  Scroll ",
+        "Fixed"
+      ]
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "share.service"
+    },
+    "sort": {
+      "type": "integer"
+    }
+  }
+}

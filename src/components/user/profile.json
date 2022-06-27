@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_user_profiles",
+  "info": {
+    "displayName": "profile",
+    "icon": "print",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "profile_wallet": {
+      "type": "biginteger"
+    },
+    "profile_image_url": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "padding": {
+      "type": "string"
+    },
+    "margin": {
+      "type": "string"
+    },
+    "profile_name": {
+      "type": "string"
+    },
+    "serviceBehavior": {
+      "type": "component",
+      "repeatable": false,
+      "component": "share.service-behaviour"
+    }
+  }
+}
