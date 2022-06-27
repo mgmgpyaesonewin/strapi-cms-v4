@@ -25,7 +25,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
         entriesCategories.forEach(object => {
             object.icon = object.icon.url;
         });
-        
+
         const entriesMiniAPP = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
             populate: {
                 title: true,
@@ -44,16 +44,17 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
             orderBy: { position: 'asc' },
             select: ['id', 'is_home', 'include_header', 'position']
         });
-
-        entriesMiniAPP.forEach(object => {
-            object.category_id = object.mini_app_category.id;
-            object.category_name = object.mini_app_category.name;
-            object.icon = object.icon.url;
-            delete object.mini_app_category;
-        });
+        if (entriesMiniAPP.length > 0) {
+            entriesMiniAPP.forEach(object => {
+                object.category_id = object.mini_app_category.id;
+                object.category_name = object.mini_app_category.name;
+                object.icon = object.icon.url;
+                delete object.mini_app_category;
+            });
+        }
         let finalResult = {
             "categories": entriesCategories,
-            "mini_apps": entriesMiniAPP
+            "mini_apps": entriesMiniAPP.length > 0 ? entriesMiniAPP: null
         }
         return finalResult;
     },

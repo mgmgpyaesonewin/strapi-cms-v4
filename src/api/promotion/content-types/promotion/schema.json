@@ -69,6 +69,10 @@
       "type": "integer",
       "required": true,
       "min": 1
+    },
+    "promotion_details": {
+      "type": "text",
+      "required": true
     }
   }
 }

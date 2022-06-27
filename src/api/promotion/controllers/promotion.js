@@ -80,6 +80,7 @@ module.exports = createCoreController('api::promotion.promotion', ({ strapi }) =
       promotion_code: entity.promotion_code,
       is_external: entity.is_external,
       external_deeplink: entity.external_deeplink,
+      promotion_details:entity.promotion_details
     };
     return { status, responseMap };
 
@@ -109,6 +110,7 @@ function responseMapping(promotionEntries) {
       "promotion_code": value.promotion_code,
       "is_external": value.is_external,
       "external_deeplink": value.external_deeplink,
+      "promotion_details":value.promotion_details
 
     });
   });

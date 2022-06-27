@@ -10,12 +10,17 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
     async create(ctx) {
 
-        if (ctx.request.body.model === 'api-version-history' || ctx.request.body.model === 'api-version') {
+
+        if (ctx.request.body.model === 'api-version-history' || ctx.request.body.model === 'api-version' || ctx.request.body.model === 'url-version') {
             return null;
         }
 
-        if (ctx.request.body.model !== 'api-version-history' || ctx.request.body.model !== 'api-version') {
-           
+        if (ctx.request.body.model !== 'api-version-history' || ctx.request.body.model !== 'api-version' || ctx.request.body.model !== 'url-version') {
+            const model = ctx.request.body.model;
+            const obj_model = strapi.config.get("config.models." + model);
+            const url = obj_model.url;
+            const app = obj_model.app;
+
             const api_versions = await strapi.entityService.findMany('api::api-version.api-version', {
                 filters: {
                     entity: {
@@ -30,7 +35,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                 }
             };
             if (api_versions.length > 0) {
-
                 api_version.attribute.version = ++api_versions[0].version;
             }
 
@@ -63,36 +67,76 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                 });
             }
 
-            /*
-            axios.post('https://fcm.googleapis.com/fcm/send', {
-                "to": process.env.NOTIFICATION_TO,
-                "notification": {
-                    "type": 1,
-                    "title": "mixpanel testing6876876876",
-                    "alert": "test1 mixpanel",
-                    "extra": {
-                        "paymentRequestId": "310924-1572420543082",
-                        "client_id": "4f9b0470bf144ba4b03ccb74a4c81761"
-                    },
-                    "notification_id": "2",
-                    "created_date": "1572443943"
-                },
-                "content_available": true
-            }, {
-                headers: {
-                    'Authorization': process.env.NOTIFICATION_TOKEN
-                }
-            })
-                .then(function (response) {
-                    console.log("##########", process.env.NOTIFICATION_TO);
-                    console.log(response.data);
-                    console.log("##########", process.env.NOTIFICATION_TOKEN);
 
-                })
-                .catch(function (error) {
-                    console.log(error);
+            if (url) {
+                const entry_URL = await strapi.db.query('api::url-version.url-version').findOne({
+                    select: ['url', 'version'],
+                    where: { url: url },
+
                 });
-            */
-           }
+                const api_version_url = {
+                    attribute: {
+                        URL: url,
+                        version: 1
+                    }
+                };
+
+                if (entry_URL) {
+                    api_version_url.attribute.version = ++entry_URL.version;
+                    const entry = await strapi.db.query('api::url-version.url-version').update({
+                        where: { url: url },
+                        data: {
+
+                            version: api_version_url.attribute.version,
+                            publicationState: 'live',
+                            publishedAt: new Date(),
+                            app: app,
+                        },
+                    });
+                }
+                else {
+                    const entry = await strapi.entityService.create('api::url-version.url-version', {
+                        data: {
+                            url: url,
+                            version: api_version_url.attribute.version,
+                            publishedAt: new Date(),
+                            app: app,
+                        },
+                    });
+                }
+            }
+            /*
+                axios.post('https://fcm.googleapis.com/fcm/send', {
+                    "to": process.env.NOTIFICATION_TO,
+                    "notification": {
+                        "type": 1,
+                        "title": "mixpanel testing6876876876",
+                        "alert": "test1 mixpanel",
+                        "extra": {
+                            "paymentRequestId": "310924-1572420543082",
+                            "client_id": "4f9b0470bf144ba4b03ccb74a4c81761"
+                        },
+                        "notification_id": "2",
+                        "created_date": "1572443943"
+                    },
+                    "content_available": true
+                }, {
+                    headers: {
+                        'Authorization': process.env.NOTIFICATION_TOKEN
+                    }
+                })
+                    .then(function (response) {
+                        console.log("##########", process.env.NOTIFICATION_TO);
+                        console.log(response.data);
+                        console.log("##########", process.env.NOTIFICATION_TOKEN);
+    
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+                */
+        }
+
+
     }
 }));

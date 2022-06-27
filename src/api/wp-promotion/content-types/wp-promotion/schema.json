@@ -65,6 +65,10 @@
       "relation": "manyToOne",
       "target": "api::wp-promotion-type.wp-promotion-type",
       "inversedBy": "wp_promotions"
+    },
+    "promotion_details": {
+      "type": "text",
+      "required": true
     }
   }
 }

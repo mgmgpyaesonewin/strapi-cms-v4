@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "url_versions",
+  "info": {
+    "singularName": "url-version",
+    "pluralName": "url-versions",
+    "displayName": "URL Version",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "text",
+      "required": false
+    },
+    "version": {
+      "type": "biginteger"
+    },
+    "app": {
+      "type": "string"
+    }
+  }
+}
