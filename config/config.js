@@ -6,9 +6,13 @@ module.exports = {
         },
         "merchant-onboarding-page": {
             url: "/merchant-on-boarding",
-            app: "wp",
+            app: "merchant",
         },
         "wp-mini-app": {
+            url: "/wp-mini-app-categories",
+            app: "wp",
+        },
+        "wp-mini-app-category": {
             url: "/wp-mini-app-categories",
             app: "wp",
         },
