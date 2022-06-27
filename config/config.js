@@ -14,11 +14,19 @@ module.exports = {
         },
         "wp-category": {
             url: "/categories",
-            app: "wp,merchant"
+            app: "wp"
         },
         "wp-promotion": {
             url: "/promotions",
-            app: "wp,merchant"
+            app: "wp"
+        },
+        "categoriess":{
+            url: "/categories",
+            app: "wp"
+        },
+        "promotion":{
+            url: "/promotions",
+            app: "wp" 
         }
 
 

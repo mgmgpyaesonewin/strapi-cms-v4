@@ -66,8 +66,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
                     },
                 });
             }
-
-
             if (url) {
                 const entry_URL = await strapi.db.query('api::url-version.url-version').findOne({
                     select: ['url', 'version'],
