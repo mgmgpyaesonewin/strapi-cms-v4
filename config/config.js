@@ -1,6 +1,6 @@
 module.exports = {
     models: {
-        "merchant-onboarding": {
+        "merchant-on-boarding": {
             url: "/merchant-on-boarding",
             app: "merchant",
         },
