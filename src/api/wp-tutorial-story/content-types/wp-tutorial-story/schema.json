@@ -12,11 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "code": {
+    "name": {
       "type": "string",
       "required": true,
-      "unique": true,
-      "default": "S1"
+      "unique": false
     },
     "title": {
       "type": "component",

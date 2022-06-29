@@ -12,11 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "code": {
+    "name": {
       "type": "string",
       "required": true,
-      "unique": true,
-      "default": "T1"
+      "unique": false
     },
     "title": {
       "type": "component",
@@ -29,14 +28,15 @@
       "component": "wp.default-label"
     },
     "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "tutorial": {
       "type": "component",
