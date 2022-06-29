@@ -42,6 +42,11 @@
       "relation": "oneToMany",
       "target": "api::wp-mini-app.wp-mini-app",
       "mappedBy": "mini_app_category"
+    },
+    "tag": {
+      "type": "string",
+      "default": "category",
+      "required": true
     }
   }
 }

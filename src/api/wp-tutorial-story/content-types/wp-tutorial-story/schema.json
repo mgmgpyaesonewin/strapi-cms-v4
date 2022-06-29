@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_tutorial_stories",
+  "info": {
+    "singularName": "wp-tutorial-story",
+    "pluralName": "wp-tutorial-stories",
+    "displayName": "WP Tutorial Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "story": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.story"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_logins",
+  "info": {
+    "singularName": "merchant-login",
+    "pluralName": "merchant-logins",
+    "displayName": "Merchant Login",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "validations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.validations"
+    },
+    "allowedLogin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.login-with-phone-or-id"
+    },
+    "signup_confirm_pin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.signup-confirm-pin"
+    },
+    "password_guide_dialog": {
+      "displayName": "password_guide_dialog",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.password-guide-dialog"
+    }
+  }
+}

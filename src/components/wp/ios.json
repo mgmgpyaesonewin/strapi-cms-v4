@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_wp_ios",
+  "info": {
+    "displayName": "ios",
+    "icon": "phone-square-alt"
+  },
+  "options": {},
+  "attributes": {
+    "ios_640_1136": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "ios_750_1334": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "ios_1080_1920": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "ios_1125_2436": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
