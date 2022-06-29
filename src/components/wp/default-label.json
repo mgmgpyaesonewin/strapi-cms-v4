@@ -2,22 +2,23 @@
   "collectionName": "components_wp_default_labels",
   "info": {
     "displayName": "default label",
-    "icon": "grip-vertical"
+    "icon": "grip-vertical",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "en": {
-      "type": "string",
+      "type": "text",
       "required": true,
       "maxLength": 30
     },
     "my": {
-      "type": "string",
+      "type": "text",
       "required": true,
       "maxLength": 30
     },
     "zw": {
-      "type": "string",
+      "type": "text",
       "maxLength": 30
     }
   }

@@ -7,15 +7,12 @@
   },
   "options": {},
   "attributes": {
-    "imageURL": {
+    "imageURL_en": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "videos",
-        "audios",
-        "files"
+        "images"
       ]
     },
     "width": {
@@ -24,6 +21,14 @@
     },
     "height": {
       "type": "string",
+      "required": true
+    },
+    "imageURL_mm": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }

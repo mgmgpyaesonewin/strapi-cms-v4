@@ -17,12 +17,6 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "deep_link": {
-      "displayName": "deep_link",
-      "type": "component",
-      "repeatable": false,
-      "component": "wp.deep-link"
-    },
     "is_home": {
       "type": "boolean",
       "default": false,
@@ -62,6 +56,17 @@
       "relation": "manyToOne",
       "target": "api::wp-mini-app-category.wp-mini-app-category",
       "inversedBy": "mini_apps"
+    },
+    "deep_link": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deeplink.deeplink",
+      "inversedBy": "wp_mini_apps"
+    },
+    "tag": {
+      "type": "string",
+      "default": "mini_app",
+      "required": true
     }
   }
 }

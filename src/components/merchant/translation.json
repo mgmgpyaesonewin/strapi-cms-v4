@@ -8,11 +8,11 @@
   "options": {},
   "attributes": {
     "my": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "en": {
-      "type": "string",
+      "type": "text",
       "required": true
     }
   }

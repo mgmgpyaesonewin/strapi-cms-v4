@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_wp_stories",
+  "info": {
+    "displayName": "story",
+    "icon": "window-restore"
+  },
+  "options": {},
+  "attributes": {
+    "ios": {
+      "displayName": "ios",
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.ios"
+    },
+    "android": {
+      "displayName": "AndirodResolution",
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.andirod-resolution"
+    }
+  }
+}

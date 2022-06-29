@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_merchant_validations",
+  "info": {
+    "displayName": "validations",
+    "icon": "plane-arrival"
+  },
+  "options": {},
+  "attributes": {
+    "msisdn": {
+      "type": "text",
+      "required": true
+    },
+    "pin": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

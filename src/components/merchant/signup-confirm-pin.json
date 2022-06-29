@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_merchant_signup_confirm_pins",
+  "info": {
+    "displayName": "signup_confirm_pin",
+    "icon": "concierge-bell",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "screen_text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    }
+  }
+}

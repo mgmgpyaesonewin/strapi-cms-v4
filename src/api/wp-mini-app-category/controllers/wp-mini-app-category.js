@@ -11,16 +11,15 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
         const entriesCategories = await strapi.db.query('api::wp-mini-app-category.wp-mini-app-category').findMany({
             populate: {
                 title: true,
-                icon: true
+                icon: true,
             },
             where: {
                 publishedAt: {
                     $notNull: true,
-
                 },
             },
             orderBy: { position: 'asc' },
-            select: ['id', 'home', 'position']
+            select: ['id', 'home', 'position','tag']
         });
         entriesCategories.forEach(object => {
             object.icon = object.icon.url;
@@ -30,19 +29,21 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
             populate: {
                 title: true,
                 icon: true,
-                deep_link: true,
+                ["deep_link"]: {
+                    select: ["name", "deeplink", "is_external", "is_webURL"],
+                    //populate: true,
+                },
                 path: true,
                 parameters: true,
-                mini_app_category: true
+                mini_app_category: true,
             },
             where: {
                 publishedAt: {
                     $notNull: true,
-
                 },
             },
             orderBy: { position: 'asc' },
-            select: ['id', 'is_home', 'include_header', 'position']
+            select: ['id', 'is_home', 'include_header', 'position','tag']
         });
         if (entriesMiniAPP.length > 0) {
             entriesMiniAPP.forEach(object => {
@@ -54,7 +55,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
         }
         let finalResult = {
             "categories": entriesCategories,
-            "mini_apps": entriesMiniAPP.length > 0 ? entriesMiniAPP: null
+            "mini_apps": entriesMiniAPP.length > 0 ? entriesMiniAPP : null
         }
         return finalResult;
     },
