@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_core_configs",
+  "info": {
+    "singularName": "merchant-core-config",
+    "pluralName": "merchant-core-configs",
+    "displayName": "Merchant Core Config",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "config": {
+      "displayName": "config logo and theme",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.config-logo-and-theme"
+    },
+    "splash": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.image-with-width"
+    }
+  }
+}

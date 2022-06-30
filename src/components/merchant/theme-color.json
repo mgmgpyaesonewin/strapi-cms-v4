@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_merchant_theme_colors",
+  "info": {
+    "displayName": "theme color",
+    "icon": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "primary_color": {
+      "type": "string",
+      "required": true
+    },
+    "secondary_color": {
+      "type": "string"
+    }
+  }
+}

@@ -1,11 +1,19 @@
 module.exports = {
     models: {
         "merchant-on-boarding": {
-            url: "/merchant-on-boarding",
+            url: "/merchant-core-config",
             app: "merchant",
         },
         "merchant-onboarding-page": {
-            url: "/merchant-on-boarding",
+            url: "/merchant-core-config",
+            app: "merchant",
+        },
+        "merchant-core-config":{
+            url: "/merchant-core-config",
+            app: "merchant",
+        },
+        "merchant-login":{
+            url: "/merchant-core-config",
             app: "merchant",
         },
         "wp-mini-app": {
@@ -24,14 +32,15 @@ module.exports = {
             url: "/promotions",
             app: "wp"
         },
-        "categoriess":{
+        "categoriess": {
             url: "/categories",
             app: "wp"
         },
-        "promotion":{
+        "promotion": {
             url: "/promotions",
-            app: "wp" 
-        }
+            app: "wp"
+        },
+       
 
 
     },
