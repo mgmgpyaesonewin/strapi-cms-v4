@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_merchant_config_logo_and_themes",
+  "info": {
+    "displayName": "config logo and theme",
+    "icon": "bookmark",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "theme": {
+      "displayName": "theme color",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.theme-color"
+    }
+  }
+}
