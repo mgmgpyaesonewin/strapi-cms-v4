@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_subcategories_tutorials",
+  "info": {
+    "singularName": "wp-subcategories-tutorial",
+    "pluralName": "wp-subcategories-tutorials",
+    "displayName": "WP Subcategories Tutorial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sub_category_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wp_tutorial_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tutorial.wp-tutorial",
+      "mappedBy": "wp_subcategories_tutorial"
+    },
+    "wp_tutorial_list": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-tutorial-list.wp-tutorial-list",
+      "inversedBy": "subcategories"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

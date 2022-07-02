@@ -4,7 +4,7 @@
   "info": {
     "singularName": "wp-tutorial",
     "pluralName": "wp-tutorials",
-    "displayName": "WP Tutorial",
+    "displayName": "WP Tutorial(Item)",
     "description": ""
   },
   "options": {
@@ -27,7 +27,7 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "icon": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -38,10 +38,20 @@
         "audios"
       ]
     },
-    "tutorial": {
+    "tutorials": {
       "type": "component",
       "repeatable": true,
       "component": "wp.tutorial"
+    },
+    "wp_subcategories_tutorial": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-subcategories-tutorial.wp-subcategories-tutorial",
+      "inversedBy": "wp_tutorial_items"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
     }
   }
 }

@@ -29,6 +29,9 @@
       "relation": "oneToMany",
       "target": "api::wp-mini-app.wp-mini-app",
       "mappedBy": "deep_link"
+    },
+    "alternative_url": {
+      "type": "string"
     }
   }
 }

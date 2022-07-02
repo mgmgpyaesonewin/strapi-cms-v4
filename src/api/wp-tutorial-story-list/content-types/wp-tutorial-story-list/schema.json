@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_tutorial_story_lists",
+  "info": {
+    "singularName": "wp-tutorial-story-list",
+    "pluralName": "wp-tutorial-story-lists",
+    "displayName": "WP Tutorial Story List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "story_name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "story"
+      ],
+      "default": "story",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "wp_tutorial_stories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tutorial-story.wp-tutorial-story",
+      "mappedBy": "wp_tutorial_story_list"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

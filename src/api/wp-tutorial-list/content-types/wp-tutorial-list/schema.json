@@ -29,20 +29,25 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "story",
-        "tutorial"
+        "tutorial "
       ],
+      "required": true,
+      "default": "tutorial "
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-subcategories-tutorial.wp-subcategories-tutorial",
+      "mappedBy": "wp_tutorial_list"
+    },
+    "position": {
+      "type": "biginteger",
       "required": true
-    },
-    "wp_tutorial": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wp-tutorial.wp-tutorial"
-    },
-    "wp_tutorial_story": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wp-tutorial-story.wp-tutorial-story"
     }
   }
 }

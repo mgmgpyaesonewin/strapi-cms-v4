@@ -1,8 +1,9 @@
 {
   "collectionName": "components_wp_stories",
   "info": {
-    "displayName": "story",
-    "icon": "window-restore"
+    "displayName": "andirod_ios_resolution ",
+    "icon": "window-restore",
+    "description": ""
   },
   "options": {},
   "attributes": {
