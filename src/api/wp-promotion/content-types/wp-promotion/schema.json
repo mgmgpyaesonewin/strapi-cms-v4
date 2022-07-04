@@ -68,7 +68,7 @@
     },
     "promotion_details": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }

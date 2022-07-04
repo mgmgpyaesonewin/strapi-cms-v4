@@ -8,11 +8,11 @@ module.exports = {
             url: "/merchant-core-config",
             app: "merchant",
         },
-        "merchant-core-config":{
+        "merchant-core-config": {
             url: "/merchant-core-config",
             app: "merchant",
         },
-        "merchant-login":{
+        "merchant-login": {
             url: "/merchant-core-config",
             app: "merchant",
         },
@@ -32,15 +32,9 @@ module.exports = {
             url: "/promotions",
             app: "wp"
         },
-        "categoriess": {
-            url: "/categories",
-            app: "wp"
-        },
-        "promotion": {
-            url: "/promotions",
-            app: "wp"
-        },
-       
+
+
+
 
 
     },

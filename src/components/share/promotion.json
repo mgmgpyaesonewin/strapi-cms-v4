@@ -29,16 +29,6 @@
         "videos",
         "audios"
       ]
-    },
-    "categoriess": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::categoriess.categoriess"
-    },
-    "promotion_type": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::promotion-type.promotion-type"
     }
   }
 }
