@@ -19,7 +19,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
                 },
             },
             orderBy: { position: 'asc' },
-            select: ['id', 'home', 'position','tag']
+            select: ['id', 'is_home', 'position','tag']
         });
         entriesCategories.forEach(object => {
             object.icon = object.icon.url;
