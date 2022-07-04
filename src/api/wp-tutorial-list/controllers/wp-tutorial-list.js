@@ -19,7 +19,7 @@ module.exports = createCoreController('api::wp-tutorial-list.wp-tutorial-list', 
         });
         */
         const merged = [...entityStories, ...entityTutorials];
-        console.log(merged);
+       
 
         return merged;
     }

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_merchant_pins",
+  "info": {
+    "displayName": "Pin",
+    "icon": "arrow-circle-left"
+  },
+  "options": {},
+  "attributes": {
+    "patthern": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
