@@ -41,7 +41,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "min": 1
     },
     "photo_path_normal": {
       "type": "media",

@@ -41,7 +41,7 @@
     "position": {
       "type": "integer",
       "required": true,
-      "min": 0
+      "min": 1
     }
   }
 }

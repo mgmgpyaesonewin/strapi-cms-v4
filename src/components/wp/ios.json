@@ -1,42 +1,51 @@
 {
   "collectionName": "components_wp_ios",
   "info": {
-    "displayName": "ios",
-    "icon": "phone-square-alt"
+    "displayName": "Image with Resolution",
+    "icon": "phone-square-alt",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "ios_640_1136": {
-      "allowedTypes": [
-        "images"
-      ],
+    "extra_large": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "ios_750_1334": {
-      "allowedTypes": [
-        "images"
-      ],
+    "large": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "ios_1080_1920": {
-      "allowedTypes": [
-        "images"
-      ],
+    "mid": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "ios_1125_2436": {
-      "allowedTypes": [
-        "images"
-      ],
+    "small": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "extra_small": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

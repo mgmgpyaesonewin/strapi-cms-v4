@@ -26,44 +26,43 @@ module.exports = createCoreController('api::wp-tutorial-story.wp-tutorial-story'
                  description: true,
                 ["stories"]: {
                     populate: {
-                        ['ios']: {
+                        ['en']: {
                             populate: {
-                                ["ios_640_1136"]: {
+                                ["extra_large"]: {
                                     select: ["url"],
                                 },
-                                ["ios_750_1334"]: {
+                                ["large"]: {
                                     select: ["url"],
                                 },
-                                ["ios_1080_1920"]: {
+                                ["mid"]: {
                                     select: ["url"],
                                 },
-                                ["ios_1125_2436"]: {
+                                ["small"]: {
+                                    select: ["url"],
+                                },
+                                ["extra_small"]: {
                                     select: ["url"],
                                 },
 
                             },
                         },
-                        ['android']: {
+                        ['my']: {
                             populate: {
-                                ["ldpi"]: {
-                                    select: ['url'],
+                                ["extra_large"]: {
+                                    select: ["url"],
                                 },
-                                ["mdpi"]: {
-                                    select: ['url'],
+                                ["large"]: {
+                                    select: ["url"],
                                 },
-                                ["hdpi"]: {
-                                    select: ['url'],
+                                ["mid"]: {
+                                    select: ["url"],
                                 },
-                                ["xhdpi"]: {
-                                    select: ['url'],
+                                ["small"]: {
+                                    select: ["url"],
                                 },
-                                ["xxhdpi"]: {
-                                    select: ['url'],
+                                ["extra_small"]: {
+                                    select: ["url"],
                                 },
-                                ["xxxhdpi"]: {
-                                    select: ['url'],
-                                },
-
                             },
                         },
 

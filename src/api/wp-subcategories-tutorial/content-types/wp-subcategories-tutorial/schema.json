@@ -47,7 +47,8 @@
     },
     "position": {
       "type": "biginteger",
-      "required": true
+      "required": true,
+      "min": "1"
     }
   }
 }

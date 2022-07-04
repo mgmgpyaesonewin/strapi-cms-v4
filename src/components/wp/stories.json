@@ -1,23 +1,21 @@
 {
   "collectionName": "components_wp_stories",
   "info": {
-    "displayName": "andirod_ios_resolution ",
-    "icon": "window-restore",
+    "displayName": "Image Resolution with Localization",
+    "icon": "align-center",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "ios": {
-      "displayName": "ios",
+    "en": {
       "type": "component",
       "repeatable": false,
       "component": "wp.ios"
     },
-    "android": {
-      "displayName": "AndirodResolution",
+    "my": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.andirod-resolution"
+      "component": "wp.ios"
     }
   }
 }

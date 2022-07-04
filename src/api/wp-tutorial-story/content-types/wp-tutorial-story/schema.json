@@ -28,9 +28,10 @@
       "component": "wp.default-label"
     },
     "stories": {
+      "displayName": "stories",
       "type": "component",
       "repeatable": true,
-      "component": "wp.story"
+      "component": "wp.stories"
     },
     "options": {
       "displayName": "button option",
@@ -46,7 +47,8 @@
     },
     "position": {
       "type": "biginteger",
-      "required": true
+      "required": true,
+      "min": "1"
     }
   }
 }
