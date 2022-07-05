@@ -2,27 +2,32 @@
   "collectionName": "components_wp_tutorials",
   "info": {
     "displayName": "tutorial",
-    "icon": "parking"
+    "icon": "parking",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "text": {
+    "title": {
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "step_text": {
+    "description": {
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label"
+    },
+    "indicatorColor": {
+      "type": "text",
+      "required": true
     }
   }
 }

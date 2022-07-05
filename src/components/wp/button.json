@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_wp_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "hamburger",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "required": true
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "textColor": {
+      "type": "string",
+      "required": true
+    },
+    "deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deeplink.deeplink"
+    },
+    "en": {
+      "type": "text",
+      "required": true
+    },
+    "my": {
+      "type": "text",
+      "required": true
+    },
+    "zw": {
+      "type": "text"
+    }
+  }
+}

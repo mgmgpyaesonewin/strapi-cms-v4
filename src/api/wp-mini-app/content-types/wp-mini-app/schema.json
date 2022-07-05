@@ -24,7 +24,8 @@
     },
     "position": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 1
     },
     "include_header": {
       "type": "boolean",

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_wp_button_options",
+  "info": {
+    "displayName": "button option",
+    "icon": "coins",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttons": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.button"
+    },
+    "autoPlay": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "autoPlaySpeed": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

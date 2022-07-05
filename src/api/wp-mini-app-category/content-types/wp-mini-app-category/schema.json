@@ -21,13 +21,14 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "home": {
+    "is_home": {
       "type": "boolean",
       "required": true
     },
     "position": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "min": 1
     },
     "icon": {
       "type": "media",

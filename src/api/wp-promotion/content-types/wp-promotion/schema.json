@@ -51,7 +51,7 @@
     },
     "position": {
       "type": "integer",
-      "min": 0,
+      "min": 1,
       "required": true
     },
     "wp_category": {
@@ -68,7 +68,7 @@
     },
     "promotion_details": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }

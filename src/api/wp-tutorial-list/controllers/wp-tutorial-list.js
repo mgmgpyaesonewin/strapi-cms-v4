@@ -5,36 +5,22 @@
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
+const stories = require('../../wp-tutorial-story/controllers/wp-tutorial-story.js');
 
 module.exports = createCoreController('api::wp-tutorial-list.wp-tutorial-list', ({ strapi }) => ({
     async find(ctx) {
-        const entriesCategories = await strapi.db.query('api::wp-tutorial-list.wp-tutorial-list').findMany({
-            populate: {
-                title: true,
-                //image: true,
-                ["image"]: {
-                    select: ["url"],
+        const entityStories = await strapi.service('api::wp-tutorial-story-list.wp-tutorial-story-list').find(ctx);
+        const entityTutorials = await strapi.service('api::wp-tutorial-list.wp-tutorial-list').find(ctx);
 
-                },
-                ["wp_tutorial"]: {
-                    select: ["code"],
-
-                },
-                ["wp_tutorial_story"]: {
-                    select: ["code"],
-
-                },
-            },
-
-            where: {
-                publishedAt: {
-                    $notNull: true,
-                },
-            },
-            //orderBy: { position: 'asc' },
-            select: ['id', 'type']
+        /*
+        const entriesCategories = await strapi.entityService.findMany('api::wp-tutorial-list.wp-tutorial-list', {
+            populate: 'deep',
+            publicationState: 'live',
         });
-
-        return entriesCategories;
+        */
+        const merged = [...entityStories, ...entityTutorials];
+        return {
+            data: merged
+        };
     }
 }));

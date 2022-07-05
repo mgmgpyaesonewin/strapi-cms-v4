@@ -12,7 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "validations": {
+    "validations_create_pin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.validations"
+    },
+    "validations_msisdn": {
       "type": "component",
       "repeatable": false,
       "component": "merchant.validations"

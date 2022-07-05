@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_wp_stories",
+  "info": {
+    "displayName": "Image Resolution with Localization",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.ios"
+    },
+    "my": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.ios"
+    }
+  }
+}

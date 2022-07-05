@@ -22,10 +22,41 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "story": {
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stories": {
+      "displayName": "stories",
       "type": "component",
       "repeatable": true,
-      "component": "wp.story"
+      "component": "wp.stories"
+    },
+    "options": {
+      "displayName": "button option",
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.button-option"
+    },
+    "wp_tutorial_story_list": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-tutorial-story-list.wp-tutorial-story-list",
+      "inversedBy": "wp_tutorial_stories"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true,
+      "min": "1"
     }
   }
 }
