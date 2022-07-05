@@ -19,7 +19,7 @@
       "required": true
     },
     "autoPlaySpeed": {
-      "type": "string",
+      "type": "biginteger",
       "required": true
     }
   }

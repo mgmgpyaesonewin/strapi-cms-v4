@@ -28,6 +28,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::deeplink.deeplink"
+    },
+    "en": {
+      "type": "text",
+      "required": true
+    },
+    "my": {
+      "type": "text",
+      "required": true
+    },
+    "zw": {
+      "type": "text"
     }
   }
 }

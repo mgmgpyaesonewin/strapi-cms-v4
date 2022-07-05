@@ -32,6 +32,9 @@ module.exports = createCoreService('api::wp-tutorial-story-list.wp-tutorial-stor
                     populate: {
                         title: true,
                         description: true,
+                        ["image"]: {
+                            select: ["url"],
+                        },
                        
                     }
                 }

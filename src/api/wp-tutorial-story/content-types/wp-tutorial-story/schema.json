@@ -27,6 +27,14 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "stories": {
       "displayName": "stories",
       "type": "component",
