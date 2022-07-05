@@ -32,7 +32,7 @@
       "default": false,
       "required": true
     },
-    "path": {
+    "paths": {
       "displayName": "path",
       "type": "component",
       "repeatable": true,
