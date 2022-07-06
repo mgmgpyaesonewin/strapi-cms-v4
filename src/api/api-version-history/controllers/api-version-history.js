@@ -111,36 +111,30 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
         }
         /*
-            axios.post('https://fcm.googleapis.com/fcm/send', {
-                "to": process.env.NOTIFICATION_TO,
-                "notification": {
-                    "type": 1,
-                    "title": "mixpanel testing6876876876",
-                    "alert": "test1 mixpanel",
-                    "extra": {
-                        "paymentRequestId": "310924-1572420543082",
-                        "client_id": "4f9b0470bf144ba4b03ccb74a4c81761"
-                    },
-                    "notification_id": "2",
-                    "created_date": "1572443943"
-                },
-                "content_available": true
-            }, {
-                headers: {
-                    'Authorization': process.env.NOTIFICATION_TOKEN
-                }
-            })
-                .then(function (response) {
-                    console.log("##########", process.env.NOTIFICATION_TO);
-                    console.log(response.data);
-                    console.log("##########", process.env.NOTIFICATION_TOKEN);
+        axios.post('https://fcm.googleapis.com/fcm/send', {
+          "to": process.env.NOTIFICATION_TO,
+          "notification": {
+            "title": "Content Update",
+            "body": "Strapi Content is updated",
+            "type": "17",
+            "alert": ""
+          }
+        }, {
+          headers: {
+            'Authorization': process.env.NOTIFICATION_TOKEN
+          }
+        })
+          .then(function (response) {
+            console.log("##########", process.env.NOTIFICATION_TO);
+            console.log(response.data);
+            console.log("##########", process.env.NOTIFICATION_TOKEN);
 
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-            */
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
 
+*/
       }
     }
   }

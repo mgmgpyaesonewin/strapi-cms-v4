@@ -7,8 +7,6 @@
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
 const defaultRouter = createCoreRouter('api::wp-promotion.wp-promotion');
-
-//module.exports = createCoreRouter('api::wp-promotion.wp-promotion');
 const customRouter = (innerRouter, extraRoutes = []) => {
     let routes;
     return {
@@ -22,18 +20,16 @@ const customRouter = (innerRouter, extraRoutes = []) => {
     };
   };
 
-  
 const myExtraRoutes = [
     {
         method: 'GET',
         path: '/wp-promotion/categories/:id',
-        handler: 'wp-promotion.indexTest',
+        handler: 'wp-promotion.filterByCategory',
         config: {
           policies: [],
           middlewares: [],
         },
     },
+];
 
-  ];
-
-  module.exports = customRouter(defaultRouter, myExtraRoutes);
+module.exports = customRouter(defaultRouter, myExtraRoutes);
