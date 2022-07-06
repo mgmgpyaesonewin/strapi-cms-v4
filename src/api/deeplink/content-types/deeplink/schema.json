@@ -16,7 +16,7 @@
       "type": "string"
     },
     "deeplink": {
-      "type": "string"
+      "type": "text"
     },
     "is_external": {
       "type": "boolean"
@@ -31,7 +31,7 @@
       "mappedBy": "deep_link"
     },
     "alternative_url": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
