@@ -110,7 +110,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
           });
 
         }
-        /*
+
         axios.post('https://fcm.googleapis.com/fcm/send', {
           "to": process.env.NOTIFICATION_TO,
           "notification": {
@@ -125,16 +125,12 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
           }
         })
           .then(function (response) {
-            console.log("##########", process.env.NOTIFICATION_TO);
             console.log(response.data);
-            console.log("##########", process.env.NOTIFICATION_TOKEN);
-
           })
           .catch(function (error) {
             console.log(error);
           });
 
-*/
       }
     }
   }

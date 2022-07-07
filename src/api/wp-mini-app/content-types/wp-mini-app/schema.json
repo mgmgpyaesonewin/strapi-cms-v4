@@ -65,7 +65,10 @@
       "inversedBy": "wp_mini_apps"
     },
     "tag": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": [
+        "mini_app"
+      ],
       "default": "mini_app",
       "required": true
     }

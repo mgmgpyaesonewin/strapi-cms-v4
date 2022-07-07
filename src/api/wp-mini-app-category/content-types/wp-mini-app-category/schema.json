@@ -23,7 +23,8 @@
     },
     "is_home": {
       "type": "boolean",
-      "required": true
+      "required": true,
+      "default": false
     },
     "position": {
       "type": "integer",
@@ -45,7 +46,10 @@
       "mappedBy": "mini_app_category"
     },
     "tag": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": [
+        "category"
+      ],
       "default": "category",
       "required": true
     }

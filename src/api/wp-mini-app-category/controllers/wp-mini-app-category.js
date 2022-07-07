@@ -26,7 +26,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
     }
     return {
       "categories": categories,
-      "mini_apps": miniApps.length > 0 ? miniApps : ''
+      "mini_apps": miniApps.length > 0 ? miniApps : []
     };
   },
 

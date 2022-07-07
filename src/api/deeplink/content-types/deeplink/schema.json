@@ -13,11 +13,11 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "deeplink": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "is_external": {
@@ -35,7 +35,7 @@
       "mappedBy": "deep_link"
     },
     "alternative_url": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
