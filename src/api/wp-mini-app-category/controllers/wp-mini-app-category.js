@@ -4,59 +4,30 @@
  *  wp-mini-app-category controller
  */
 
-const { createCoreController } = require('@strapi/strapi').factories;
+const {createCoreController} = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({ strapi }) => ({
-    async find(ctx) {
-        const entriesCategories = await strapi.db.query('api::wp-mini-app-category.wp-mini-app-category').findMany({
-            populate: {
-                title: true,
-                icon: true,
-            },
-            where: {
-                publishedAt: {
-                    $notNull: true,
-                },
-            },
-            orderBy: { position: 'asc' },
-            select: ['id', 'is_home', 'position','tag']
-        });
-        entriesCategories.forEach(object => {
-            object.icon = object.icon.url;
-        });
+module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({strapi}) => ({
+  async find(ctx) {
+    /* mini app category */
+    const categories = await strapi.service('api::wp-mini-app-category.wp-mini-app-category').find(ctx);
+    categories.forEach(category => {
+      category.icon = category.icon.url;
+    });
 
-        const entriesMiniAPP = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
-            populate: {
-                title: true,
-                icon: true,
-                ["deep_link"]: {
-                    select: ["name", "deeplink", "is_external", "is_webURL","alternative_url"],
-                    //populate: true,
-                },
-                path: true,
-                parameters: true,
-                mini_app_category: true,
-            },
-            where: {
-                publishedAt: {
-                    $notNull: true,
-                },
-            },
-            orderBy: { position: 'asc' },
-            select: ['id', 'is_home', 'include_header', 'position','tag']
-        });
-        if (entriesMiniAPP.length > 0) {
-            entriesMiniAPP.forEach(object => {
-              object.category_id = !!object.mini_app_category ? object.mini_app_category.id : 0;
-              object.category_name = !!object.mini_app_category ? object.mini_app_category.name :null ;
-                object.icon = object.icon.url;
-                delete object.mini_app_category;
-            });
-        }
-        let finalResult = {
-            "categories": entriesCategories,
-            "mini_apps": entriesMiniAPP.length > 0 ? entriesMiniAPP : null
-        }
-        return finalResult;
-    },
+    /* mini app */
+    const miniApps = await strapi.service('api::wp-mini-app.wp-mini-app').find(ctx);
+    if (miniApps.length > 0) {
+      miniApps.forEach(miniApp => {
+        miniApp.category_id = !!miniApp.mini_app_category ? miniApp.mini_app_category.id : 0;
+        miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : null;
+        miniApp.icon = miniApp.icon.url;
+        delete miniApp.mini_app_category;
+      });
+    }
+    return {
+      "categories": categories,
+      "mini_apps": miniApps.length > 0 ? miniApps : []
+    };
+  },
+
 }));

@@ -13,16 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "deeplink": {
-      "type": "string"
+      "type": "text",
+      "required": true
     },
     "is_external": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "is_webURL": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "wp_mini_apps": {
       "type": "relation",
@@ -31,7 +35,7 @@
       "mappedBy": "deep_link"
     },
     "alternative_url": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
