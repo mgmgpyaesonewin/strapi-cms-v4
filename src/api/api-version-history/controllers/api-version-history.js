@@ -9,20 +9,18 @@ const {createCoreController} = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::api-version-history.api-version-history', ({strapi}) => ({
 
   async create(ctx) {
-
-
-    if (ctx.request.body.model === 'api-version-history' || ctx.request.body.model === 'api-version' || ctx.request.body.model === 'url-version') {
+    const {model} = ctx.request.body;
+    const versionConfig = ['api-version-history','api-version','url-version'];
+    if(versionConfig.includes(model)){
       return null;
     }
-
-    if (ctx.request.body.model !== 'api-version-history' || ctx.request.body.model !== 'api-version' || ctx.request.body.model !== 'url-version') {
+    if(!versionConfig.includes(model)){
       const model = ctx.request.body.model;
-      const objModel = strapi.config.get("config.models." + model);
+      const objModel = strapi.config.get(`config.models.${model}`);
       if (objModel) {
         const urlArr = objModel.url;
         const app = objModel.app;
-
-
+        
         // APP-Version
         const apiVersions = await strapi.entityService.findMany('api::api-version.api-version', {
           filters: {
