@@ -20,7 +20,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
       if (objModel) {
         const urlArr = objModel.url;
         const app = objModel.app;
-        
+
         // APP-Version
         const apiVersions = await strapi.entityService.findMany('api::api-version.api-version', {
           filters: {
@@ -111,7 +111,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
         axios.post('https://fcm.googleapis.com/fcm/send', {
           "to": process.env.NOTIFICATION_TO,
-          "notification": {
+          "data": {
             "title": "Content Update",
             "body": "Strapi Content is updated",
             "type": "17",
