@@ -6,7 +6,7 @@ const axios = require('axios');
 async function fetchStoryTutorialList() {
   try {
     console.log(process.env.BASE_URL,"url");
-    return await axios.get(`${BASE_URL}/wp-tutorial-lists`);
+    return await axios.get(`${BASE_URL}/wp-tutorial-story-lists`);
   } catch (e) {
     return [];
   }
