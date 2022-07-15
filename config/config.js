@@ -62,6 +62,14 @@ module.exports = {
       url: ["/wp-tutorial-stories", "/wp-tutorial-lists"],
       app: "wp"
     },
+    "wp-term-and-condition": {
+      url: ["/wp-term-and-conditions"],
+      app: "wp"
+    },
+    "wp-mobile-app-version":{
+      url: ["/wp-mobile-app-versions"],
+      app: "wp"
+    }
 
   },
 };

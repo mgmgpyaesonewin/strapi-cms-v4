@@ -114,3 +114,5 @@ build
 .strapi-updater.json
 
 postgres
+src/extensions/documentation/documentation/1.0.0/full_documentation.json
+src/extensions/documentation/public/index.html
