@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_merchant_home_s",
+  "info": {
+    "displayName": "Home ",
+    "icon": "arrow-alt-circle-up",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "biginteger",
+      "required": true,
+      "min": "1"
+    },
+    "items": {
+      "displayName": "Photo with Title",
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.photo-with-title"
+    }
+  }
+}

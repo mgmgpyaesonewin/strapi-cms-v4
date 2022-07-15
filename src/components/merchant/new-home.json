@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_merchant_new_homes",
+  "info": {
+    "displayName": "Home-New",
+    "icon": "arrow-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "items": {
+      "displayName": "Home-New-Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.home-new-item"
+    }
+  }
+}

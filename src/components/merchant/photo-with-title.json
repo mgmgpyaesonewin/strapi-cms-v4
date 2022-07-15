@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_merchant_photo_with_titles",
+  "info": {
+    "displayName": "Photo with Title",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "width": {
+      "type": "string",
+      "required": true
+    },
+    "title_en": {
+      "type": "text",
+      "required": true
+    },
+    "title_my": {
+      "type": "text",
+      "required": true
+    },
+    "isShow": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

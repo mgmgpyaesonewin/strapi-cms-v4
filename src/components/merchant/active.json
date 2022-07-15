@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_merchant_actives",
+  "info": {
+    "displayName": "Active",
+    "icon": "arrow-alt-circle-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}
