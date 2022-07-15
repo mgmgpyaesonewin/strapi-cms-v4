@@ -4,7 +4,7 @@ describe("fetchStoryTutorialList", () => {
     describe("when storyTutorials API call is successful", () => {
         it("should return story tutorials list", async () => {
             let response = await storyTutorials.fetchStoryTutorialList();
-            let stories = response.data;
+            let stories = response.data.data;
             expect(stories[0]).toMatchSnapshot({
                 description: expect.objectContaining({
                     en: expect.any(String),
