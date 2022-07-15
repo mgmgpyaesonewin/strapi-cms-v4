@@ -1,18 +1,26 @@
 const axios = require('axios');
-
- const BASE_URL = "http://localhost:1337/api";
+const strapi = require('@strapi/strapi')
+const BASE_URL = process.env.API_URL;
 
 
 async function fetchStoryTutorialList() {
   try {
-    console.log(process.env.BASE_URL,"url");
+
     return await axios.get(`${BASE_URL}/wp-tutorial-story-lists`);
+  } catch (e) {
+    return [];
+  }
+}
+async function fetchStoryTutorialDetail(id) {
+  try {
+
+    return await axios.get(`${BASE_URL}/wp-tutorial-stories/${id}`);
   } catch (e) {
     return [];
   }
 }
 
 
-  
 
-module.exports = fetchStoryTutorialList;
+
+module.exports = { fetchStoryTutorialList, fetchStoryTutorialDetail };

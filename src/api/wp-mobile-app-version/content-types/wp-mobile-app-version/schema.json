@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_mobile_app_versions",
+  "info": {
+    "singularName": "wp-mobile-app-version",
+    "pluralName": "wp-mobile-app-versions",
+    "displayName": "WP Mobile App Version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

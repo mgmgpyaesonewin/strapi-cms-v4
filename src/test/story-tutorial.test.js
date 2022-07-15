@@ -3,11 +3,8 @@ const storyTutorials = require("./api/story-tutorial/story-tutorial.js");
 describe("fetchStoryTutorialList", () => {
     describe("when storyTutorials API call is successful", () => {
         it("should return story tutorials list", async () => {
-            let response = await storyTutorials();
-
-            let stories = response.data.data;
-            console.log(stories[0].wp_tutorial_stories[0]);
-
+            let response = await storyTutorials.fetchStoryTutorialList();
+            let stories = response.data;
             expect(stories[0]).toMatchSnapshot({
                 description: expect.objectContaining({
                     en: expect.any(String),
