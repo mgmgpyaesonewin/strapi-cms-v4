@@ -10,14 +10,14 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
   async find(ctx) {
     /* mini app category */
     const categories = await strapi.service('api::wp-mini-app-category.wp-mini-app-category').find(ctx);
-    categories.forEach(category => {
-      category.icon = category.icon.url;
-    });
+    categories.map(category => {
+       category.icon = category.icon.url;
 
-    /* mini app */
+    });
+   /* mini app */
     const miniApps = await strapi.service('api::wp-mini-app.wp-mini-app').find(ctx);
     if (miniApps.length > 0) {
-      miniApps.forEach(miniApp => {
+      miniApps.map(miniApp => {
         miniApp.category_id = !!miniApp.mini_app_category ? miniApp.mini_app_category.id : 0;
         miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : null;
         miniApp.icon = miniApp.icon.url;

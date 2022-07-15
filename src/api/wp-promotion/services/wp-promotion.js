@@ -11,6 +11,13 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
     const promotions = await strapi.entityService.findMany('api::wp-promotion.wp-promotion', {
       populate: 'deep',
       publicationState: 'live',
+      filters: {
+        wp_category: {
+          category_id: {
+            $notNull: true,
+          },
+        },
+      },
     });
     return promotions;
   },
@@ -18,6 +25,13 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
     const promotion = await strapi.entityService.findOne('api::wp-promotion.wp-promotion', id, {
       populate: 'deep',
       publicationState: 'live',
+      filters: {
+        wp_category: {
+          category_id: {
+            $notNull: true,
+          },
+        },
+      },
 
     });
     return promotion;
