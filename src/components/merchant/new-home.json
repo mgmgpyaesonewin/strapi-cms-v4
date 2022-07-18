@@ -12,10 +12,9 @@
       "required": true
     },
     "items": {
-      "displayName": "Home-New-Item",
-      "type": "component",
-      "repeatable": true,
-      "component": "merchant.home-new-item"
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tutorial-story.wp-tutorial-story"
     }
   }
 }

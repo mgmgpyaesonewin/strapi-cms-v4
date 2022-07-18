@@ -52,6 +52,15 @@
       "type": "biginteger",
       "required": true,
       "min": "1"
+    },
+    "app": {
+      "type": "enumeration",
+      "enum": [
+        "merchant",
+        "wp"
+      ],
+      "required": true,
+      "default": "merchant"
     }
   }
 }

@@ -22,6 +22,10 @@ module.exports = {
       url: ["/merchant-core-config"],
       app: "merchant",
     },
+    "merchant-home":{
+      url: ["/merchant-home","/wp-tutorial-stories"],
+      app: "merchant"
+    },
     /* Wave Pay */
     "wp-mini-app": {
       url: ["/wp-mini-app-categories"],
@@ -54,16 +58,16 @@ module.exports = {
       app: "wp"
     },
     "wp-tutorial-story-list": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists"],
-      app: "wp"
+      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
+      app: "wp,merchant"
     },
 
     "wp-tutorial-story": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists"],
-      app: "wp"
+      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
+      app: "wp,merchant"
     },
     "wp-term-and-condition": {
-      url: ["/wp-term-and-conditions"],
+      url: ["/wp-term-and-conditions","wp-mobile-app-versions"],
       app: "wp"
     },
     "wp-mobile-app-version":{
