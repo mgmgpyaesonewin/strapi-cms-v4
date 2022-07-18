@@ -43,7 +43,7 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
       sort: { position: 'asc' },
       filters: {
         wp_category: {
-          category_id: id
+          category_id: id,
         },
       },
     });

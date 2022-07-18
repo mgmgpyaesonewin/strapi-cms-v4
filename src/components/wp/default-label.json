@@ -9,17 +9,14 @@
   "attributes": {
     "en": {
       "type": "text",
-      "required": true,
-      "maxLength": 30
+      "required": true
     },
     "my": {
       "type": "text",
-      "required": true,
-      "maxLength": 30
+      "required": true
     },
     "zw": {
-      "type": "text",
-      "maxLength": 30
+      "type": "text"
     }
   }
 }

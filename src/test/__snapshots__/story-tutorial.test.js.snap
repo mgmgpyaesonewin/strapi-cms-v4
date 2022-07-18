@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchStoryTutorialList when storyTutorials API call is successful should return story tutorials list 1`] = `
+Object {
+  "description": ObjectContaining {
+    "en": Any<String>,
+    "my": Any<String>,
+    "zw": Any<String>,
+  },
+  "id": Any<Number>,
+  "image": Any<Object>,
+  "position": Any<String>,
+  "story_name": Any<String>,
+  "title": ObjectContaining {
+    "en": Any<String>,
+    "my": Any<String>,
+    "zw": Any<String>,
+  },
+  "type": Any<String>,
+  "wp_tutorial_stories": Array [
+    Object {
+      "createdAt": "2022-07-02T15:54:49.917Z",
+      "description": Object {
+        "en": "Itaque dolorem maior",
+        "id": 64,
+        "my": "Sunt ex qui dolorem ",
+        "zw": "Dolorum magni qui il",
+      },
+      "id": 3,
+      "image": Object {
+        "url": "https://wave-strapi-staging-s3-bucket.s3.ap-southeast-1.amazonaws.com/story_Frames_ffa9dbecb4.png",
+      },
+      "name": "Hilary Sexton",
+      "position": null,
+      "publishedAt": "2022-07-02T15:54:52.407Z",
+      "title": Object {
+        "en": "Nostrum tempor conse",
+        "id": 63,
+        "my": "Ipsam deserunt aute ",
+        "zw": "Aliquam nisi autem s",
+      },
+      "updatedAt": "2022-07-05T03:01:32.889Z",
+    },
+  ],
+}
+`;
+
+exports[`fetchStoryTutorialList when storyTutorials API call is successful should return story tutorials list 2`] = `
+Object {
+  "createdAt": "2022-07-02T15:54:49.917Z",
+  "description": ObjectContaining {
+    "en": Any<String>,
+    "id": Any<Number>,
+    "my": Any<String>,
+    "zw": Any<String>,
+  },
+  "id": Any<Number>,
+  "image": Any<Object>,
+  "name": Any<String>,
+  "position": null,
+  "publishedAt": "2022-07-02T15:54:52.407Z",
+  "title": ObjectContaining {
+    "en": Any<String>,
+    "id": Any<Number>,
+    "my": Any<String>,
+    "zw": Any<String>,
+  },
+  "updatedAt": "2022-07-05T03:01:32.889Z",
+}
+`;
