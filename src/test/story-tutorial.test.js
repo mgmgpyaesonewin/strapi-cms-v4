@@ -21,34 +21,6 @@ describe("fetchStoryTutorialList", () => {
                     zw: expect.any(String)
                 }),
                 type: expect.any(String),
-                // wp_tutorial_stories: expect.arrayContaining([
-                // wp_tutorial_stories: expect.arrayContaining([
-                //     expect.objectContaining(
-                //         {
-                //             id: expect.any(Number),
-                //             //createdAt : expect.any(Date),
-                //             //updatedAt :expect.any(Date),
-                //             //publishedAt:expect.any(Date),
-                //             name: expect.any(String),
-                //             title: expect.objectContaining({
-                //                 en: expect.any(String),
-                //                 my: expect.any(String),
-                //                 zw: expect.any(String),
-                //                 id: expect.any(Number)
-                //             }),
-                //             description: expect.objectContaining({
-                //                 en: expect.any(String),
-                //                 my: expect.any(String),
-                //                 zw: expect.any(String),
-                //                 id: expect.any(Number)
-                //             }),
-                //             image: expect.any(Object),
-
-                //         }
-                //     ),
-
-                // ])
-
             });
 
             expect(stories[0].wp_tutorial_stories[0]).toMatchSnapshot({
