@@ -17,11 +17,6 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.config-logo-and-theme"
-    },
-    "splash": {
-      "type": "component",
-      "repeatable": false,
-      "component": "merchant.image-with-width"
     }
   }
 }

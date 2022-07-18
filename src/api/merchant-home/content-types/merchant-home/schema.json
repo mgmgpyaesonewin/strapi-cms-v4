@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_homes",
+  "info": {
+    "singularName": "merchant-home",
+    "pluralName": "merchant-homes",
+    "displayName": "Merchant Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "action_row": {
+      "displayName": "Home ",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.home"
+    },
+    "what_new": {
+      "displayName": "New-Home",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.new-home"
+    }
+  }
+}

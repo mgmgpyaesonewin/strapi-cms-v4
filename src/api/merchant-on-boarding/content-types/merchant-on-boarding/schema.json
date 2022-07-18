@@ -37,12 +37,6 @@
       "type": "boolean",
       "required": true
     },
-    "logo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "merchant.logo",
-      "required": true
-    },
     "submitButton": {
       "type": "component",
       "repeatable": false,

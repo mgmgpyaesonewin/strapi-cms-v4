@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_merchant_home_new_items",
+  "info": {
+    "displayName": "Home-New-Item",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "isPinned": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title_en": {
+      "type": "text",
+      "required": true
+    },
+    "title_my": {
+      "type": "text",
+      "required": true
+    },
+    "description_en": {
+      "type": "text",
+      "required": true
+    },
+    "description_my": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
