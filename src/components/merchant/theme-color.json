@@ -2,7 +2,8 @@
   "collectionName": "components_merchant_theme_colors",
   "info": {
     "displayName": "theme color",
-    "icon": "columns"
+    "icon": "columns",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,7 +12,8 @@
       "required": true
     },
     "secondary_color": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
