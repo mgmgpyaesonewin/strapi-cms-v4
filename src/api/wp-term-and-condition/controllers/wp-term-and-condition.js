@@ -8,9 +8,8 @@ const {createCoreController} = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::wp-term-and-condition.wp-term-and-condition', ({strapi}) => ({
 
-  async filterByVersion(ctx) {
-    let {version} = ctx.params;
-    const data= await strapi.service('api::wp-term-and-condition.wp-term-and-condition').findByVersion(version);
+  async version(ctx) {
+    const data= await strapi.service('api::wp-term-and-condition.wp-term-and-condition').findByVersion(ctx);
     if(data){
       data.version = data.wp_version.version;
       delete data.wp_version;

@@ -10,11 +10,11 @@ async function fetchTermAndConditionList() {
   }
 }
 
-async function fetchTermAndConditionDetail(version) {
+async function fetchTermAndCondition() {
   try {
-    return await axios.get(`${BASE_URL}/wp-term-and-conditions/version/${version}`);
+    return await axios.get(`${BASE_URL}/wp-term-and-conditions/version/get`);
   } catch (e) {
     return [];
   }
 }
-module.exports = { fetchTermAndConditionList, fetchTermAndConditionDetail };
+module.exports = { fetchTermAndConditionList, fetchTermAndCondition };

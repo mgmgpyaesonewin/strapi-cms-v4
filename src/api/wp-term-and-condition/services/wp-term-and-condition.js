@@ -8,7 +8,7 @@ const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condition', ({ strapi }) => ({
 
-  async findByVersion(version) {
+  async findByVersion(ctx) {
     return await strapi.db.query('api::wp-term-and-condition.wp-term-and-condition').findOne({
       populate: {
         title: true,
@@ -26,26 +26,18 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
           },
           {
             wp_version: {
-              $and: [
-                {
-                  version: {
-                    $eq: version,
-                  },
-
-                }, {
-                  publishedAt: {
-                    $notNull: true,
-                  },
-
-                },
-              ]
+              publishedAt: {
+                $notNull: true,
+              },
             }
           },
         ],
       },
+      orderBy: { publishedAt: 'desc' },
       select: ['id']
     });
   },
+
   async find(ctx) {
     return await strapi.db.query('api::wp-term-and-condition.wp-term-and-condition').findMany({
       populate: {

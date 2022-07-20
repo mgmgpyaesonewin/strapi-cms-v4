@@ -1,9 +1,8 @@
 
 const termAndCondition = require("./api/term-and-condition/term-and-condition.js");
 test('Get term and condition', async () => {
-    let response = await termAndCondition.fetchTermAndConditionList();
-    let firstData = response.data;
-    let data = firstData[0];
+    let response = await termAndCondition.fetchTermAndCondition();
+    let data = response.data;
     expect(data).toHaveProperty('id');
     expect(data).toHaveProperty('title.id');
     expect(data).toHaveProperty('title.en');

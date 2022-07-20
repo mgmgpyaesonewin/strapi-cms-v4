@@ -110,7 +110,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         }
 
         axios.post('https://fcm.googleapis.com/fcm/send', {
-          "to": process.env.NOTIFICATION_TO,
+          "to": process.env.NOTIFICATION_TOPIC,
           "data": {
             "title": "Content Update",
             "body": "Strapi Content is updated",

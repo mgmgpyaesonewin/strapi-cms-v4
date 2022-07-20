@@ -23,8 +23,8 @@ const customRouter = (innerRouter, extraRoutes = []) => {
 const myExtraRoutes = [
   {
     method: 'GET',
-    path: '/wp-term-and-conditions/version/:version',
-    handler: 'wp-term-and-condition.filterByVersion',
+    path: "/wp-term-and-conditions/version/get",
+    handler: 'wp-term-and-condition.version',
     config: {
       policies: [],
       middlewares: [],
