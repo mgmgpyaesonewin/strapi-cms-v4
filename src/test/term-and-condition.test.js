@@ -1,9 +1,9 @@
 
 const termAndCondition = require("./api/term-and-condition/term-and-condition.js");
-test('Get term and condition by version', async () => {
-    let version = '1.0.0';
-    let response = await termAndCondition.fetchTermAndConditionDetail(version);
-    let data = response.data;
+test('Get term and condition', async () => {
+    let response = await termAndCondition.fetchTermAndConditionList();
+    let firstData = response.data;
+    let data = firstData[0];
     expect(data).toHaveProperty('id');
     expect(data).toHaveProperty('title.id');
     expect(data).toHaveProperty('title.en');
@@ -13,6 +13,6 @@ test('Get term and condition by version', async () => {
     expect(data).toHaveProperty('content.en');
     expect(data).toHaveProperty('content.my');
     expect(data).toHaveProperty('content.zw');
-    expect(data).toHaveProperty('version',version);
+    expect(data).toHaveProperty('version');
     
 });

@@ -13,7 +13,7 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
       populate: {
         title: true,
         content: true,
-        ['wp_mobile_app_version']: {
+        ['wp_version']: {
           select: ['version'],
         },
       },
@@ -25,7 +25,7 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
             },
           },
           {
-            wp_mobile_app_version: {
+            wp_version: {
               $and: [
                 {
                   version: {
@@ -51,7 +51,7 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
       populate: {
         title: true,
         content: true,
-        ['wp_mobile_app_version']: {
+        ['wp_version']: {
           select: ['version'],
         },
       },
@@ -63,7 +63,7 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
             },
           },
           {
-            wp_mobile_app_version: {
+            wp_version: {
               publishedAt: {
                 $notNull: true,
               },

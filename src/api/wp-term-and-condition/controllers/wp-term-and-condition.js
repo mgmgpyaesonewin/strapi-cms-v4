@@ -12,8 +12,8 @@ module.exports = createCoreController('api::wp-term-and-condition.wp-term-and-co
     let {version} = ctx.params;
     const data= await strapi.service('api::wp-term-and-condition.wp-term-and-condition').findByVersion(version);
     if(data){
-      data.version = data.wp_mobile_app_version.version;
-      delete data.wp_mobile_app_version;
+      data.version = data.wp_version.version;
+      delete data.wp_version;
     }
     return data;
   },
@@ -21,8 +21,8 @@ module.exports = createCoreController('api::wp-term-and-condition.wp-term-and-co
     const terms= await strapi.service('api::wp-term-and-condition.wp-term-and-condition').find(ctx);
     if (terms.length > 0) {
       terms.map(term => {
-        term.version = !!term.wp_mobile_app_version ? term.wp_mobile_app_version.version : '';
-        delete term.wp_mobile_app_version;
+        term.version = !!term.wp_version ? term.wp_version.version : '';
+        delete term.wp_version;
       });
     }
     return terms;

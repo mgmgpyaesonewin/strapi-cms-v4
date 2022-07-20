@@ -1,5 +1,5 @@
 {
-  "/wp-mobile-app-versions": {
+  "/wp-term-and-condition-versions": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpMobileAppVersionListResponse"
+                "$ref": "#/components/schemas/WpTermAndConditionVersionListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Wp-mobile-app-version"
+        "Wp-term-and-condition-version"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/wp-mobile-app-versions"
+      "operationId": "get/wp-term-and-condition-versions"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpMobileAppVersionResponse"
+                "$ref": "#/components/schemas/WpTermAndConditionVersionResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Wp-mobile-app-version"
+        "Wp-term-and-condition-version"
       ],
       "parameters": [],
-      "operationId": "post/wp-mobile-app-versions",
+      "operationId": "post/wp-term-and-condition-versions",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WpMobileAppVersionRequest"
+              "$ref": "#/components/schemas/WpTermAndConditionVersionRequest"
             }
           }
         }
       }
     }
   },
-  "/wp-mobile-app-versions/{id}": {
+  "/wp-term-and-condition-versions/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpMobileAppVersionResponse"
+                "$ref": "#/components/schemas/WpTermAndConditionVersionResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Wp-mobile-app-version"
+        "Wp-term-and-condition-version"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/wp-mobile-app-versions/{id}"
+      "operationId": "get/wp-term-and-condition-versions/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpMobileAppVersionResponse"
+                "$ref": "#/components/schemas/WpTermAndConditionVersionResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Wp-mobile-app-version"
+        "Wp-term-and-condition-version"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/wp-mobile-app-versions/{id}",
+      "operationId": "put/wp-term-and-condition-versions/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WpMobileAppVersionRequest"
+              "$ref": "#/components/schemas/WpTermAndConditionVersionRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Wp-mobile-app-version"
+        "Wp-term-and-condition-version"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/wp-mobile-app-versions/{id}"
+      "operationId": "delete/wp-term-and-condition-versions/{id}"
     }
   }
 }
