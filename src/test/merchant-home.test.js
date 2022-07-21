@@ -32,17 +32,14 @@ test('Get merchant home', async () => {
                     position: expect.any(String),
                     name: expect.any(String),
                     isPinned: expect.any(Boolean),
-                    app: expect.stringMatching('merchant'),
                     image: expect.any(Object),
                     title: expect.objectContaining({
                         en: expect.any(String),
                         my: expect.any(String),
-                        zw: expect.any(String)
                     }),
                     description: expect.objectContaining({
                         en: expect.any(String),
                         my: expect.any(String),
-                        zw: expect.any(String)
                     }),
                 })
             ])

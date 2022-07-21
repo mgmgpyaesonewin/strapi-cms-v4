@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_tutorial_merchant_buttons",
+  "info": {
+    "displayName": "story-tutorial-button",
+    "icon": "ambulance",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary ",
+        "secondary "
+      ],
+      "default": "primary ",
+      "required": true
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "textColor": {
+      "type": "string",
+      "required": true
+    },
+    "en": {
+      "type": "string"
+    },
+    "my": {
+      "type": "text"
+    },
+    "zw": {
+      "type": "text"
+    },
+    "deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-deeplink.merchant-deeplink"
+    }
+  }
+}

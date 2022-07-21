@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "deeplinks",
+  "collectionName": "merchant_deeplinks",
   "info": {
-    "singularName": "deeplink",
-    "pluralName": "deeplinks",
-    "displayName": "WP deeplink",
+    "singularName": "merchant-deeplink",
+    "pluralName": "merchant-deeplinks",
+    "displayName": "Merchant Deeplink",
     "description": ""
   },
   "options": {
@@ -13,8 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "text",
-      "required": true
+      "type": "string"
     },
     "deeplink": {
       "type": "text",
@@ -27,12 +26,6 @@
     "is_webURL": {
       "type": "boolean",
       "default": false
-    },
-    "wp_mini_apps": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::wp-mini-app.wp-mini-app",
-      "mappedBy": "deep_link"
     },
     "alternative_url": {
       "type": "text"

@@ -71,6 +71,11 @@
       ],
       "default": "mini_app",
       "required": true
+    },
+    "is_login": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

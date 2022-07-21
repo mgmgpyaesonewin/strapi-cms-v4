@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_tutorial_stories",
+  "info": {
+    "singularName": "merchant-tutorial-story",
+    "pluralName": "merchant-tutorial-stories",
+    "displayName": "Merchant Tutorial Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.stories"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "isPinned": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.button-option-tutorial-story"
+    }
+  }
+}

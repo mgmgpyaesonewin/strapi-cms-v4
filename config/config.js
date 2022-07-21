@@ -1,10 +1,7 @@
 module.exports = {
   models: {
     /* general */
-    "deeplink": {
-      url: ["/wp-mini-app-categories","/wp-tutorial-lists","/wp-tutorial-stories"],
-      app: "wp",
-    },
+  
     /* merchant */
     "merchant-on-boarding": {
       url: ["/merchant-core-config"],
@@ -23,10 +20,22 @@ module.exports = {
       app: "merchant",
     },
     "merchant-home":{
-      url: ["/merchant-home","/wp-tutorial-stories"],
+      url: ["/merchant-home"],
       app: "merchant"
     },
+    "merchant-deeplink": {
+      url: ["/merchant-home","/merchant-tutorial-stories"],
+      app: "merchant",
+    },
+    "merchant-tutorial-story":{
+      url: ["/merchant-home","/merchant-tutorial-stories"],
+      app: "merchant",
+    },
     /* Wave Pay */
+    "deeplink": {
+      url: ["/wp-mini-app-categories","/wp-tutorial-lists","/wp-tutorial-stories"],
+      app: "wp",
+    },
     "wp-mini-app": {
       url: ["/wp-mini-app-categories"],
       app: "wp",
@@ -59,12 +68,12 @@ module.exports = {
     },
     "wp-tutorial-story-list": {
       url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
-      app: "wp,merchant"
+      app: "wp"
     },
 
     "wp-tutorial-story": {
       url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
-      app: "wp,merchant"
+      app: "wp"
     },
     "wp-term-and-condition": {
       url: ["/wp-term-and-conditions","wp-mobile-app-versions"],

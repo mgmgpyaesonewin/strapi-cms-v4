@@ -9,21 +9,12 @@ const { createCoreService } = require('@strapi/strapi').factories;
 module.exports = createCoreService('api::wp-tutorial-story-list.wp-tutorial-story-list', ({ strapi }) => ({
   async find(ctx) {
     const entityStoryLists = await strapi.db.query('api::wp-tutorial-story-list.wp-tutorial-story-list').findMany({
-      select: ['id', 'type', 'story_name', 'position','app'],
+      select: ['id', 'type', 'story_name', 'position'],
       orderBy: { position: 'asc' },
       where: {
-        $and: [
-          {
-            publishedAt: {
-              $notNull: true,
-            },
-          },
-          {
-            app: {
-              $eq: 'wp',
-            },
-          },
-        ],
+        publishedAt: {
+          $notNull: true,
+        },
       },
       populate: {
         ["image"]: {
@@ -34,18 +25,9 @@ module.exports = createCoreService('api::wp-tutorial-story-list.wp-tutorial-stor
         ["wp_tutorial_stories"]: {
           orderBy: { position: 'asc' },
           where: {
-            $and: [
-              {
-                publishedAt: {
-                  $notNull: true,
-                },
-              },
-              {
-                app: {
-                  $eq: 'wp',
-                },
-              },
-            ],
+            publishedAt: {
+              $notNull: true,
+            },
           },
           populate: {
             title: true,

@@ -10,6 +10,8 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
   async create(ctx) {
     const {model} = ctx.request.body;
+    console.log(model);
+    console.log("########");
     const versionConfig = ['api-version-history','api-version','url-version'];
     if(versionConfig.includes(model)){
       return null;

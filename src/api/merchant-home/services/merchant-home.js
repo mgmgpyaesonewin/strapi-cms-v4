@@ -26,22 +26,13 @@ module.exports = createCoreService('api::merchant-home.merchant-home', ({ strapi
                 what_new: {
                     populate: {
                         ["items"]: {
-                            
+
                             orderBy: { position: 'asc' },
                             where: {
-                                $and: [
-                                  {
-                                    publishedAt: {
-                                      $notNull: true,
-                                    },
-                                  },
-                                  {
-                                    app: {
-                                      $eq: 'merchant',
-                                    },
-                                  },
-                                ],
-                              },
+                                publishedAt: {
+                                    $notNull: true,
+                                },
+                            },
                             populate: {
                                 title: true,
                                 description: true,

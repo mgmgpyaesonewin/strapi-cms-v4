@@ -14,7 +14,7 @@
     "items": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::wp-tutorial-story.wp-tutorial-story"
+      "target": "api::merchant-tutorial-story.merchant-tutorial-story"
     }
   }
 }
