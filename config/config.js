@@ -31,6 +31,14 @@ module.exports = {
       url: ["/merchant-home","/merchant-tutorial-stories"],
       app: "merchant",
     },
+    "merchant-term-and-condition-version":{
+      url:["/merchant-term-and-condition-content","/merchant-term-and-condition-versions"],
+      app: "merchant",
+    },
+    "merchant-term-and-condition-content":{
+      url:["/merchant-term-and-condition-content"],
+      app: "merchant",
+    },
     /* Wave Pay */
     "deeplink": {
       url: ["/wp-mini-app-categories","/wp-tutorial-lists","/wp-tutorial-stories"],
@@ -76,11 +84,11 @@ module.exports = {
       app: "wp"
     },
     "wp-term-and-condition": {
-      url: ["/wp-term-and-conditions","wp-mobile-app-versions"],
+      url: ["/wp-term-and-conditions"],
       app: "wp"
     },
-    "wp-mobile-app-version":{
-      url: ["/wp-mobile-app-versions"],
+    "wp-term-and-condition-version":{
+      url: ["/wp-mobile-app-versions","/wp-term-and-conditions"],
       app: "wp"
     }
 

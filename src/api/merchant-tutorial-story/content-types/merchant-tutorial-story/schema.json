@@ -4,7 +4,7 @@
   "info": {
     "singularName": "merchant-tutorial-story",
     "pluralName": "merchant-tutorial-stories",
-    "displayName": "Merchant Tutorial Story",
+    "displayName": "Merchant Story Content",
     "description": ""
   },
   "options": {
@@ -36,7 +36,8 @@
     "stories": {
       "type": "component",
       "repeatable": true,
-      "component": "wp.stories"
+      "component": "wp.stories",
+      "required": true
     },
     "position": {
       "type": "biginteger",

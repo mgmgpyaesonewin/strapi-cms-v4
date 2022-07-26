@@ -3,15 +3,14 @@ const termAndCondition = require("./api/mini-app/mini-app.js");
 test('Get Mini App Category & Min App List', async () => {
     let response = await termAndCondition.fetchMiniApp();
     let data = response.data;
-
     let miniAppCategories = data.categories;
     let miniApp = data.mini_apps;
     expect.extend({
         alternativeURL(value) {
             expect(value).toBe([expect(value).toBeNull(), expect.any(String)]);
         },
-      });
-      
+    });
+    /* Mini App Category */
     expect(miniAppCategories).toEqual(
         expect.arrayContaining([
             expect.objectContaining({
@@ -27,6 +26,7 @@ test('Get Mini App Category & Min App List', async () => {
             })
         ])
     );
+    /* Mini App */
     expect(miniApp).toEqual(
         expect.arrayContaining([
             expect.objectContaining({
@@ -45,13 +45,44 @@ test('Get Mini App Category & Min App List', async () => {
                     name: expect.any(String),
                     deeplink: expect.any(String),
                     is_external: expect.any(Boolean),
-                    is_webURL:expect.any(Boolean),
-                   //alternative_url : expect.extend(toBeTypeOrNull(String)),
-                   //alternative_url : expect(alternative_url === null || Number(alternative_url)).toBe(true),
+                    is_webURL: expect.any(Boolean),
+                    alternative_url: expect.toBeNullOrAny(String), //key I may receive string or null
+
                 }),
+                paths: expect.arrayContaining([
+                    expect.objectContaining({
+                        value_injector: expect.any(String),
+                        position: expect.any(Number),
+
+                    })
+                ]),
+                parameters: expect.arrayContaining([
+                    expect.objectContaining({
+                        query_param: expect.any(String),
+                        value_injector: expect.any(String),
+
+                    })
+                ]),
+                category_id: expect.any(Number),
+                category_name: expect.any(String),
             })
         ])
     );
-
 });
 
+expect.extend({
+    toBeNullOrAny(received, expected) {
+        if (received === null) {
+            return {
+                pass: true,
+                message: () => `expected null or instance of ${this.utils.printExpected(expected)}, but received ${this.utils.printReceived(received)}`
+            };
+        }
+        if (expected == String) {
+            return {
+                pass: typeof received == 'string' || received instanceof String,
+                message: () => `expected null or instance of ${this.utils.printExpected(expected)}, but received ${this.utils.printReceived(received)}`
+            };
+        }
+    }
+});

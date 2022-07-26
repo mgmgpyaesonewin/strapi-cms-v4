@@ -4,7 +4,7 @@
   "info": {
     "singularName": "url-version",
     "pluralName": "url-versions",
-    "displayName": "URL Version",
+    "displayName": "API Version URL",
     "description": ""
   },
   "options": {

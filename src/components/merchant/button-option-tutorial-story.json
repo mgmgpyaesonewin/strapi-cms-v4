@@ -19,7 +19,8 @@
       "required": true
     },
     "autoPlaySpeed": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     }
   }
 }

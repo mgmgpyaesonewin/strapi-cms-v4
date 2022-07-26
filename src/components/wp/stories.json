@@ -15,7 +15,8 @@
     "my": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.ios"
+      "component": "wp.ios",
+      "required": true
     }
   }
 }

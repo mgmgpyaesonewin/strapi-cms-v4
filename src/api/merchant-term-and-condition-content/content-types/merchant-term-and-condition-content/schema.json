@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_term_and_condition_contents",
+  "info": {
+    "singularName": "merchant-term-and-condition-content",
+    "pluralName": "merchant-term-and-condition-contents",
+    "displayName": "Merchant Term&Condition Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "en": {
+      "type": "text",
+      "required": true
+    },
+    "my": {
+      "type": "text"
+    },
+    "merchant_version": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-term-and-condition-version.merchant-term-and-condition-version"
+    }
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "api-version",
     "pluralName": "api-versions",
-    "displayName": "Api Version"
+    "displayName": "API Version",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false

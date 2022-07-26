@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wp-term-and-condition-version",
     "pluralName": "wp-term-and-condition-versions",
-    "displayName": "WP Term and Condition Version"
+    "displayName": "WP Term&Condition Version",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
