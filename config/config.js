@@ -75,12 +75,12 @@ module.exports = {
       app: "wp"
     },
     "wp-tutorial-story-list": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
+      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","/wp-tutorial-story-lists"],
       app: "wp"
     },
 
     "wp-tutorial-story": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","wp-tutorial-story-lists"],
+      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","/wp-tutorial-story-lists"],
       app: "wp"
     },
     "wp-term-and-condition": {
