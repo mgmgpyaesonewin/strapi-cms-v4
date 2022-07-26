@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_term_and_condition_versions",
+  "info": {
+    "singularName": "merchant-term-and-condition-version",
+    "pluralName": "merchant-term-and-condition-versions",
+    "displayName": "Merchant Term&Condition Version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

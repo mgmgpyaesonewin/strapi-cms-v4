@@ -11,6 +11,14 @@ async function fetchStoryTutorialList() {
     return [];
   }
 }
+async function fetchMerchantStoryTutorialDetail(id) {
+  try {
+
+    return await axios.get(`${BASE_URL}/merchant-tutorial-stories/${id}`);
+  } catch (e) {
+    return [];
+  }
+}
 async function fetchStoryTutorialDetail(id) {
   try {
 
@@ -23,4 +31,4 @@ async function fetchStoryTutorialDetail(id) {
 
 
 
-module.exports = { fetchStoryTutorialList, fetchStoryTutorialDetail };
+module.exports = { fetchStoryTutorialList, fetchStoryTutorialDetail,fetchMerchantStoryTutorialDetail };

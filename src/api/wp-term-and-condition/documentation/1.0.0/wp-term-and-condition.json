@@ -483,7 +483,7 @@
       "operationId": "delete/wp-term-and-conditions/{id}"
     }
   },
-  "/wp-term-and-conditions/version/{version}": {
+  "/wp-term-and-conditions/version/get": {
     "get": {
       "responses": {
         "200": {
@@ -550,19 +550,8 @@
       "tags": [
         "Wp-term-and-condition"
       ],
-      "parameters": [
-        {
-          "name": "version",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
-      "operationId": "get/wp-term-and-conditions/version/{version}"
+      "parameters": [],
+      "operationId": "get/wp-term-and-conditions/version/get"
     }
   }
 }

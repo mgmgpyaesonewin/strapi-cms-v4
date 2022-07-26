@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_deeplinks",
+  "info": {
+    "singularName": "merchant-deeplink",
+    "pluralName": "merchant-deeplinks",
+    "displayName": "Merchant Deeplink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "deeplink": {
+      "type": "text",
+      "required": true
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_webURL": {
+      "type": "boolean",
+      "default": false
+    },
+    "alternative_url": {
+      "type": "text"
+    }
+  }
+}

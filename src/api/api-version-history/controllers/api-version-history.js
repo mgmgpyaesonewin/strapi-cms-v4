@@ -10,6 +10,8 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
   async create(ctx) {
     const {model} = ctx.request.body;
+    console.log(model);
+    console.log("########");
     const versionConfig = ['api-version-history','api-version','url-version'];
     if(versionConfig.includes(model)){
       return null;
@@ -110,7 +112,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         }
 
         axios.post('https://fcm.googleapis.com/fcm/send', {
-          "to": process.env.NOTIFICATION_TO,
+          "to": process.env.NOTIFICATION_TOPIC,
           "data": {
             "title": "Content Update",
             "body": "Strapi Content is updated",

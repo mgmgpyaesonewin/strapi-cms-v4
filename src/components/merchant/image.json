@@ -1,7 +1,7 @@
 {
   "collectionName": "components_share_images",
   "info": {
-    "displayName": "image",
+    "displayName": "image(translation)",
     "icon": "image",
     "description": ""
   },
@@ -15,21 +15,13 @@
         "images"
       ]
     },
-    "width": {
-      "type": "string",
-      "required": true
-    },
-    "height": {
-      "type": "string",
-      "required": true
-    },
     "imageURL_mm": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

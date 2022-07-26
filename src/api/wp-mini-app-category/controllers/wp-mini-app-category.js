@@ -19,7 +19,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
     if (miniApps.length > 0) {
       miniApps.map(miniApp => {
         miniApp.category_id = !!miniApp.mini_app_category ? miniApp.mini_app_category.id : 0;
-        miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : null;
+        miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : '';
         miniApp.icon = miniApp.icon.url;
         delete miniApp.mini_app_category;
       });

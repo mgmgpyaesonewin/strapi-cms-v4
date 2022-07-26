@@ -10,14 +10,6 @@
     "bgColor": {
       "type": "string",
       "required": true
-    },
-    "backgroundImageUrl": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     }
   }
 }

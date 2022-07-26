@@ -4,7 +4,7 @@
   "info": {
     "singularName": "wp-term-and-condition",
     "pluralName": "wp-term-and-conditions",
-    "displayName": "WP Term & Condition",
+    "displayName": "WP Term&Condition Content",
     "description": ""
   },
   "options": {
@@ -22,10 +22,10 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "wp_mobile_app_version": {
+    "wp_version": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::wp-mobile-app-version.wp-mobile-app-version"
+      "target": "api::wp-term-and-condition-version.wp-term-and-condition-version"
     }
   }
 }

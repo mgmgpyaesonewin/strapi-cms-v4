@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_merchant_button_option_tutorial_stories",
+  "info": {
+    "displayName": "Story-tutorial-button-option",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttons": {
+      "displayName": "buttons",
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.buttons"
+    },
+    "autoPlay": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "autoPlaySpeed": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "wp-tutorial-story",
     "pluralName": "wp-tutorial-stories",
-    "displayName": "WP Tutorial Story",
+    "displayName": "WP Story Content",
     "description": ""
   },
   "options": {
@@ -57,6 +57,20 @@
       "type": "biginteger",
       "required": true,
       "min": "1"
+    },
+    "app": {
+      "type": "enumeration",
+      "enum": [
+        "merchant",
+        "wp"
+      ],
+      "required": true,
+      "default": "merchant"
+    },
+    "isPinned": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

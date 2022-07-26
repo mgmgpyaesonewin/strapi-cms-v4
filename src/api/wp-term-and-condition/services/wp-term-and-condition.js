@@ -8,12 +8,12 @@ const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condition', ({ strapi }) => ({
 
-  async findByVersion(version) {
+  async findByVersion(ctx) {
     return await strapi.db.query('api::wp-term-and-condition.wp-term-and-condition').findOne({
       populate: {
         title: true,
         content: true,
-        ['wp_mobile_app_version']: {
+        ['wp_version']: {
           select: ['version'],
         },
       },
@@ -25,33 +25,25 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
             },
           },
           {
-            wp_mobile_app_version: {
-              $and: [
-                {
-                  version: {
-                    $eq: version,
-                  },
-
-                }, {
-                  publishedAt: {
-                    $notNull: true,
-                  },
-
-                },
-              ]
+            wp_version: {
+              publishedAt: {
+                $notNull: true,
+              },
             }
           },
         ],
       },
+      orderBy: { publishedAt: 'desc' },
       select: ['id']
     });
   },
+
   async find(ctx) {
     return await strapi.db.query('api::wp-term-and-condition.wp-term-and-condition').findMany({
       populate: {
         title: true,
         content: true,
-        ['wp_mobile_app_version']: {
+        ['wp_version']: {
           select: ['version'],
         },
       },
@@ -63,7 +55,7 @@ module.exports = createCoreService('api::wp-term-and-condition.wp-term-and-condi
             },
           },
           {
-            wp_mobile_app_version: {
+            wp_version: {
               publishedAt: {
                 $notNull: true,
               },

@@ -17,18 +17,6 @@
       "repeatable": false,
       "component": "merchant.image"
     },
-    "title": {
-      "displayName": "title",
-      "type": "component",
-      "repeatable": false,
-      "component": "merchant.title"
-    },
-    "subTitle": {
-      "displayName": "subTitle",
-      "type": "component",
-      "repeatable": false,
-      "component": "merchant.sub-title"
-    },
     "page_design": {
       "displayName": "page_design",
       "type": "component",
