@@ -4,23 +4,28 @@
  *  wp-mini-app-category controller
  */
 
-const {createCoreController} = require('@strapi/strapi').factories;
+const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({strapi}) => ({
+module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({ strapi }) => ({
   async find(ctx) {
     /* mini app category */
     const categories = await strapi.service('api::wp-mini-app-category.wp-mini-app-category').find(ctx);
     categories.map(category => {
-       category.icon = category.icon.url;
+      category.icon = category.icon.url;
 
     });
-   /* mini app */
+    /* mini app */
     const miniApps = await strapi.service('api::wp-mini-app.wp-mini-app').find(ctx);
     if (miniApps.length > 0) {
       miniApps.map(miniApp => {
+        let paths = miniApp.paths;
         miniApp.category_id = !!miniApp.mini_app_category ? miniApp.mini_app_category.id : 0;
         miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : '';
         miniApp.icon = miniApp.icon.url;
+        paths.map(path => {
+          path.value = path.value_injector === "static" ? path.value : null;
+
+        });
         delete miniApp.mini_app_category;
       });
     }

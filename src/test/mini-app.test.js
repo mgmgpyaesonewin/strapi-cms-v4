@@ -53,6 +53,7 @@ test('Get Mini App Category & Min App List', async () => {
                     expect.objectContaining({
                         value_injector: expect.any(String),
                         position: expect.any(Number),
+                        value : expect.toBeNullOrAny(String),
 
                     })
                 ]),
