@@ -35,6 +35,7 @@ test('Get Mini App Category & Min App List', async () => {
                 position: expect.any(Number),
                 tag: expect.stringMatching('mini_app'),
                 is_login: expect.any(Boolean),
+                screen_orientation : expect.toBeNullOrAny(String),
                 title: expect.objectContaining({
                     en: expect.any(String),
                     my: expect.any(String),

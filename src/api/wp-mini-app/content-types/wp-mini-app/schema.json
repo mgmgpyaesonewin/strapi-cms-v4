@@ -76,6 +76,15 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "screen_orientation": {
+      "type": "enumeration",
+      "enum": [
+        "portrait",
+        "landscape",
+        "neutral"
+      ],
+      "required": false
     }
   }
 }
