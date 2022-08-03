@@ -1,7 +1,7 @@
 {
   "collectionName": "components_merchant_validations",
   "info": {
-    "displayName": "validations",
+    "displayName": "validations with Pattern",
     "icon": "plane-arrival",
     "description": ""
   },

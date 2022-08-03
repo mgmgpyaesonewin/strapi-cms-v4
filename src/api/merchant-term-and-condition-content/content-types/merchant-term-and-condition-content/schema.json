@@ -17,7 +17,8 @@
       "required": true
     },
     "my": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "merchant_version": {
       "type": "relation",

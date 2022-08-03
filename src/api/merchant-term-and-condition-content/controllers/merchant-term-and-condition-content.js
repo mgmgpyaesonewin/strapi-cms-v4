@@ -13,6 +13,8 @@ module.exports = createCoreController('api::merchant-term-and-condition-content.
           data.version = data.merchant_version.version;
           delete data.merchant_version;
         }
-        return data;
+        return {
+          'terms_html':data
+        };
       },
 }));

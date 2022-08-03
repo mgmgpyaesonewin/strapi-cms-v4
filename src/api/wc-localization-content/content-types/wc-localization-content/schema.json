@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_localization_contents",
+  "info": {
+    "singularName": "wc-localization-content",
+    "pluralName": "wc-localization-contents",
+    "displayName": "WC Localization Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "label",
+        "placeholder",
+        "inline"
+      ],
+      "required": true
+    },
+    "value": {
+      "displayName": "WC translation ",
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    }
+  }
+}

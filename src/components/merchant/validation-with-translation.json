@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_merchant_validation_with_translation_s",
+  "info": {
+    "displayName": "Validation with Translation ",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "error_message": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation"
+    }
+  }
+}

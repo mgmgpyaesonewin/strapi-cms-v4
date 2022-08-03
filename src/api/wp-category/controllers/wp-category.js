@@ -11,8 +11,8 @@ module.exports = createCoreController('api::wp-category.wp-category', ({strapi})
     let status = 'Success';
     const categories = await strapi.service('api::wp-category.wp-category').find(ctx);
     let responseMap = categories.map((value, index) => {
-      let photoNormal = value.photo_path_normal.url;
-      let photoSelected = value.photo_path_selected.url;
+      let photoNormal = value.photo_path_normal ? value.photo_path_normal.url : '';
+      let photoSelected = value.photo_path_selected ? value.photo_path_selected.url :'';
       return {
         'category_id': value.category_id,
         'category_title': value.category_title,

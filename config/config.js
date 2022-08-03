@@ -57,7 +57,7 @@ module.exports = {
       app: "wp"
     },
     "wp-promotion": {
-      url: ["/promotions"],
+      url: ["/promotions","/categories"],
       app: "wp"
     },
 
@@ -90,6 +90,11 @@ module.exports = {
     "wp-term-and-condition-version":{
       url: ["/wp-mobile-app-versions","/wp-term-and-conditions"],
       app: "wp"
+    },
+    /* Wave Chanel  EKYC */
+    "wc-localization-content":{
+      url: ["/wc-localization-contents"],
+      app: "wc"
     }
 
   },

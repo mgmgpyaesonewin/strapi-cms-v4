@@ -20,6 +20,9 @@
     },
     "position": {
       "type": "integer"
+    },
+    "value": {
+      "type": "text"
     }
   }
 }

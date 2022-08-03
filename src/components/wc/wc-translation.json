@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_wc_wc_translation_s",
+  "info": {
+    "displayName": "WC translation ",
+    "icon": "arrows-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "type": "text",
+      "required": true
+    },
+    "my": {
+      "type": "text",
+      "required": true
+    },
+    "zw": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

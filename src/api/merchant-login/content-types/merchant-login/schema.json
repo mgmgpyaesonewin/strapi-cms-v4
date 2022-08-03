@@ -37,6 +37,11 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.password-guide-dialog"
+    },
+    "validations_confirm_pin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.validation-with-translation"
     }
   }
 }
