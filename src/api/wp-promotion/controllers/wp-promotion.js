@@ -45,7 +45,7 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     const promotion = await strapi.service('api::wp-promotion.wp-promotion').findOne(id);
     const responseMap = {
       promotion_id: promotion.id,
-      photo_path: promotion.photo_path.url,
+      photo_path: promotion.photo_path ? promotion.photo_path.url : '',
       promotion_type: !promotion.wp_promotion_type ? null : promotion.wp_promotion_type.type_title,
       category_id: !promotion.wp_category ? null : promotion.wp_category.category_id,
       category_title: !promotion.wp_category ? null : promotion.wp_category.category_title,
@@ -70,7 +70,7 @@ function responseMapping(promotionEntries) {
     mapping.push({
       "promotion_id": value.id,
       'promotion_title': value.promotion_title,
-      "photo_path": value.photo_path.url,
+      "photo_path": value.photo_path ? value.photo_path.url : '',
       "promotion_type": !value.wp_promotion_type ? null : value.wp_promotion_type.type_title,
       "category_id": !value.wp_category ? null : value.wp_category.category_id,
       "category_title": !value.wp_category ? null : value.wp_category.category_title,
