@@ -57,7 +57,7 @@ module.exports = {
       app: "wp"
     },
     "wp-promotion": {
-      url: ["/promotions"],
+      url: ["/promotions","/categories"],
       app: "wp"
     },
 
