@@ -22,7 +22,7 @@ module.exports = createCoreService('api::merchant-tutorial-story.merchant-tutori
                     ['buttons']: {
                         populate: {
                             ['deeplink']: {
-                                select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url'],
+                                select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url','client_id'],
 
                             },
                         },

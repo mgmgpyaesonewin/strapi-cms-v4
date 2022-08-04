@@ -43,6 +43,9 @@
     },
     "alternative_url_IOS": {
       "type": "text"
+    },
+    "client_id": {
+      "type": "text"
     }
   }
 }
