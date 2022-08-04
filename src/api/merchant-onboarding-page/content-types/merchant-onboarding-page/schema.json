@@ -15,13 +15,15 @@
     "image": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.image"
+      "component": "merchant.image",
+      "required": true
     },
     "page_design": {
       "displayName": "page_design",
       "type": "component",
       "repeatable": false,
-      "component": "share.page-design"
+      "component": "share.page-design",
+      "required": true
     },
     "page_short_name": {
       "type": "string"

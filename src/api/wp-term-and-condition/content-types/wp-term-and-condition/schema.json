@@ -15,12 +15,14 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "content": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "wp_version": {
       "type": "relation",

@@ -36,6 +36,13 @@
     },
     "alternative_url": {
       "type": "text"
+    },
+    "deeplink_IOS": {
+      "type": "text",
+      "required": true
+    },
+    "alternative_url_IOS": {
+      "type": "text"
     }
   }
 }

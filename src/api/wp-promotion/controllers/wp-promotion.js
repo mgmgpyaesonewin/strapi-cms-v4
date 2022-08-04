@@ -15,7 +15,6 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
 
     let promotionType = ctx.query.promotionType;
     const promotions = await strapi.service('api::wp-promotion.wp-promotion').find(ctx);
-
     var finalData;
     if (types.includes(ctx.query.promotionType)) {
       finalData = promotions.filter(function (filterType) {
@@ -24,7 +23,6 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     } else {
       finalData = promotions;
     }
-
     let responseMap = responseMapping(finalData);
     return {status, responseMap};
   },
@@ -43,12 +41,13 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     const {id} = ctx.params;
     const {query} = ctx;
     const promotion = await strapi.service('api::wp-promotion.wp-promotion').findOne(id);
-    const responseMap = {
+    if(promotion){    
+      const responseMap = {
       promotion_id: promotion.id,
       photo_path: promotion.photo_path ? promotion.photo_path.url : '',
-      promotion_type: !promotion.wp_promotion_type ? null : promotion.wp_promotion_type.type_title,
-      category_id: !promotion.wp_category ? null : promotion.wp_category.category_id,
-      category_title: !promotion.wp_category ? null : promotion.wp_category.category_title,
+      promotion_type: !promotion.wp_promotion_type ? '' : promotion.wp_promotion_type.type_title,
+      category_id: !promotion.wp_category ? '' : promotion.wp_category.category_id,
+      category_title: !promotion.wp_category ? '' : promotion.wp_category.category_title,
       hasDetails: promotion.hasDetails,
       action_link_ios: promotion.action_link_ios,
       action_link_android: promotion.action_link_android,
@@ -61,6 +60,7 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     };
     return {status, responseMap};
   }
+ }
 
 }));
 
@@ -71,9 +71,9 @@ function responseMapping(promotionEntries) {
       "promotion_id": value.id,
       'promotion_title': value.promotion_title,
       "photo_path": value.photo_path ? value.photo_path.url : '',
-      "promotion_type": !value.wp_promotion_type ? null : value.wp_promotion_type.type_title,
-      "category_id": !value.wp_category ? null : value.wp_category.category_id,
-      "category_title": !value.wp_category ? null : value.wp_category.category_title,
+      "promotion_type": !value.wp_promotion_type ? '' : value.wp_promotion_type.type_title,
+      "category_id": !value.wp_category ? '' : value.wp_category.id,
+      "category_title": !value.wp_category ? '' : value.wp_category.category_title,
       "hasDetails": value.hasDetails,
       "action_link_ios": value.action_link_ios,
       "action_link_android": value.action_link_android,

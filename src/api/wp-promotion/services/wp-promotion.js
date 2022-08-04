@@ -13,7 +13,7 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
       publicationState: 'live',
       filters: {
         wp_category: {
-          category_id: {
+          id: {
             $notNull: true,
           },
         },
@@ -27,7 +27,7 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
       publicationState: 'live',
       filters: {
         wp_category: {
-          category_id: {
+          id: {
             $notNull: true,
           },
         },
@@ -43,7 +43,7 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
       sort: { position: 'asc' },
       filters: {
         wp_category: {
-          category_id: id,
+          id: id,
         },
       },
     });
