@@ -30,6 +30,7 @@ test('Get Story Tutorial by ID', async () => {
     expect(data).toHaveProperty('options.buttons[0].deeplink.alternative_url');
     expect(data).toHaveProperty('options.buttons[0].deeplink.alternative_url_IOS');
     expect(data).toHaveProperty('options.buttons[0].deeplink.deeplink_IOS');
+    expect(data).toHaveProperty('options.buttons[0].deeplink.client_id');
     expect(data).toHaveProperty('stories[0].id');
     expect(data).toHaveProperty('stories[0].en.id');
     expect(data).toHaveProperty('stories[0].en.extra_large.url');
