@@ -53,11 +53,11 @@ module.exports = {
       app: "wp",
     },
     "wp-category": {
-      url: ["/categories","/promotions"],
+      url: ["/wp-categories","/wp-promotions"],
       app: "wp"
     },
     "wp-promotion": {
-      url: ["/promotions"],
+      url: ["/wp-promotions"],
       app: "wp"
     },
 
