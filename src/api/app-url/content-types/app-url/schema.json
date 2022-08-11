@@ -16,21 +16,20 @@
       "type": "string",
       "required": true
     },
-    "model": {
-      "type": "string",
-      "required": true
-    },
-    "versions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "wp.url",
-      "required": true
+    "firebase_topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::firebase-topic.firebase-topic"
     },
     "app": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::app.app",
       "inversedBy": "app_urls"
+    },
+    "model": {
+      "type": "text",
+      "required": true
     }
   }
 }

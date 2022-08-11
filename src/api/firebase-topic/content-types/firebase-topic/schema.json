@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "firebase_topics",
+  "info": {
+    "singularName": "firebase-topic",
+    "pluralName": "firebase-topics",
+    "displayName": "Firebase Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topic_name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

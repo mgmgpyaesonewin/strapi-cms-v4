@@ -14,7 +14,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
       console.log(model);
       console.log("########");
 
-      // to prevent resursion of webhook, should return null.
+      // to prevent recursion of webhook, should return null.
       const versionConfig = ['api-version-history', 'api-version', 'url-version', 'app', 'app-url'];
       if (versionConfig.includes(model)) {
         return null;
@@ -22,7 +22,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
       if (!versionConfig.includes(model)) { // no more necessary
         const model = ctx.request.body.model;
-        
+
         /* get all value by model in api version */
         const apiVersions = await strapi.service('api::api-version.api-version').findAllByEntity(ctx.request.body.model);
         const apiVersion = {
@@ -53,14 +53,17 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
         // App-version-URLs
         /* find app url value by model*/
-        const appURL = await strapi.service('api::app-url.app-url').findByModel(model);
+        // const appURL = await strapi.service('api::app-url.app-url').findByModel(model);
+        const appURL = await strapi.service('api::strapi-model.strapi-model').findByModel(model);
+    
+
         let app = '';
         const pushNotiVersion = [];
-        if (appURL.length > 0) {
-          for (const data of appURL) {
+        if (appURL) {
+          for (const data of appURL.app_urls) {
             app = data.app ? data.app.name : '';
             const url = data.url;
-            const app_version_arr = data.versions;
+            const app_version_arr = data.firebase_topics;
             /* data push */
             pushNotiVersion.push(...app_version_arr);
             const entry_URL = await strapi.service('api::url-version.url-version').findByURL(url);
@@ -82,16 +85,10 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         }
         /*firebase notification */
         if (pushNotiVersion.length > 0) {
-          const uniqueArr = [...new Set(pushNotiVersion.map(item => item.version))]; /* remove duplicate version */
+          const uniqueArr = [...new Set(pushNotiVersion.map(item => item.topic_name))]; /* remove duplicate version */
           for (const appVersion of uniqueArr) {
-            let topics = '/topics/content_version_strapi';
-            if (app === "WP") {
-              topics = `/topics/WP_${appVersion}`
-              sendNotificationToWp(topics);
-            } else if (app == "Merchant") {
-              topics = `/topics/Merchant_${appVersion}`
-              sendNotificationToWp(topics);
-            }
+            console.log(appVersion);
+            sendNotificationToWp(appVersion);
           };
         }
         /*firebase notification */
