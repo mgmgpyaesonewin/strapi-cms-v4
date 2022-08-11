@@ -12,9 +12,20 @@ module.exports = createCoreService('api::wp-tutorial-story-list.wp-tutorial-stor
       select: ['id', 'type', 'story_name', 'position'],
       orderBy: { position: 'asc' },
       where: {
-        publishedAt: {
-          $notNull: true,
-        },
+        $and: [
+          {
+            publishedAt: {
+              $notNull: true,
+            }
+          },
+          {
+            wp_tutorial_stories: {
+              publishedAt: {
+                $notNull: true,
+              }
+            }
+          }
+        ]
       },
       populate: {
         ["image"]: {

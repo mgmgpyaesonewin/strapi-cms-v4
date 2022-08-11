@@ -4,20 +4,32 @@
  * wp-promotion service.
  */
 
-const {createCoreService} = require('@strapi/strapi').factories;
+const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) => ({
+module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }) => ({
   async find(ctx) {
     const promotions = await strapi.entityService.findMany('api::wp-promotion.wp-promotion', {
       populate: 'deep',
       publicationState: 'live',
       filters: {
-        wp_category: {
-          id: {
-            $notNull: true,
-          },
-        },
-      },
+        $and: [
+          {
+            wp_category: {
+              id: {
+                $notNull: true,
+              },
+            },
+          }, {
+            wp_category: {
+              publishedAt: {
+                $notNull: true,
+              }
+            },
+          }
+
+        ],
+      }
+
     });
     return promotions;
   },
@@ -42,9 +54,20 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({strapi}) 
       publicationState: 'live',
       sort: { position: 'asc' },
       filters: {
-        wp_category: {
-          id: id,
-        },
+        $and: [
+          {
+            wp_category: {
+              id: id,
+            },
+          }, {
+            wp_category: {
+              publishedAt: {
+                $notNull: true,
+              }
+            },
+          }
+
+        ],
       },
     });
     return promotion;
