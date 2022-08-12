@@ -28,8 +28,9 @@
       "inversedBy": "app_urls"
     },
     "model": {
-      "type": "text",
-      "required": true
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.url"
     }
   }
 }
