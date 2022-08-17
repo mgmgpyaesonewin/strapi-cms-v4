@@ -65,7 +65,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
             app = data.app ? data.app.name : '';
             const url = data.url;
             const app_version_arr = data.firebase_topics;
-            console.log(appURL.app_version_arr);
             /* data push */
             pushNotiVersion.push(...app_version_arr);
             const entry_URL = await strapi.service('api::url-version.url-version').findByURL(url);
