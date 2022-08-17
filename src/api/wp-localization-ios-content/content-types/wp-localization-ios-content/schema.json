@@ -1,10 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "wp_localization_contents",
+  "collectionName": "wp_localization_ios_contents",
   "info": {
-    "singularName": "wp-localization-content",
-    "pluralName": "wp-localization-contents",
-    "displayName": "WP Localization Content"
+    "singularName": "wp-localization-ios-content",
+    "pluralName": "wp-localization-ios-contents",
+    "displayName": "WP LocalizationIOS Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,7 @@
   "attributes": {
     "key": {
       "type": "string",
+      "unique": true,
       "required": true
     },
     "type": {

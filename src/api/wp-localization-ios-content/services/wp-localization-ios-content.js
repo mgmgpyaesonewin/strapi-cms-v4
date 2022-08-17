@@ -1,14 +1,14 @@
 'use strict';
 
 /**
- * wp-localization-content service.
+ * wp-localization-ios-content service.
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::wp-localization-content.wp-localization-content', ({ strapi }) => ({
+module.exports = createCoreService('api::wp-localization-ios-content.wp-localization-ios-content', ({ strapi }) => ({
     async find(ctx) {
-        return await strapi.db.query('api::wp-localization-content.wp-localization-content').findMany({
+        return await strapi.db.query('api::wp-localization-ios-content.wp-localization-ios-content').findMany({
             populate: {
                 value: true,
             },
@@ -22,3 +22,4 @@ module.exports = createCoreService('api::wp-localization-content.wp-localization
     }
 
 }));
+

@@ -1,7 +1,7 @@
 
-const localization = require("./api/wp-localization-contents/wc-localization-contents.js");
-test('Get Wave Pay localization contents List', async () => {
-    let response = await localization.fetchLocalizationList();
+const localization = require("./api/wc-localization-contents/wc-localization-contents.js");
+test('Get Wave Pay localization contents List for Android', async () => {
+    let response = await localization.fetchLocalizationListforAndroid();
     let data = response.data;
     expect(data.contents).toEqual(
         expect.arrayContaining([

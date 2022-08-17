@@ -55,7 +55,8 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         /* find app url value by model*/
         // const appURL = await strapi.service('api::app-url.app-url').findByModel(model);
         const appURL = await strapi.service('api::strapi-model.strapi-model').findByModel(model);
-    
+         
+        
 
         let app = '';
         const pushNotiVersion = [];
@@ -64,6 +65,7 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
             app = data.app ? data.app.name : '';
             const url = data.url;
             const app_version_arr = data.firebase_topics;
+            console.log(appURL.app_version_arr);
             /* data push */
             pushNotiVersion.push(...app_version_arr);
             const entry_URL = await strapi.service('api::url-version.url-version').findByURL(url);
@@ -106,7 +108,8 @@ function sendNotificationToWp(topics) {
       "body": "Strapi Content is updated",
       "type": "17",
       "alert": ""
-    }
+    },
+    "content_available": true
   }, {
     headers: {
       'Authorization': process.env.NOTIFICATION_TOKEN

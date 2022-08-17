@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_localization_android_contents",
+  "info": {
+    "singularName": "wp-localization-android-content",
+    "pluralName": "wp-localization-android-contents",
+    "displayName": "WP LocalizationAndroid  Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "label",
+        "placeholder",
+        "inline"
+      ]
+    },
+    "value": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    }
+  }
+}
