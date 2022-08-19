@@ -13,5 +13,3 @@ module.exports = createCoreController('api::wp-dynamic-list.wp-dynamic-list', ({
     }
 
 }));
-
-

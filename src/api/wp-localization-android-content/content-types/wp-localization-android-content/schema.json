@@ -24,7 +24,8 @@
         "label",
         "placeholder",
         "inline"
-      ]
+      ],
+      "required": true
     },
     "value": {
       "type": "component",

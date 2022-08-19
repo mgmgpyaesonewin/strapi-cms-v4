@@ -1,10 +1,11 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "wp_dynamic_lists",
   "info": {
     "singularName": "wp-dynamic-list",
     "pluralName": "wp-dynamic-lists",
-    "displayName": "WP Dynamic List"
+    "displayName": "WP Dynamic List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

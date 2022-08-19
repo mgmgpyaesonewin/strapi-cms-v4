@@ -15,4 +15,3 @@ module.exports = createCoreService('api::wp-dynamic-list.wp-dynamic-list', ({ st
     }
 
 }));
-
