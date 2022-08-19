@@ -3,9 +3,14 @@ const termAndCondition = require("./api/merchant-term-and-condition/term-and-con
 test('Get merchant term and condition', async () => {
     let response = await termAndCondition.fetchTermAndCondition();
     let data = response.data;
-    expect(data).toHaveProperty('terms_html.id');
-    expect(data).toHaveProperty('terms_html.en');
-    expect(data).toHaveProperty('terms_html.my');
-    expect(data).toHaveProperty('terms_html.version');
-    
+    expect(data.terms_html).toEqual(
+        expect.objectContaining({
+            id: expect.any(Number),
+            en: expect.any(String),
+            my: expect.any(String),
+            version: expect.any(String)
+        })
+    );
+
+
 });

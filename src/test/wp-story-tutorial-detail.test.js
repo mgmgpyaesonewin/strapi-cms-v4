@@ -1,7 +1,7 @@
 
 const storyTutorials = require("./api/story-tutorial/story-tutorial.js");
-test('Get Merchant Story Tutorial by ID', async () => {
-    let response = await storyTutorials.fetchMerchantStoryTutorialDetail(1);
+test('Get Wave Pay Story Tutorial by ID', async () => {
+    let response = await storyTutorials.fetchStoryTutorialDetail(13);
     let data = response.data;
     expect(data).toEqual(
         expect.objectContaining({
@@ -10,10 +10,12 @@ test('Get Merchant Story Tutorial by ID', async () => {
             title: expect.objectContaining({
                 en: expect.any(String),
                 my: expect.any(String),
+                zw: expect.any(String),
             }),
             description: expect.objectContaining({
                 en: expect.any(String),
                 my: expect.any(String),
+                zw: expect.any(String),
             }),
             image: expect.objectContaining({
                 url: expect.any(String)
@@ -36,9 +38,10 @@ test('Get Merchant Story Tutorial by ID', async () => {
                 deeplink: expect.objectContaining({
                     name: expect.any(String),
                     deeplink: expect.any(String),
-                    is_external: expect.any(Boolean),
+                    deeplink_IOS: expect.toBeNullOrAny(String), 
                     is_webURL: expect.any(Boolean),
                     alternative_url: expect.toBeNullOrAny(String), //key I may receive string or null
+                    alternative_url_IOS: expect.toBeNullOrAny(String), //key I may receive string or null
                     client_id: expect.toBeNullOrAny(String),
                 }),
             })
