@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_wc_tutorials",
+  "info": {
+    "displayName": "tutorials",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wc.wc-translation"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "indicatorColor": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

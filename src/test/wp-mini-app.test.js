@@ -48,6 +48,9 @@ test('Get Mini App Category & Min App List', async () => {
                     is_external: expect.any(Boolean),
                     is_webURL: expect.any(Boolean),
                     alternative_url: expect.toBeNullOrAny(String), //key I may receive string or null
+                    alternative_url_IOS: expect.toBeNullOrAny(String),
+                    deeplink_IOS: expect.toBeNullOrAny(String),
+                    client_id:expect.toBeNullOrAny(String),
 
                 }),
                 paths: expect.arrayContaining([

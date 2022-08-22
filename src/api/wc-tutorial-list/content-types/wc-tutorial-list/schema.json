@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_tutorial_lists",
+  "info": {
+    "singularName": "wc-tutorial-list",
+    "pluralName": "wc-tutorial-lists",
+    "displayName": "WC Tutorial List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "tutorial "
+      ],
+      "default": "tutorial ",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wc-tutorial-subcategory.wc-tutorial-subcategory",
+      "mappedBy": "wc_tutorial_list"
+    }
+  }
+}

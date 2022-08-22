@@ -22,7 +22,7 @@ module.exports = createCoreService('api::wp-tutorial-story.wp-tutorial-story', (
             ['buttons']: {
               populate: {
                 ['deeplink']: {
-                  select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url'],
+                  select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url','alternative_url_IOS','deeplink_IOS','client_id'],
 
                 },
               },

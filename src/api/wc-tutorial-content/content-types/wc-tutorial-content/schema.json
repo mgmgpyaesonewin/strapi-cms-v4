@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_tutorial_contents",
+  "info": {
+    "singularName": "wc-tutorial-content",
+    "pluralName": "wc-tutorial-contents",
+    "displayName": "WC Tutorial Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "tutorials": {
+      "displayName": "tutorials",
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.tutorials"
+    },
+    "wc_tutorial_subcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wc-tutorial-subcategory.wc-tutorial-subcategory",
+      "inversedBy": "tutorial_contents"
+    }
+  }
+}

@@ -18,12 +18,14 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.translation"
+      "component": "merchant.translation",
+      "required": true
     },
     "description": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.translation"
+      "component": "merchant.translation",
+      "required": true
     },
     "image": {
       "type": "media",

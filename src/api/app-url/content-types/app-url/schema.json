@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_urls",
+  "info": {
+    "singularName": "app-url",
+    "pluralName": "app-urls",
+    "displayName": "App URL",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "firebase_topics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::firebase-topic.firebase-topic"
+    },
+    "app": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app.app",
+      "inversedBy": "app_urls"
+    },
+    "model": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.url"
+    }
+  }
+}

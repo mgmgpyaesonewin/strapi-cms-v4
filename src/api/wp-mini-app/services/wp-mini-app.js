@@ -13,7 +13,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({strapi}) =>
         title: true,
         icon: true,
         ["deep_link"]: {
-          select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url"],
+          select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url","alternative_url_IOS","deeplink_IOS","client_id"],
         },
         paths: true,
         parameters: true,

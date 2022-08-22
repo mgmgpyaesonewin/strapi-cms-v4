@@ -10,38 +10,17 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
-    "category_title": {
+    "name": {
       "type": "string",
       "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "category_id": {
-      "type": "integer",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "position": {
       "required": true,
       "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "min": 1
     },
     "photo_path_normal": {
@@ -51,11 +30,7 @@
       "allowedTypes": [
         "images"
       ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "photo_path_selected": {
       "type": "media",
@@ -64,17 +39,20 @@
       "allowedTypes": [
         "images"
       ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "wp_promotions": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::wp-promotion.wp-promotion",
       "mappedBy": "wp_category"
+    },
+    "category_title": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {},
+      "component": "wp.default-label",
+      "required": true
     }
   }
 }

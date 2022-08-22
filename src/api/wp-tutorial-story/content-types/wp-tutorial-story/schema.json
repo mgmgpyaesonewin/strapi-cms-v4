@@ -20,12 +20,14 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "description": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "image": {
       "type": "media",
@@ -39,7 +41,8 @@
       "displayName": "stories",
       "type": "component",
       "repeatable": true,
-      "component": "wp.stories"
+      "component": "wp.stories",
+      "required": true
     },
     "options": {
       "displayName": "button option",

@@ -15,7 +15,7 @@
     "key": {
       "type": "string",
       "unique": false,
-      "required": true
+      "required": false
     },
     "type": {
       "type": "enumeration",
@@ -31,7 +31,8 @@
       "displayName": "WC translation ",
       "type": "component",
       "repeatable": false,
-      "component": "wc.wc-translation"
+      "component": "wc.wc-translation",
+      "required": true
     }
   }
 }

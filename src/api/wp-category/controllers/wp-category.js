@@ -14,7 +14,7 @@ module.exports = createCoreController('api::wp-category.wp-category', ({strapi})
       let photoNormal = value.photo_path_normal ? value.photo_path_normal.url : '';
       let photoSelected = value.photo_path_selected ? value.photo_path_selected.url :'';
       return {
-        'category_id': value.category_id,
+        'category_id': value.id,
         'category_title': value.category_title,
         'photo_path_normal': photoNormal,
         'photo_path_selected': photoSelected,

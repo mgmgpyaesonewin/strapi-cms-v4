@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_wp_urls",
+  "info": {
+    "displayName": "Model",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    }
+  }
+}
