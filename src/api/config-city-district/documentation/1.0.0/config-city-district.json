@@ -1,5 +1,5 @@
 {
-  "/wp-subcategories-tutorials": {
+  "/config-city-districts": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpSubcategoriesTutorialListResponse"
+                "$ref": "#/components/schemas/ConfigCityDistrictListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Wp-subcategories-tutorial"
+        "Config-city-district"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/wp-subcategories-tutorials"
+      "operationId": "get/config-city-districts"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpSubcategoriesTutorialResponse"
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Wp-subcategories-tutorial"
+        "Config-city-district"
       ],
       "parameters": [],
-      "operationId": "post/wp-subcategories-tutorials",
+      "operationId": "post/config-city-districts",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WpSubcategoriesTutorialRequest"
+              "$ref": "#/components/schemas/ConfigCityDistrictRequest"
             }
           }
         }
       }
     }
   },
-  "/wp-subcategories-tutorials/{id}": {
+  "/config-city-districts/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpSubcategoriesTutorialResponse"
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Wp-subcategories-tutorial"
+        "Config-city-district"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/wp-subcategories-tutorials/{id}"
+      "operationId": "get/config-city-districts/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WpSubcategoriesTutorialResponse"
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Wp-subcategories-tutorial"
+        "Config-city-district"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/wp-subcategories-tutorials/{id}",
+      "operationId": "put/config-city-districts/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WpSubcategoriesTutorialRequest"
+              "$ref": "#/components/schemas/ConfigCityDistrictRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Wp-subcategories-tutorial"
+        "Config-city-district"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/wp-subcategories-tutorials/{id}"
+      "operationId": "delete/config-city-districts/{id}"
     }
   }
 }

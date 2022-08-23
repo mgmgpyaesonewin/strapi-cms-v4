@@ -9,6 +9,9 @@ const {createCoreController} = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::wp-tutorial.wp-tutorial', ({strapi}) => ({
   async findOne(ctx) {
     const {id} = ctx.params;
-    return await strapi.service('api::wp-tutorial.wp-tutorial').findOne(id);
+    let tutorial = await strapi.service('api::wp-tutorial.wp-tutorial').findOne(id);
+    return {
+      data:tutorial
+    }
   }
 }));

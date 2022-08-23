@@ -4,16 +4,17 @@
  *  wp-tutorial-list controller
  */
 
-const {createCoreController} = require('@strapi/strapi').factories;
-const stories = require('../../wp-tutorial-story/controllers/wp-tutorial-story.js');
+const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::wp-tutorial-list.wp-tutorial-list', ({strapi}) => ({
+module.exports = createCoreController('api::wp-tutorial-list.wp-tutorial-list', ({ strapi }) => ({
+
   async find(ctx) {
-    const entityStories = await strapi.service('api::wp-tutorial-story-list.wp-tutorial-story-list').find(ctx);
-    const entityTutorials = await strapi.service('api::wp-tutorial-list.wp-tutorial-list').find(ctx);
-    const merged = [...entityStories, ...entityTutorials];
+    let tutorialLists = await strapi.service('api::wp-tutorial-list.wp-tutorial-list').find(ctx);
+    let title = await strapi.service('api::wp-help-and-support.wp-help-and-support').getLatestStoryHelp(ctx);
+    title.categories = tutorialLists;
     return {
-      data: merged
+      data: title
     };
   }
+
 }));

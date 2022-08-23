@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_help_and_supports",
+  "info": {
+    "singularName": "wp-help-and-support",
+    "pluralName": "wp-help-and-supports",
+    "displayName": "WP Help&Support ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "story",
+        "standard",
+        "faq"
+      ],
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
