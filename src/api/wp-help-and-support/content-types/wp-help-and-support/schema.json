@@ -24,12 +24,14 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "description": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "position": {
       "type": "biginteger",

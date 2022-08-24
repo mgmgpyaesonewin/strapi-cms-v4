@@ -28,7 +28,7 @@ module.exports = createCoreService('api::config-region.config-region', ({strapi}
                   $notNull: true,
                 },
               },
-              select:['name']
+              select:['name','code']
             },
           },
           where: {
@@ -36,7 +36,7 @@ module.exports = createCoreService('api::config-region.config-region', ({strapi}
               $notNull: true,
             },
           },
-          select:['name']
+          select:['name','code']
 
         }
       },
@@ -61,7 +61,7 @@ module.exports = createCoreService('api::config-region.config-region', ({strapi}
           }
         ],
       },
-      select:['name']
+      select:['name','code']
     });
   },
 

@@ -53,7 +53,6 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
 
         // App-version-URLs
         /* find app url value by model*/
-        // const appURL = await strapi.service('api::app-url.app-url').findByModel(model);
         const appURL = await strapi.service('api::strapi-model.strapi-model').findByModel(model);
          
         

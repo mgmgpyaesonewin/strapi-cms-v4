@@ -14,7 +14,8 @@
   "attributes": {
     "url": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "firebase_topics": {
       "type": "relation",
