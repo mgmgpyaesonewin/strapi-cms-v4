@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_regions",
+  "info": {
+    "singularName": "wc-region",
+    "pluralName": "wc-regions",
+    "displayName": "WC Region",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "city_districts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wc-city-district.wc-city-district",
+      "mappedBy": "region"
+    }
+  }
+}

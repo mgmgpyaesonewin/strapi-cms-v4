@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_townships",
+  "info": {
+    "singularName": "wc-township",
+    "pluralName": "wc-townships",
+    "displayName": "WC Township"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "city_district": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wc-city-district.wc-city-district",
+      "inversedBy": "townships"
+    }
+  }
+}

@@ -13,5 +13,12 @@ module.exports = createCoreController('api::wp-tutorial.wp-tutorial', ({strapi})
     return {
       data:tutorial
     }
+  },
+  async find(ctx) {
+
+    let tutorials = await strapi.service('api::wp-tutorial.wp-tutorial').find();
+    return {
+      data:tutorials
+    }
   }
 }));
