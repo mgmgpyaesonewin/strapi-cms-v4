@@ -22,7 +22,7 @@ module.exports = createCoreService('api::wp-help-and-support.wp-help-and-support
                         },
                     },
                     {
-                        type: 'story',
+                        type: 'standard',
                     },
                 ],
             },
