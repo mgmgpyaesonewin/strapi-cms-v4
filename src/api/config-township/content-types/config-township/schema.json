@@ -4,7 +4,8 @@
   "info": {
     "singularName": "config-township",
     "pluralName": "config-townships",
-    "displayName": "Config Township"
+    "displayName": "Config Township",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +24,8 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "city_district": {
       "type": "relation",

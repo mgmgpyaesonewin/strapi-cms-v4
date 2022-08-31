@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "wc_dynamic_lists",
+  "collectionName": "config_nrcs",
   "info": {
-    "singularName": "wc-dynamic-list",
-    "pluralName": "wc-dynamic-lists",
-    "displayName": "WC Dynamic List"
+    "singularName": "config-nrc",
+    "pluralName": "config-nrcs",
+    "displayName": "Config NRC",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
