@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_wp_error_codes",
+  "info": {
+    "displayName": "error code",
+    "icon": "at"
+  },
+  "options": {},
+  "attributes": {
+    "error_code": {
+      "type": "string"
+    },
+    "error_status": {
+      "type": "string"
+    },
+    "transaction_allow": {
+      "type": "boolean",
+      "required": true
+    },
+    "error": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    }
+  }
+}
