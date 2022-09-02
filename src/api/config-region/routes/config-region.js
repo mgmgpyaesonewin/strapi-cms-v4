@@ -47,6 +47,15 @@ const myExtraRoutes = [
       middlewares: [],
     },
   },
+  {
+    method: 'GET',
+    path: '/config-region/findByCode/:name',
+    handler: 'config-region.findRegionByCode',
+    config: {
+      policies: [],
+      middlewares: [],
+    },
+  },
 ];
 
 module.exports = customRouter(defaultRouter, myExtraRoutes);

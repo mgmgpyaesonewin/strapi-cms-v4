@@ -17,7 +17,7 @@ module.exports = createCoreController('api::config-region.config-region', ({ str
                 district.region_id = !!district.region ? district.region.id : 0;
                 district.region_name = !!district.region ? district.region.name : '';
                 delete district.region;
-               
+
             });
         }
         if (townships.length > 0) {
@@ -25,7 +25,7 @@ module.exports = createCoreController('api::config-region.config-region', ({ str
                 township.district_id = !!township.city_district ? township.city_district.id : 0;
                 township.district_name = !!township.city_district ? township.city_district.name : '';
                 delete township.city_district;
-                
+
             });
         }
 
@@ -37,14 +37,19 @@ module.exports = createCoreController('api::config-region.config-region', ({ str
             }
         }
     },
-    async addressForWP(ctx){
+    async addressForWP(ctx) {
         return await this.find(ctx);
     },
-    async addressForMerchant(ctx){
+    async addressForMerchant(ctx) {
         return await this.find(ctx);
     },
-    async addressForWC(ctx){
+    async addressForWC(ctx) {
         return await this.find(ctx);
+    },
+    async findRegionByCode(ctx) {
+        const { name } = ctx.params;
+        let regions = await strapi.service('api::config-region.config-region').findByCode(name);
+        return regions;
     }
 }));
 

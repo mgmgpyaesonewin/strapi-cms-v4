@@ -35,6 +35,21 @@ module.exports = createCoreService('api::config-region.config-region', ({ strapi
       }
     });
   },
+  async findByCode(code) {
+    return await strapi.db.query('api::config-region.config-region').findOne({
+      where: { code: code },
+      populate: {
+        title: true,
+        where: {
+          publishedAt: {
+            $notNull: true,
+          }
+        }
+      },
+      select: ['name', 'code']
+    });
+
+  },
 
 }));
 
