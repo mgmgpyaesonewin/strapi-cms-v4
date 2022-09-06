@@ -21,11 +21,12 @@ module.exports = createCoreService('api::config-city-district.config-city-distri
                         },
                     },
                     select: ['name', 'code']
-                },
-                where: {
-                    publishedAt: {
-                        $notNull: true,
-                    }
+                }
+
+            },
+            where: {
+                publishedAt: {
+                    $notNull: true,
                 }
             },
             select: ['name', 'code']
@@ -57,19 +58,19 @@ module.exports = createCoreService('api::config-city-district.config-city-distri
     },
     async findByCode(code) {
         return await strapi.db.query('api::config-city-district.config-city-district').findOne({
-          where: { code: code },
-          populate: {
-            title: true,
-            where: {
-              publishedAt: {
-                $notNull: true,
-              }
-            }
-          },
-          select: ['name', 'code']
+            where: { code: code },
+            populate: {
+                title: true,
+                where: {
+                    publishedAt: {
+                        $notNull: true,
+                    }
+                }
+            },
+            select: ['name', 'code']
         });
-    
-      },
+
+    },
 }));
 
 

@@ -21,28 +21,29 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
             },
           },
           select: ['name', 'code']
-        },
-        where: {
-          $and: [
-            {
+        }
+
+      },
+      where: {
+        $and: [
+          {
+            publishedAt: {
+              $notNull: true,
+            },
+          },
+          {
+            city_district: {
               publishedAt: {
                 $notNull: true,
-              },
+              }
             },
-            {
-              city_district: {
-                publishedAt: {
-                  $notNull: true,
-                }
-              },
-            }
-          ],
-        },
+          }
+        ],
       },
       select: ['name', 'code']
     });
   },
-  async findByService(ctx){
+  async findByService(ctx) {
     return await strapi.entityService.findMany('api::config-township.config-township', {
       populate: ['city_district', 'title'],
       // populate: 'deep',

@@ -11,10 +11,10 @@ module.exports = createCoreService('api::config-region.config-region', ({ strapi
     return await strapi.db.query('api::config-region.config-region').findMany({
       populate: {
         title: true,
-        where: {
-          publishedAt: {
-            $notNull: true,
-          }
+      },
+      where: {
+        publishedAt: {
+          $notNull: true,
         }
       },
       select: ['name', 'code']
@@ -40,10 +40,10 @@ module.exports = createCoreService('api::config-region.config-region', ({ strapi
       where: { code: code },
       populate: {
         title: true,
-        where: {
-          publishedAt: {
-            $notNull: true,
-          }
+      },
+      where: {
+        publishedAt: {
+          $notNull: true,
         }
       },
       select: ['name', 'code']
