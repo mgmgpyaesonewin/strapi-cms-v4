@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "config_city_districts",
+  "info": {
+    "singularName": "config-city-district",
+    "pluralName": "config-city-districts",
+    "displayName": "Config City/District",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "townships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::config-township.config-township",
+      "mappedBy": "city_district"
+    },
+    "region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::config-region.config-region",
+      "inversedBy": "districts"
+    }
+  }
+}

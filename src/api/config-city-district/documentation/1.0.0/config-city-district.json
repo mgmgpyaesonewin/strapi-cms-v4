@@ -1,0 +1,568 @@
+{
+  "/config-city-districts": {
+    "get": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigCityDistrictListResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [
+        {
+          "name": "sort",
+          "in": "query",
+          "description": "Sort by attributes ascending (asc) or descending (desc)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "pagination[withCount]",
+          "in": "query",
+          "description": "Retun page/pageSize (default: true)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "pagination[page]",
+          "in": "query",
+          "description": "Page number (default: 0)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "pagination[pageSize]",
+          "in": "query",
+          "description": "Page size (default: 25)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "pagination[start]",
+          "in": "query",
+          "description": "Offset value (default: 0)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "pagination[limit]",
+          "in": "query",
+          "description": "Number of entities to return (default: 25)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "fields",
+          "in": "query",
+          "description": "Fields to return (ex: title,author)",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "populate",
+          "in": "query",
+          "description": "Relations to return",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "operationId": "get/config-city-districts"
+    },
+    "post": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [],
+      "operationId": "post/config-city-districts",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigCityDistrictRequest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "/config-city-districts/{id}": {
+    "get": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "operationId": "get/config-city-districts/{id}"
+    },
+    "put": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "operationId": "put/config-city-districts/{id}",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConfigCityDistrictRequest"
+            }
+          }
+        }
+      }
+    },
+    "delete": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "operationId": "delete/config-city-districts/{id}"
+    }
+  },
+  "/config-city-district/findByCode/{name}": {
+    "get": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigCityDistrictResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Config-city-district"
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "operationId": "get/config-city-district/findByCode/{name}"
+    }
+  }
+}
