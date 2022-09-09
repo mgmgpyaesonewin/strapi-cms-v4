@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * homepage router.
+ * wp-home router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::homepage.homepage');
+module.exports = createCoreRouter('api::wp-home.wp-home');

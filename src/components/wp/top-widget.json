@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_wp_top_widgets",
+  "info": {
+    "displayName": "Home Widget",
+    "icon": "stopwatch",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "is_hide": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "background": {
+      "displayName": "Home-Background",
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.home-background"
+    },
+    "theme_color": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "json",
+      "required": false
+    }
+  }
+}

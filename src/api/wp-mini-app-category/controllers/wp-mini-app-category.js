@@ -21,6 +21,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
         let paths = miniApp.paths;
         miniApp.category_id = !!miniApp.mini_app_category ? miniApp.mini_app_category.id : 0;
         miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : '';
+        miniApp.color = miniApp.color == null ? '#00000' :miniApp.color;
         miniApp.icon = !! miniApp.icon ? miniApp.icon.url :'';
         paths.map(path => {
           path.value = path.value_injector === "static" ? path.value : null;
