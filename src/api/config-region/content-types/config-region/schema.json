@@ -24,13 +24,18 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.default-label"
+      "component": "wp.default-label",
+      "required": true
     },
     "districts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::config-city-district.config-city-district",
       "mappedBy": "region"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
     }
   }
 }
