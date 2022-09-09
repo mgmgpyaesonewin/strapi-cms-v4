@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_wp_home_backgrounds",
+  "info": {
+    "displayName": "Home-Background",
+    "icon": "home"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "aspect_ratio": {
+      "type": "string"
+    }
+  }
+}
