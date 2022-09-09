@@ -13,7 +13,8 @@
       "required": true
     },
     "position": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "background": {
       "displayName": "Home-Background",
