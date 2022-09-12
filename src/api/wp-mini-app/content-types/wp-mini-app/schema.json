@@ -86,7 +86,15 @@
     "color": {
       "type": "string",
       "required": true,
-      "default": "#00000"
+      "default": "#000000"
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "mini_app"
+      ],
+      "required": true,
+      "default": "mini_app"
     }
   }
 }
