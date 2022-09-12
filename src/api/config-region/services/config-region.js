@@ -17,7 +17,8 @@ module.exports = createCoreService('api::config-region.config-region', ({ strapi
           $notNull: true,
         }
       },
-      select: ['name', 'code']
+      orderBy: { position: 'asc' },
+      select: ['name', 'code','position']
     });
   },
   async findByService(ctx) {
