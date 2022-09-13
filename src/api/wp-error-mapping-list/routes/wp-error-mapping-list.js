@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- * wc-error-mapping router.
+ * wp-error-mapping-list router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
-const defaultRouter = createCoreRouter('api::wc-error-mapping.wc-error-mapping');
+
+const defaultRouter = createCoreRouter('api::wp-error-mapping-list.wp-error-mapping-list');
 const customRouter = (innerRouter, extraRoutes = []) => {
     let routes;
     return {
@@ -21,8 +22,8 @@ const customRouter = (innerRouter, extraRoutes = []) => {
 const myExtraRoutes = [
     {
         method: 'GET',
-        path: '/wc-error-mapping/version/:version',
-        handler: 'wc-error-mapping.filterByVersion',
+        path: '/wp-error-mapping-list/version/:version',
+        handler: 'wp-error-mapping-list.filterByVersion',
         config: {
             policies: [],
             middlewares: [],

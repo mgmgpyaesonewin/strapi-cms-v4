@@ -4,7 +4,7 @@
   "info": {
     "singularName": "wc-error-mapping",
     "pluralName": "wc-error-mappings",
-    "displayName": "WC Error Mapping",
+    "displayName": "WC ErrorMapping List",
     "description": ""
   },
   "options": {

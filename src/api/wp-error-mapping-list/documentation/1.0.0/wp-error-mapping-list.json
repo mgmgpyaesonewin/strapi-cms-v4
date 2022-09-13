@@ -1,5 +1,5 @@
 {
-  "/wc-error-mappings": {
+  "/wp-error-mapping-lists": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcErrorMappingListResponse"
+                "$ref": "#/components/schemas/WpErrorMappingListListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/wc-error-mappings"
+      "operationId": "get/wp-error-mapping-lists"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcErrorMappingResponse"
+                "$ref": "#/components/schemas/WpErrorMappingListResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [],
-      "operationId": "post/wc-error-mappings",
+      "operationId": "post/wp-error-mapping-lists",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WcErrorMappingRequest"
+              "$ref": "#/components/schemas/WpErrorMappingListRequest"
             }
           }
         }
       }
     }
   },
-  "/wc-error-mappings/{id}": {
+  "/wp-error-mapping-lists/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcErrorMappingResponse"
+                "$ref": "#/components/schemas/WpErrorMappingListResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/wc-error-mappings/{id}"
+      "operationId": "get/wp-error-mapping-lists/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcErrorMappingResponse"
+                "$ref": "#/components/schemas/WpErrorMappingListResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/wc-error-mappings/{id}",
+      "operationId": "put/wp-error-mapping-lists/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WcErrorMappingRequest"
+              "$ref": "#/components/schemas/WpErrorMappingListRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [
         {
@@ -480,10 +480,10 @@
           }
         }
       ],
-      "operationId": "delete/wc-error-mappings/{id}"
+      "operationId": "delete/wp-error-mapping-lists/{id}"
     }
   },
-  "/wc-error-mapping/version/{version}": {
+  "/wp-error-mapping-list/version/{version}": {
     "get": {
       "responses": {
         "200": {
@@ -491,7 +491,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcErrorMappingResponse"
+                "$ref": "#/components/schemas/WpErrorMappingListResponse"
               }
             }
           }
@@ -548,7 +548,7 @@
         }
       },
       "tags": [
-        "Wc-error-mapping"
+        "Wp-error-mapping-list"
       ],
       "parameters": [
         {
@@ -562,7 +562,7 @@
           }
         }
       ],
-      "operationId": "get/wc-error-mapping/version/{version}"
+      "operationId": "get/wp-error-mapping-list/version/{version}"
     }
   }
 }

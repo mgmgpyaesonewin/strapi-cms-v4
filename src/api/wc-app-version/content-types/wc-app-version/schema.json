@@ -4,7 +4,7 @@
   "info": {
     "singularName": "wc-app-version",
     "pluralName": "wc-app-versions",
-    "displayName": "WC APP Version",
+    "displayName": "WC AppVersion List",
     "description": ""
   },
   "options": {
@@ -12,12 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "version_name": {
       "type": "string",
       "required": true
     },
     "version_code": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "unique": true
     }
   }
 }

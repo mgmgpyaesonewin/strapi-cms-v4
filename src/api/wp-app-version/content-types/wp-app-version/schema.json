@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_app_versions",
+  "info": {
+    "singularName": "wp-app-version",
+    "pluralName": "wp-app-versions",
+    "displayName": "WP AppVersion List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version_code": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "version_name": {
+      "type": "string",
+      "required": true
+    },
+    "wp_error_mapping_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-error-mapping-list.wp-error-mapping-list",
+      "inversedBy": "wp_app_version_list"
+    }
+  }
+}
