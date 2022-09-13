@@ -20,12 +20,6 @@
     "version_name": {
       "type": "string",
       "required": true
-    },
-    "wp_error_mapping_list": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wp-error-mapping-list.wp-error-mapping-list",
-      "inversedBy": "wp_app_version_list"
     }
   }
 }

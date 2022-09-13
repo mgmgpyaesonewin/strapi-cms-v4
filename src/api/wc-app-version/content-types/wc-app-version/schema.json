@@ -18,7 +18,8 @@
     },
     "version_code": {
       "type": "biginteger",
-      "unique": true
+      "unique": true,
+      "required": true
     }
   }
 }

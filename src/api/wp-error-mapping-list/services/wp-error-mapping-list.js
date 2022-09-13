@@ -23,11 +23,11 @@ module.exports = createCoreService('api::wp-error-mapping-list.wp-error-mapping-
         });
     },
     async filterByVersion(version) {
-        return await strapi.db.query("api::wp-error-mapping.wc-error-mapping").findOne({
+        return await strapi.db.query("api::wp-error-mapping-list.wp-error-mapping-list").findOne({
             where: {
                 $and: [
                     {
-                        wc_app_version: {
+                        wp_app_version_list: {
                             version_code: version,
                         },
                     },

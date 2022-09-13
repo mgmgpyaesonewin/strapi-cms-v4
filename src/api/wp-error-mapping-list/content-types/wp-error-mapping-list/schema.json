@@ -19,8 +19,7 @@
     "wp_app_version_list": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::wp-app-version.wp-app-version",
-      "inversedBy": "wp_error_mapping_list"
+      "target": "api::wp-app-version.wp-app-version"
     }
   }
 }
