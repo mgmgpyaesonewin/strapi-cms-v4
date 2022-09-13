@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "app_errors",
+  "info": {
+    "singularName": "app-error",
+    "pluralName": "app-errors",
+    "displayName": "App Error",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nrc_front": {
+      "displayName": "error code",
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.error-code"
+    },
+    "nrc_back": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.error-code"
+    },
+    "facial_liveness": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.error-code"
+    }
+  }
+}
