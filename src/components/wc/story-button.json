@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_wc_story_buttons",
+  "info": {
+    "displayName": "story-button",
+    "icon": "dice-one",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "required": true
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "textColor": {
+      "type": "string",
+      "required": true
+    },
+    "en": {
+      "type": "string",
+      "required": true
+    },
+    "my": {
+      "type": "string",
+      "required": true
+    },
+    "zw": {
+      "type": "string",
+      "required": true
+    },
+    "wc_deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wc-deeplink.wc-deeplink"
+    }
+  }
+}
