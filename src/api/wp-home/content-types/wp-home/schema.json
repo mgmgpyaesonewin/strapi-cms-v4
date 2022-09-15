@@ -16,22 +16,26 @@
       "displayName": "top_widget",
       "type": "component",
       "repeatable": false,
-      "component": "wp.top-widget"
+      "component": "wp.top-widget",
+      "required": true
     },
     "recent_activity_widget": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.top-widget"
+      "component": "wp.top-widget",
+      "required": true
     },
     "popular_widget": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.top-widget"
+      "component": "wp.top-widget",
+      "required": true
     },
     "promotion_widget": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.top-widget"
+      "component": "wp.top-widget",
+      "required": true
     }
   }
 }
