@@ -20,14 +20,16 @@
       "displayName": "Home-Background",
       "type": "component",
       "repeatable": false,
-      "component": "wp.home-background"
+      "component": "wp.home-background",
+      "required": true
     },
     "theme_color": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "attributes": {
       "type": "json",
-      "required": false
+      "required": true
     }
   }
 }
