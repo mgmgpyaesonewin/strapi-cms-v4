@@ -26,7 +26,7 @@ module.exports = createCoreService('api::wc-story-content.wc-story-content', ({ 
                     populate: {
                         ['buttons']: {
                             populate: {
-                                ['deeplink']: {
+                                ['wc_deeplink']: {
                                     select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url', 'client_id'],
 
                                 },
@@ -109,7 +109,7 @@ module.exports = createCoreService('api::wc-story-content.wc-story-content', ({ 
                     populate: {
                         ['buttons']: {
                             populate: {
-                                ['deeplink']: {
+                                ['wc_deeplink']: {
                                     select: ['name', 'deeplink', 'is_external', 'is_webURL', 'alternative_url', 'client_id'],
 
                                 },
