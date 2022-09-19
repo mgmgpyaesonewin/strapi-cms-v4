@@ -4,47 +4,44 @@
  *  wp-home controller
  */
 
-const { createCoreController } = require("@strapi/strapi").factories;
+const {createCoreController} = require("@strapi/strapi").factories;
 
-module.exports = createCoreController("api::wp-home.wp-home", ({ strapi }) => ({
+module.exports = createCoreController("api::wp-home.wp-home", ({strapi}) => ({
+  /**
+   *
+   * @param ctx
+   * @returns {Promise<{}>}
+   */
   async find(ctx) {
     let obj = await strapi.service("api::wp-home.wp-home").find(ctx);
-
-    if(obj.promotion_widget.background.image){
-        obj.promotion_widget.background.image.aspect_ratio =obj.promotion_widget.background.aspect_ratio;
-        delete obj.promotion_widget.background.aspect_ratio;
-    }else{
-        delete obj.promotion_widget.background.aspect_ratio;
-    }
-
-    if(obj.top_widget.background.image){
-        obj.top_widget.background.image.aspect_ratio =obj.top_widget.background.aspect_ratio;
-        delete obj.top_widget.background.aspect_ratio;
-    }else{
-        delete obj.top_widget.background.aspect_ratio;
-    }
-    if(obj.popular_widget.background.image){
-        obj.popular_widget.background.image.aspect_ratio =obj.popular_widget.background.aspect_ratio;
-        delete obj.popular_widget.background.aspect_ratio;
-    }else{
-        delete obj.popular_widget.background.aspect_ratio;
-    }
-    if(obj.recent_activity_widget.background.image){
-        obj.recent_activity_widget.background.image.aspect_ratio =obj.recent_activity_widget.background.aspect_ratio;
-        delete obj.recent_activity_widget.background.aspect_ratio;
-    }else{
-        delete obj.recent_activity_widget.background.aspect_ratio;
-    }
-  
-
+    formatting(obj.promotion_widget);
+    formatting(obj.top_widget);
+    formatting(obj.popular_widget);
+    formatting(obj.recent_activity_widget);
     let sorted = {};
     Object.keys(obj)
-      .sort(function (a, b) {
-        return obj[a].position - obj[b].position;
+      .sort(function (widget, next_widget) {
+        return obj[widget].position - obj[next_widget].position;
       })
-      .forEach(function (key) {
-        sorted[key] = obj[key];
+      .forEach(function (widget_key) {
+        console.log(widget_key);
+        sorted[widget_key] = obj[widget_key];
       });
     return sorted;
   },
 }));
+/**
+ *
+ * @param name
+ * @returns {*}
+ */
+const formatting = (name) => {
+  /* strapi return image as object but want to put aspect_ration inside image object when image is not null */
+  if (name.background.image) {
+    name.background.image.aspect_ratio = name.background.aspect_ratio;
+    delete name.background.aspect_ratio;
+  } else {
+    delete name.background.aspect_ratio;
+  }
+  return name;
+};
