@@ -13,6 +13,18 @@ module.exports = createCoreService('api::wp-dynamic-list.wp-dynamic-list', ({ st
             populate: 'deep',
             publicationState: 'live',
         });
+    },
+    async findConfig(ctx) {
+        return await strapi.db.query('api::wp-dynamic-list.wp-dynamic-list').findOne({
+            where: {
+                publishedAt: {
+                    $notNull: true,
+                },
+            },
+            select:[
+                ['poi_types']
+            ]
+        });
     }
 
 }));
