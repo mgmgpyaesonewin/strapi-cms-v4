@@ -34,41 +34,16 @@ module.exports = createCoreService('api::wp-tutorial-story.wp-tutorial-story', (
           populate: {
             ['en']: {
               populate: {
-                ["extra_large"]: {
+                ["image"]: {
                   select: ["url"],
-                },
-                ["large"]: {
-                  select: ["url"],
-                },
-                ["mid"]: {
-                  select: ["url"],
-                },
-                ["small"]: {
-                  select: ["url"],
-                },
-                ["extra_small"]: {
-                  select: ["url"],
-                },
-
+                }
               },
             },
             ['my']: {
               populate: {
-                ["extra_large"]: {
+                ["image"]: {
                   select: ["url"],
-                },
-                ["large"]: {
-                  select: ["url"],
-                },
-                ["mid"]: {
-                  select: ["url"],
-                },
-                ["small"]: {
-                  select: ["url"],
-                },
-                ["extra_small"]: {
-                  select: ["url"],
-                },
+                }
               },
             },
           }
