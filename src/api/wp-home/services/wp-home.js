@@ -8,11 +8,6 @@ const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::wp-home.wp-home', ({ strapi }) => ({
     async find(ctx) {
-        const entriesCoreConfig = await strapi.entityService.findMany('api::wp-home.wp-home', {
-            populate: 'deep',
-            publicationState: 'live',
-        });
-        // return entriesCoreConfig;
         return await strapi.db.query('api::wp-home.wp-home').findOne({
             populate: {
                 ['top_widget']: {
