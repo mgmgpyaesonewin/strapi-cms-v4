@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_merchant_mini_app_parameters",
+  "info": {
+    "displayName": "MiniApp-parameters",
+    "icon": "braille"
+  },
+  "options": {},
+  "attributes": {
+    "query_param": {
+      "type": "text"
+    },
+    "value_injector": {
+      "type": "enumeration",
+      "enum": [
+        "phone_number",
+        "username",
+        "language_type1",
+        "language_type2",
+        "language_type3",
+        "app_id",
+        "static"
+      ]
+    }
+  }
+}
