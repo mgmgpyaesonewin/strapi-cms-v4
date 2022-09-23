@@ -24,7 +24,6 @@ module.exports = createCoreController("api::wp-home.wp-home", ({strapi}) => ({
         return obj[widget].position - obj[next_widget].position;
       })
       .forEach(function (widget_key) {
-        console.log(widget_key);
         sorted[widget_key] = obj[widget_key];
       });
     return sorted;

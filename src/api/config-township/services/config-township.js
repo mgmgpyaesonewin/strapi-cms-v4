@@ -46,7 +46,6 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
   async findByService(ctx) {
     return await strapi.entityService.findMany('api::config-township.config-township', {
       populate: ['city_district', 'title'],
-      // populate: 'deep',
       publicationState: 'live',
       filters: {
         city_district: {
