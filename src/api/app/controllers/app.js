@@ -8,12 +8,21 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::app.app', ({ strapi }) => ({
     async find(ctx) {
-        return await strapi.entityService.findMany('api::app.app', {
-            populate: 'deep',
-            publicationState: 'live',
-          });
-
-        return await strapi.service('api::app.app').find();
-
+        const entriesMiniAPP = await strapi.db.query('api::app.app').findMany({
+            populate: {
+                ["app_urls"]: {
+                    select: ["url"],
+                    populate: {
+                        model: true,
+                    },
+                },
+            },
+            where: {
+                publishedAt: {
+                    $notNull: true,
+                },
+            },
+        });
+        return entriesMiniAPP;
     }
 }));
