@@ -3,7 +3,6 @@
 module.exports = {
     pagesReport: async () => {
         try {
-            console.log('service');
             // fetching the data
             // we dont really need contentSections for this example.
             // its kept here, just for your reference
@@ -24,9 +23,7 @@ module.exports = {
             let responeMap;
             if (entries && Array.isArray(entries)) {
                 responeMap = entries.reduce((acc, item) => {
-                    console.log(acc);
                     acc = acc || [];
-                    //console.log(acc);
                     acc.push({
                         id: item.id,
                         name: item.name || '',

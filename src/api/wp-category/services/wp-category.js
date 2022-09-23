@@ -20,9 +20,7 @@ module.exports = createCoreService('api::wp-category.wp-category', ({strapi}) =>
         wp_promotions:true
       },
       publicationState: 'live',
-      sort: {position: 'asc'},
-      //locale: (ctx.query.locale) ? ((ctx.query.locale == 'zw') ? ("my-MM") : (ctx.query.locale)) : 'en'
-      // (condition1) ? ((condition2) ? (true block2)  : (else block2) ) : (else block1)
+      sort: {position: 'asc'}
     });
     return categories;
   }

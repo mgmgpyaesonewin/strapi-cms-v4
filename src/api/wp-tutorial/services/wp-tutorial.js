@@ -9,7 +9,6 @@ const {createCoreService} = require('@strapi/strapi').factories;
 module.exports = createCoreService('api::wp-tutorial.wp-tutorial', ({strapi}) => ({
 
   async findOne(id) {
-    console.log(id);
     const entityTutorial = await strapi.db.query('api::wp-tutorial.wp-tutorial').findOne({
       where: {
         $and: [
