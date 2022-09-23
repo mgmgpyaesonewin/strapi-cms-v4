@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_deeplinks",
+  "info": {
+    "singularName": "wc-deeplink",
+    "pluralName": "wc-deeplinks",
+    "displayName": "WC Deeplink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "deeplink": {
+      "type": "text",
+      "required": true
+    },
+    "is_external": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_webURL": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "alternative_url": {
+      "type": "text",
+      "required": true
+    },
+    "client_id": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

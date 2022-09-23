@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_app_versions",
+  "info": {
+    "singularName": "wc-app-version",
+    "pluralName": "wc-app-versions",
+    "displayName": "WC AppVersion List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version_name": {
+      "type": "string",
+      "required": true
+    },
+    "version_code": {
+      "type": "biginteger",
+      "unique": true,
+      "required": true
+    }
+  }
+}

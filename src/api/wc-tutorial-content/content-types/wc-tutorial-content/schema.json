@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wc-tutorial-content",
     "pluralName": "wc-tutorial-contents",
-    "displayName": "WC Tutorial Content"
+    "displayName": "WC Tutorial Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,22 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "wc.wc-translation"
+      "component": "wc.wc-translation",
+      "required": true
     },
     "description": {
       "type": "component",
       "repeatable": false,
-      "component": "wc.wc-translation"
+      "component": "wc.wc-translation",
+      "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "position": {
       "type": "biginteger",
@@ -40,14 +43,16 @@
     "tutorials": {
       "displayName": "tutorials",
       "type": "component",
-      "repeatable": false,
-      "component": "wc.tutorials"
+      "repeatable": true,
+      "component": "wc.tutorials",
+      "required": true
     },
-    "wc_tutorial_subcategory": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::wc-tutorial-subcategory.wc-tutorial-subcategory",
-      "inversedBy": "tutorial_contents"
+    "buttons": {
+      "displayName": "button",
+      "type": "component",
+      "repeatable": true,
+      "component": "wc.button",
+      "required": true
     }
   }
 }

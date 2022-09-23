@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "config_nrcs",
+  "info": {
+    "singularName": "config-nrc",
+    "pluralName": "config-nrcs",
+    "displayName": "Config NRC",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nrc": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

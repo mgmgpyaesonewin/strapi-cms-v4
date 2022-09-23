@@ -4,59 +4,48 @@
  * wp-tutorial-list service.
  */
 
-const {createCoreService} = require('@strapi/strapi').factories;
+const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::wp-tutorial-list.wp-tutorial-list', ({strapi}) => ({
+module.exports = createCoreService('api::wp-tutorial-list.wp-tutorial-list', ({ strapi }) => ({
   async find(ctx) {
     const tutorials = await strapi.db.query('api::wp-tutorial-list.wp-tutorial-list').findMany({
       populate: {
         title: true,
         description: true,
-        ["image"]: {
-          select: ["url"],
-        },
-        ["subcategories"]: {
+        ["wp_tutorial_contents"]: {
           populate: {
             title: true,
             description: true,
             ["image"]: {
               select: ["url"],
-            },
-            ["wp_tutorial_items"]: {
-              select: ['name'],
-              orderBy: {position: 'asc'},
-              where: {
-                publishedAt: {
-                  $notNull: true,
-                },
-              },
-              populate: {
-                title: true,
-                description: true,
-                ["image"]: {
-                  select: ["url"],
-                },
-              },
-
             }
-
           },
           where: {
             publishedAt: {
               $notNull: true,
             },
           },
-          orderBy: {position: 'asc'},
-          select: ["sub_category_name"],
+          orderBy: { position: 'asc' },
+          select: ["name"],
         },
       },
-
       where: {
-        publishedAt: {
-          $notNull: true,
-        },
+        $and: [
+          {
+            publishedAt: {
+              $notNull: true,
+            },
+          },
+          {
+            wp_tutorial_contents: {
+              publishedAt: {
+                $notNull: true,
+              }
+            },
+          }
+        ],
       },
-      orderBy: {position: 'asc'},
+      orderBy: { position: 'asc' },
       select: ['id', 'type', 'position']
     });
     return tutorials;

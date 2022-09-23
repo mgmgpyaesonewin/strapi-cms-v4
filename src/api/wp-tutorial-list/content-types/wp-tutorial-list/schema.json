@@ -12,19 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
     "title": {
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label",
       "required": true
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "type": {
       "type": "enumeration",
@@ -39,16 +35,16 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "subcategories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::wp-subcategories-tutorial.wp-subcategories-tutorial",
-      "mappedBy": "wp_tutorial_list"
-    },
     "position": {
       "type": "biginteger",
       "required": true,
       "min": "1"
+    },
+    "wp_tutorial_contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tutorial.wp-tutorial",
+      "mappedBy": "wp_tutorial_list"
     }
   }
 }

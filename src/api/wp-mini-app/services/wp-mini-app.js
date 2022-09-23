@@ -25,7 +25,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({strapi}) =>
         },
       },
       orderBy: {position: 'asc'},
-      select: ['id', 'is_home', 'include_header', 'position', 'tag','is_login','screen_orientation']
+      select: ['id', 'mini_app_type', 'include_header', 'position','is_login','screen_orientation','color','tag']
     });
 
     return entriesMiniAPP;
