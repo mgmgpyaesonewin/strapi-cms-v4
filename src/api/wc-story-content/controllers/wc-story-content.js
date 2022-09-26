@@ -16,6 +16,10 @@ module.exports = createCoreController('api::wc-story-content.wc-story-content', 
     async findOne(ctx) {
         const { id } = ctx.params;
         return await strapi.service('api::wc-story-content.wc-story-content').findOne(id);
+    },
+    async filterByName(ctx) {
+        const { name } = ctx.params;
+        return await strapi.service('api::wc-story-content.wc-story-content').filterByName(name);
     }
 }));
 
