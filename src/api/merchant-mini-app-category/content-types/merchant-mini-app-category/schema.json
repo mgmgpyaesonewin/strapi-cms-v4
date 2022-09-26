@@ -52,12 +52,6 @@
       "type": "biginteger",
       "required": true
     },
-    "merchant_mini_apps": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::merchant-mini-app-mini-app.merchant-mini-app-mini-app",
-      "mappedBy": "merchant_mini_app_category"
-    },
     "tag": {
       "type": "enumeration",
       "enum": [
