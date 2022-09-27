@@ -24,11 +24,6 @@
       "type": "string",
       "required": true
     },
-    "deeplink": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::deeplink.deeplink"
-    },
     "en": {
       "type": "text",
       "required": true
