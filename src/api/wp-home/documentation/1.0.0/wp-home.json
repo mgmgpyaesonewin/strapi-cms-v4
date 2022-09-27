@@ -1,5 +1,5 @@
 {
-  "/homepage": {
+  "/wp-home": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HomepageListResponse"
+                "$ref": "#/components/schemas/WpHomeListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Homepage"
+        "Wp-home"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/homepage"
+      "operationId": "get/wp-home"
     },
     "put": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/HomepageResponse"
+                "$ref": "#/components/schemas/WpHomeResponse"
               }
             }
           }
@@ -214,16 +214,16 @@
         }
       },
       "tags": [
-        "Homepage"
+        "Wp-home"
       ],
       "parameters": [],
-      "operationId": "put/homepage",
+      "operationId": "put/wp-home",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/HomepageRequest"
+              "$ref": "#/components/schemas/WpHomeRequest"
             }
           }
         }
@@ -294,91 +294,10 @@
         }
       },
       "tags": [
-        "Homepage"
+        "Wp-home"
       ],
       "parameters": [],
-      "operationId": "delete/homepage"
-    }
-  },
-  "/homepage/localizations": {
-    "post": {
-      "responses": {
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/HomepageLocalizationResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Bad Request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "401": {
-          "description": "Unauthorized",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "404": {
-          "description": "Not Found",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "500": {
-          "description": "Internal Server Error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        }
-      },
-      "tags": [
-        "Homepage"
-      ],
-      "parameters": [],
-      "operationId": "post/homepage/localizations",
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/HomepageLocalizationRequest"
-            }
-          }
-        }
-      }
+      "operationId": "delete/wp-home"
     }
   }
 }

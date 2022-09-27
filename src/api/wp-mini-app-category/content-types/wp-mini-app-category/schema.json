@@ -53,6 +53,20 @@
       ],
       "default": "category",
       "required": true
+    },
+    "mini_app_category_type": {
+      "type": "enumeration",
+      "enum": [
+        "popular",
+        "core",
+        "service"
+      ],
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true,
+      "default": "#00000"
     }
   }
 }
