@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_localization_contents",
+  "info": {
+    "singularName": "merchant-localization-content",
+    "pluralName": "merchant-localization-contents",
+    "displayName": "Merchant Localization Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "label",
+        "placeholder",
+        "inline"
+      ],
+      "required": true
+    },
+    "value": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation",
+      "required": true
+    }
+  }
+}
