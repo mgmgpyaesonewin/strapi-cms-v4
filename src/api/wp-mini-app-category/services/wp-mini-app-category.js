@@ -19,7 +19,7 @@ module.exports = createCoreService('api::wp-mini-app-category.wp-mini-app-catego
         },
       },
       orderBy: {position: 'asc'},
-      select: ['id', 'is_home', 'position', 'tag']
+      select: ['id', 'position', 'tag']
     });
 
     return categories;

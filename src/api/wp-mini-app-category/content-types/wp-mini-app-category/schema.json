@@ -22,11 +22,6 @@
       "component": "wp.default-label",
       "required": true
     },
-    "is_home": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
     "position": {
       "type": "integer",
       "required": true,
