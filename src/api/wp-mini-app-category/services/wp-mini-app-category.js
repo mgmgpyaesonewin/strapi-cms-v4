@@ -19,7 +19,8 @@ module.exports = createCoreService('api::wp-mini-app-category.wp-mini-app-catego
         },
       },
       orderBy: {position: 'asc'},
-      select: ['id', 'position', 'tag']
+      select: ['id', 'position', 'tag','mini_app_category_type','color']
+
     });
 
     return categories;
