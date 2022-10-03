@@ -16,6 +16,11 @@ module.exports = createCoreController('api::wp-tutorial-story.wp-tutorial-story'
     const { name } = ctx.params;
     return await strapi.service('api::wp-tutorial-story.wp-tutorial-story').findByName(name);
 
+  },
+  async find(ctx) {
+    
+    return await strapi.service('api::wp-tutorial-story.wp-tutorial-story').find();
+
   }
 
 }));

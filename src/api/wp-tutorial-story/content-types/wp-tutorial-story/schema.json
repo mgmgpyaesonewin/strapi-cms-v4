@@ -48,7 +48,8 @@
       "displayName": "button option",
       "type": "component",
       "repeatable": false,
-      "component": "wp.button-option"
+      "component": "wp.button-option",
+      "required": true
     },
     "wp_tutorial_story_list": {
       "type": "relation",
