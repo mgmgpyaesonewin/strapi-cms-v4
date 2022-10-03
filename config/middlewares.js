@@ -14,6 +14,12 @@ module.exports = ({ env }) => [
       },
     },
   },
+  {
+    resolve: '../middlewares/audit/index.js',
+    config: {
+      foo: 'bar',
+    }
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
@@ -22,4 +28,5 @@ module.exports = ({ env }) => [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+
 ];
