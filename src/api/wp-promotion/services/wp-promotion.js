@@ -9,7 +9,15 @@ const { createCoreService } = require('@strapi/strapi').factories;
 module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }) => ({
   async find(ctx) {
     const promotions = await strapi.entityService.findMany('api::wp-promotion.wp-promotion', {
-      populate: 'deep',
+      populate: {
+        photo_path: {
+          select: ['url'],
+
+        },
+        wp_category: true,
+        wp_promotion_type: true
+      },
+
       publicationState: 'live',
       filters: {
         $and: [
@@ -35,7 +43,14 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }
   },
   async findOne(id) {
     const promotion = await strapi.entityService.findOne('api::wp-promotion.wp-promotion', id, {
-      populate: 'deep',
+      populate: {
+        photo_path: {
+          select: ['url'],
+
+        },
+        wp_category: true,
+        wp_promotion_type: true
+      },
       publicationState: 'live',
       filters: {
         wp_category: {
@@ -50,7 +65,14 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }
   },
   async filterByCategoryID(id) {
     const promotion = await strapi.entityService.findMany('api::wp-promotion.wp-promotion', {
-      populate: 'deep',
+      populate: {
+        photo_path: {
+          select: ['url'],
+
+        },
+        wp_category: true,
+        wp_promotion_type: true
+      },
       publicationState: 'live',
       sort: { position: 'asc' },
       filters: {
@@ -73,4 +95,3 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }
     return promotion;
   }
 }));
-
