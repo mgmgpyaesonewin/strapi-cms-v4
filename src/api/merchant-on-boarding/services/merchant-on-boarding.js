@@ -45,4 +45,3 @@ module.exports = createCoreService('api::merchant-on-boarding.merchant-on-boardi
   },
   
 }));
-

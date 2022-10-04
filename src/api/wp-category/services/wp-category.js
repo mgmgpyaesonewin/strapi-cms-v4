@@ -26,3 +26,5 @@ module.exports = createCoreService('api::wp-category.wp-category', ({strapi}) =>
   }
 
 }));
+
+

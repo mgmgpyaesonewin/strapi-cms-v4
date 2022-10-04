@@ -95,4 +95,3 @@ module.exports = createCoreService('api::wp-promotion.wp-promotion', ({ strapi }
     return promotion;
   }
 }));
-

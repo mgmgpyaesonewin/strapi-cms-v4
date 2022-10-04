@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_wallet_limit_sizes",
+  "info": {
+    "singularName": "wp-wallet-limit-size",
+    "pluralName": "wp-wallet-limit-sizes",
+    "displayName": "WP WalletLimitSize",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "level_display": {
+      "type": "enumeration",
+      "enum": [
+        "Basic",
+        "Level 2"
+      ],
+      "required": true
+    },
+    "wallet_capacity": {
+      "type": "biginteger",
+      "required": true
+    },
+    "daily_limit": {
+      "type": "biginteger",
+      "required": true
+    },
+    "monthly_limit": {
+      "required": true,
+      "type": "biginteger"
+    }
+  }
+}
