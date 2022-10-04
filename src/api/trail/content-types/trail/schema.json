@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trails",
+  "info": {
+    "singularName": "trail",
+    "pluralName": "trails",
+    "displayName": "Trail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentType": {
+      "type": "text"
+    },
+    "action": {
+      "type": "text"
+    },
+    "content": {
+      "type": "json"
+    },
+    "author": {
+      "type": "json"
+    },
+    "method": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "params": {
+      "type": "json"
+    },
+    "statusCode": {
+      "type": "integer"
+    },
+    "request": {
+      "type": "json"
+    }
+  }
+}

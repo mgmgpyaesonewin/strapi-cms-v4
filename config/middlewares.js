@@ -15,16 +15,21 @@ module.exports = ({ env }) => [
     },
   },
   {
-    resolve: '../middlewares/audit/index.js',
-    config: {
-      foo: 'bar',
-    }
+   name:'global::audit-log'
+
   },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
-  'strapi::body',
+  {
+    name: 'strapi::body',
+    config: {
+      patchKoa: true,
+      multipart: true,
+      includeUnparsed: true,
+    },
+  },
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
