@@ -28,7 +28,7 @@
       "type": "string"
     },
     "route": {
-      "type": "string"
+      "type": "text"
     },
     "params": {
       "type": "json"

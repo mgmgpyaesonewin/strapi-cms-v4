@@ -3,6 +3,7 @@ const koaBody = require("koa-body");
 const removePasswords = (key, value) => key === "password" ? undefined : value;
 
 const getContentType = (path) => {
+
   if (path.includes("service-request")) {
     return "Service Request";
   }
@@ -22,6 +23,7 @@ const getContentType = (path) => {
 };
 
 const getActionType = (method, path) => {
+  const versionConfig = ['content-manager', '/upload/files', '/upload/folders', '/admin/webhooks', '/admin/api-tokens', '/upload/settings', '/admin/webhooks', '/admin/roles', '/admin/users', '/users-permissions/routes', '/users-permissions/providers', '/users-permissions/providers'];
   if (method.toLowerCase() === "post" && path.includes("service-request")) {
     return "Created Service Request";
   }
@@ -40,10 +42,9 @@ const getActionType = (method, path) => {
   if (method.toLowerCase() === "post" && path.includes("register")) {
     return "User Register";
   }
-  if (method.toLowerCase() === "post" && path.includes("local")) {
-    return "User log in";
+  if (method.toLowerCase() === "post" && path.includes("login")) {
+    return "User login";
   }
-
   return "Other Activities"
 };
 
@@ -53,31 +54,51 @@ const getActionType = (method, path) => {
 
 module.exports = (config, { strapi }) => {
   return async (ctx, next) => {
-    strapi.log.info('In audit-log middleware.');
     await next();
     if (ctx.state && ctx.state.user) {
-      const entry = {
+      const routeStr = ctx._matchedRoute;
+      console.log('---------------------');
+      console.log(routeStr);
+      console.log('---------------------');
+      const arr = [
+        '/content-manager', '/upload',
+        '/admin/webhooks',
+        '/admin/api-tokens',
+        // '/upload/settings',
+        '/admin/roles',
+        '/admin/users',
+        '/users-permissions/routes',
+        '/users-permissions/providers'
+      ];
 
-        contentType: getContentType(ctx._matchedRoute),
-        action: getActionType(ctx.request.method, ctx._matchedRoute),
-        statusCode: ctx.response.status,
-        author: {
-          id: ctx.state.user.id, email: ctx.state.user.email, ip: ctx.request.ip,
-        },
-        method: ctx.request.method,
-        route: ctx._matchedRoute,
-        params: ctx.params,
-        request: ctx.request.body,
-        content: ctx.request.body,
-      };
-      if ((ctx.params.model && ctx.params.model.includes("trail")) || (ctx.params.uid && ctx.params.uid.includes("trail"))) {
-      } else {
-        if (entry.action != 'Admin content View') {
-          console.log("--------------- else here -------------");
-          strapi.log.info(JSON.stringify(entry, removePasswords));
-          await strapi.service('api::trail.trail').create(entry);
+      const contains = arr.some(element => {
+        if (routeStr.includes(element)) {
+          const entry = {
+            contentType: getContentType(routeStr),
+            action: getActionType(ctx.request.method, routeStr),
+            statusCode: ctx.response.status,
+            author: {
+              id: ctx.state.user.id, email: ctx.state.user.email, ip: ctx.request.ip,
+            },
+            method: ctx.request.method,
+            route: routeStr,
+            params: ctx.params,
+            request: ctx.request.body,
+            content: ctx.request.body,
+          };
+          if (
+            (ctx.params.model && ctx.params.model.includes("trail")) || (ctx.params.uid && ctx.params.uid.includes("trail"))) {
+          } else {
+            if (entry.action != 'Admin content View') {
+              const removePwd = JSON.stringify(entry, removePasswords);
+              const auditLog = JSON.parse(removePwd);
+              strapi.service('api::trail.trail').create(auditLog);
+            }
+          }
+          return true;
         }
-      }
+        return false;
+      });
     }
   };
 };
