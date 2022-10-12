@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_force_upgrade_build_numbers",
+  "info": {
+    "singularName": "merchant-force-upgrade-build-number",
+    "pluralName": "merchant-force-upgrade-build-numbers",
+    "displayName": "Merchant ForceUpgrade BuildNumber",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "buildNumber": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

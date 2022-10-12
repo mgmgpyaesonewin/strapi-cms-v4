@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_merchant_force_upgrade_new_version_infos",
+  "info": {
+    "displayName": "forceUpgrade- new_version_info",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "storeUrl": {
+      "type": "string",
+      "required": true
+    },
+    "version": {
+      "type": "string",
+      "required": true
+    },
+    "highlights": {
+      "type": "string",
+      "required": true
+    },
+    "directUrl": {
+      "type": "string",
+      "default": "null",
+      "required": true
+    }
+  }
+}
