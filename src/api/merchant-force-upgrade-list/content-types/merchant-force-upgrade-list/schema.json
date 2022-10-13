@@ -17,13 +17,14 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.forceupgrade-ios",
-      "required": false
+      "required": true
     },
     "Android": {
       "displayName": "forceUpgrade- Android",
       "type": "component",
       "repeatable": false,
-      "component": "merchant.force-upgrade-android"
+      "component": "merchant.force-upgrade-android",
+      "required": true
     }
   }
 }
