@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_merchant_forceupgrade_ios",
+  "info": {
+    "displayName": "forceupgrade-ios",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "forcedUpgrade": {
+      "displayName": "forcedUpgrade",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.forced-upgrade",
+      "required": true
+    },
+    "softUpgrade": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.forced-upgrade",
+      "required": true
+    },
+    "new_version_info": {
+      "displayName": "forceUpgrade- new_version_info",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.force-upgrade-new-version-info",
+      "required": true
+    }
+  }
+}
