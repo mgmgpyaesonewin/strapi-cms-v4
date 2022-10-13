@@ -14,7 +14,8 @@
   "attributes": {
     "buildNumber": {
       "type": "biginteger",
-      "required": true
+      "required": true,
+      "unique": true
     }
   }
 }

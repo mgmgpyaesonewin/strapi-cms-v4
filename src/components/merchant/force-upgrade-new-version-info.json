@@ -8,7 +8,7 @@
   "options": {},
   "attributes": {
     "storeUrl": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "version": {
@@ -16,11 +16,11 @@
       "required": true
     },
     "highlights": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "directUrl": {
-      "type": "string",
+      "type": "text",
       "default": "null",
       "required": true
     }
