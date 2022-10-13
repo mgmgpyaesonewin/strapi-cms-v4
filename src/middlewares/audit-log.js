@@ -1,3 +1,4 @@
+const axios = require('axios');
 const koaBody = require("koa-body");
 
 const removePasswords = (key, value) => key === "password" ? undefined : value;
@@ -57,18 +58,11 @@ module.exports = (config, { strapi }) => {
     await next();
     if (ctx.state && ctx.state.user) {
       const routeStr = ctx._matchedRoute;
-      console.log('---------------------');
-      console.log(routeStr);
-      console.log('---------------------');
       const arr = [
-        '/content-manager', '/upload',
+        '/content-manager',
+        '/upload',
         '/admin/webhooks',
-        '/admin/api-tokens',
-        // '/upload/settings',
-        '/admin/roles',
-        '/admin/users',
-        '/users-permissions/routes',
-        '/users-permissions/providers'
+        '/admin/api-tokens'
       ];
 
       const contains = arr.some(element => {
@@ -86,6 +80,10 @@ module.exports = (config, { strapi }) => {
             request: ctx.request.body,
             content: ctx.request.body,
           };
+          entry.content = (entry.content.length > 13) ? entry.content.substr(0, 1)+'...' : entry.content;
+          let testStr = JSON.stringify(entry.content); 
+          console.log(testStr);
+          console.log(JSON.stringify(entry.content).length > 13 ?testStr.substr(1,100)+'...' :JSON.stringify(entry.content) );
           if (
             (ctx.params.model && ctx.params.model.includes("trail")) || (ctx.params.uid && ctx.params.uid.includes("trail"))) {
           } else {
@@ -93,6 +91,14 @@ module.exports = (config, { strapi }) => {
               const removePwd = JSON.stringify(entry, removePasswords);
               const auditLog = JSON.parse(removePwd);
               strapi.service('api::trail.trail').create(auditLog);
+              if(entry.action != 'Other Activities'){
+              /* actionable message */
+              //sendActionableMessage(entry);
+              /* actionable message */
+
+              }
+             
+
             }
           }
           return true;
@@ -101,4 +107,21 @@ module.exports = (config, { strapi }) => {
       });
     }
   };
+};
+
+const sendActionableMessage = (entry) => {
+  const webhookURL = process.env.MS_WEBHOOK_AUDIT_LOG_URL;
+  let content = JSON.stringify(entry.content);
+  let author = JSON.stringify(entry.author);
+  let param = JSON.stringify(entry.params);
+
+  axios.post(webhookURL, {
+    "themeColor": "0072C6",
+    "title": entry.action,
+    "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br> **Content** - ${content} <br>**Author** - ${author}`,
+  }).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+      console.log(error);
+  });
 };
