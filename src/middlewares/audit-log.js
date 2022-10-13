@@ -1,13 +1,7 @@
 const axios = require('axios');
-const koaBody = require("koa-body");
 
-const removePasswords = (key, value) => key === "password" ? undefined : value;
-
+const removePasswords = (key, value) => key === "password" ? '******' : value;
 const getContentType = (path) => {
-
-  if (path.includes("service-request")) {
-    return "Service Request";
-  }
   if (path.includes("register")) {
     return "Account Registration";
   }
@@ -23,22 +17,19 @@ const getContentType = (path) => {
   return "Others"
 };
 
-const getActionType = (method, path) => {
-  const versionConfig = ['content-manager', '/upload/files', '/upload/folders', '/admin/webhooks', '/admin/api-tokens', '/upload/settings', '/admin/webhooks', '/admin/roles', '/admin/users', '/users-permissions/routes', '/users-permissions/providers', '/users-permissions/providers'];
-  if (method.toLowerCase() === "post" && path.includes("service-request")) {
-    return "Created Service Request";
-  }
+const getActionType = (method, path, username) => {
   if (method.toLowerCase() === "get" && path.includes("content-manager")) {
-    return "Admin content View";
+    //return "Admin content View";
+   return `${username} - view content`;
   }
   if (method.toLowerCase() === "post" && path.includes("content-manager")) {
-    return "Admin content create";
+    return `${username} - create content`;
   }
   if (method.toLowerCase() === "put" && path.includes("content-manager")) {
-    return "Admin content update";
+    return `${username} - update content`;
   }
   if (method.toLowerCase() === "delete" && path.includes("content-manager")) {
-    return "Admin content delete";
+    return `${username} - delete content`;
   }
   if (method.toLowerCase() === "post" && path.includes("register")) {
     return "User Register";
@@ -56,72 +47,59 @@ const getActionType = (method, path) => {
 module.exports = (config, { strapi }) => {
   return async (ctx, next) => {
     await next();
+   
     if (ctx.state && ctx.state.user) {
-      const routeStr = ctx._matchedRoute;
-      const arr = [
-        '/content-manager',
-        '/upload',
-        '/admin/webhooks',
-        '/admin/api-tokens'
-      ];
+      const visitedRoutes = ctx._matchedRoute;
+      const auditRoutes = ['/content-manager', '/upload', '/admin/webhooks', '/admin/api-tokens'];
+      auditRoutes.map(route => {
 
-      const contains = arr.some(element => {
-        if (routeStr.includes(element)) {
+        if (visitedRoutes.includes(route)) {
           const entry = {
-            contentType: getContentType(routeStr),
-            action: getActionType(ctx.request.method, routeStr),
+            contentType: getContentType(visitedRoutes),
+            action: getActionType(ctx.request.method, visitedRoutes,ctx.state.user.username),
             statusCode: ctx.response.status,
             author: {
               id: ctx.state.user.id, email: ctx.state.user.email, ip: ctx.request.ip,
             },
             method: ctx.request.method,
-            route: routeStr,
+            route: visitedRoutes,
             params: ctx.params,
             request: ctx.request.body,
             content: ctx.request.body,
           };
-          entry.content = (entry.content.length > 13) ? entry.content.substr(0, 1)+'...' : entry.content;
-          let testStr = JSON.stringify(entry.content); 
-          console.log(testStr);
-          console.log(JSON.stringify(entry.content).length > 13 ?testStr.substr(1,100)+'...' :JSON.stringify(entry.content) );
-          if (
-            (ctx.params.model && ctx.params.model.includes("trail")) || (ctx.params.uid && ctx.params.uid.includes("trail"))) {
-          } else {
-            if (entry.action != 'Admin content View') {
+
+          // isAudtiTrailCollection
+          if (!(ctx.params.model && ctx.params.model.includes("trail")) || !(ctx.params.uid && ctx.params.uid.includes("trail"))) {
+            if (entry.action !== `${ctx.state.user.username} - view content`) {
               const removePwd = JSON.stringify(entry, removePasswords);
               const auditLog = JSON.parse(removePwd);
               strapi.service('api::trail.trail').create(auditLog);
-              if(entry.action != 'Other Activities'){
-              /* actionable message */
-              //sendActionableMessage(entry);
-              /* actionable message */
-
+              if (entry.action !== 'Other Activities') {
+                /* actionable message */
+                sendActionableMessage(entry);
+                /* actionable message */
               }
-             
-
             }
           }
-          return true;
         }
-        return false;
       });
     }
   };
 };
 
-const sendActionableMessage = (entry) => {
-  const webhookURL = process.env.MS_WEBHOOK_AUDIT_LOG_URL;
-  let content = JSON.stringify(entry.content);
-  let author = JSON.stringify(entry.author);
-  let param = JSON.stringify(entry.params);
-
-  axios.post(webhookURL, {
+const sendActionableMessage = async (entry) => {
+  try {
+    const webhookURL = process.env.MS_WEBHOOK_AUDIT_LOG_URL;
+    let content = JSON.stringify(entry.content).length > 18000 ? JSON.stringify(entry.content).substring(0, 3000) + '...' : JSON.stringify(entry.content);
+    let author = JSON.stringify(entry.author);
+    let param = JSON.stringify(entry.params);
+    const resp = await axios.post(webhookURL, {
     "themeColor": "0072C6",
     "title": entry.action,
-    "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br> **Content** - ${content} <br>**Author** - ${author}`,
-  }).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
-      console.log(error);
+    "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br>**Author** - <code>${author}</code> <br> **Content** - ${content}`,
   });
+  console.log(resp.data);
+  } catch (err) {
+    console.error(err);
+  }
 };
