@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_error_mappings",
+  "info": {
+    "singularName": "wc-error-mapping",
+    "pluralName": "wc-error-mappings",
+    "displayName": "WC ErrorMapping List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wc_app_version": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wc-app-version.wc-app-version"
+    },
+    "ekyc": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
