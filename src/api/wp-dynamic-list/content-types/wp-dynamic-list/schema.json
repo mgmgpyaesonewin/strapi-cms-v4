@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nrc": {
-      "type": "json"
-    },
     "send_money_denomintation": {
       "type": "json"
     },
