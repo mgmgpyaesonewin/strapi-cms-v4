@@ -22,7 +22,6 @@ const getContentType = (path) => {
 
 const getActionType = (method, path, username) => {
   if (method.toLowerCase() === "get" && path.includes("content-manager")) {
-    //return "Admin content View";
     return `${username} - view content`;
   }
   if (method.toLowerCase() === "post" && path.includes("content-manager")) {
