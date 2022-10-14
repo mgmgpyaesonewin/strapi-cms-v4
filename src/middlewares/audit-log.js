@@ -1,6 +1,9 @@
 const axios = require('axios');
 
 const removePasswords = (key, value) => key === "password" ? '******' : value;
+
+const checkModel = (model, ctx) => (ctx.params.model && !ctx.params.model.includes(model)) || (ctx.params.uid && !ctx.params.uid.includes(model)) ? true : false;
+
 const getContentType = (path) => {
   if (path.includes("register")) {
     return "Account Registration";
@@ -20,7 +23,7 @@ const getContentType = (path) => {
 const getActionType = (method, path, username) => {
   if (method.toLowerCase() === "get" && path.includes("content-manager")) {
     //return "Admin content View";
-   return `${username} - view content`;
+    return `${username} - view content`;
   }
   if (method.toLowerCase() === "post" && path.includes("content-manager")) {
     return `${username} - create content`;
@@ -47,7 +50,6 @@ const getActionType = (method, path, username) => {
 module.exports = (config, { strapi }) => {
   return async (ctx, next) => {
     await next();
-   
     if (ctx.state && ctx.state.user) {
       const visitedRoutes = ctx._matchedRoute;
       const auditRoutes = ['/content-manager', '/upload', '/admin/webhooks', '/admin/api-tokens'];
@@ -56,7 +58,7 @@ module.exports = (config, { strapi }) => {
         if (visitedRoutes.includes(route)) {
           const entry = {
             contentType: getContentType(visitedRoutes),
-            action: getActionType(ctx.request.method, visitedRoutes,ctx.state.user.username),
+            action: getActionType(ctx.request.method, visitedRoutes, ctx.state.user.username),
             statusCode: ctx.response.status,
             author: {
               id: ctx.state.user.id, email: ctx.state.user.email, ip: ctx.request.ip,
@@ -69,7 +71,7 @@ module.exports = (config, { strapi }) => {
           };
 
           // isAudtiTrailCollection
-          if (!(ctx.params.model && ctx.params.model.includes("trail")) || !(ctx.params.uid && ctx.params.uid.includes("trail"))) {
+          if (checkModel("trail", ctx)) {
             if (entry.action !== `${ctx.state.user.username} - view content`) {
               const removePwd = JSON.stringify(entry, removePasswords);
               const auditLog = JSON.parse(removePwd);
@@ -94,11 +96,11 @@ const sendActionableMessage = async (entry) => {
     let author = JSON.stringify(entry.author);
     let param = JSON.stringify(entry.params);
     const resp = await axios.post(webhookURL, {
-    "themeColor": "0072C6",
-    "title": entry.action,
-    "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br>**Author** - <code>${author}</code> <br> **Content** - ${content}`,
-  });
-  console.log(resp.data);
+      "themeColor": "0072C6",
+      "title": entry.action,
+      "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br>**Author** - <code>${author}</code> <br> **Content** - ${content}`,
+    });
+    console.log(resp.data);
   } catch (err) {
     console.error(err);
   }
