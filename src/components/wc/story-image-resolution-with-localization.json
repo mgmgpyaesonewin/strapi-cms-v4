@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_wc_story_image_resolution_with_localizations",
+  "info": {
+    "displayName": "story-Image Resolution with Localization",
+    "icon": "location-arrow",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

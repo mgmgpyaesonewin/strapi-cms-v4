@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_wc_options",
+  "info": {
+    "displayName": "options",
+    "icon": "unlink",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttons": {
+      "displayName": "story-button",
+      "type": "component",
+      "repeatable": true,
+      "component": "wc.story-button"
+    },
+    "autoPlay": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "autoPlaySpeed": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}
