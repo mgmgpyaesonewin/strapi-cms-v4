@@ -17,14 +17,6 @@
       "repeatable": false,
       "component": "wc.wc-translation"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "type": {
       "type": "enumeration",
       "enum": [
@@ -42,11 +34,9 @@
       "type": "biginteger",
       "required": true
     },
-    "subcategories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::wc-tutorial-subcategory.wc-tutorial-subcategory",
-      "mappedBy": "wc_tutorial_list"
+    "name": {
+      "type": "string",
+      "required": true
     }
   }
 }
