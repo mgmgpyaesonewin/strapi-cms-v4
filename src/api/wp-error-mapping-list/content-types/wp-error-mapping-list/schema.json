@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_error_mapping_lists",
+  "info": {
+    "singularName": "wp-error-mapping-list",
+    "pluralName": "wp-error-mapping-lists",
+    "displayName": "WP ErrorMapping List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ekyc": {
+      "type": "json",
+      "required": true
+    },
+    "wp_app_version_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-app-version.wp-app-version"
+    }
+  }
+}
