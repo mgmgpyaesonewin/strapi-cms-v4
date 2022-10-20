@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_wc_stories",
+  "info": {
+    "displayName": "stories",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "displayName": "story-Image Resolution with Localization",
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.story-image-resolution-with-localization"
+    },
+    "my": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.story-image-resolution-with-localization",
+      "required": true
+    }
+  }
+}
