@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "config_regions",
+  "info": {
+    "singularName": "config-region",
+    "pluralName": "config-regions",
+    "displayName": "Config Region"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "districts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::config-city-district.config-city-district",
+      "mappedBy": "region"
+    }
+  }
+}
