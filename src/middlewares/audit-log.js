@@ -77,7 +77,7 @@ module.exports = (config, { strapi }) => {
               strapi.service('api::trail.trail').create(auditLog);
               if (entry.action !== 'Other Activities') {
                 /* actionable message */
-                sendActionableMessage(entry);
+                //sendActionableMessage(entry);
                 /* actionable message */
               }
             }
