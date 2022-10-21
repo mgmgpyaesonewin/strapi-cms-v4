@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_reject_lists",
+  "info": {
+    "singularName": "wp-reject-list",
+    "pluralName": "wp-reject-lists",
+    "displayName": "WP Reject List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "integer",
+      "required": true
+    },
+    "field_enum": {
+      "type": "enumeration",
+      "enum": [
+        "poi_image",
+        "full_name",
+        "dob",
+        "father_name",
+        "gender",
+        "primary_poi",
+        "secondary_poi",
+        "poi_number",
+        "poi_images",
+        "occupation",
+        "email",
+        "address",
+        "success"
+      ],
+      "required": true
+    }
+  }
+}
