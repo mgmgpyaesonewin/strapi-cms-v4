@@ -13,7 +13,8 @@
     },
     "version": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "highlights": {
       "type": "text",
@@ -23,6 +24,13 @@
       "type": "text",
       "default": "null",
       "required": true
+    },
+    "releasedDate": {
+      "type": "date",
+      "required": true
+    },
+    "versionCode": {
+      "type": "string"
     }
   }
 }
