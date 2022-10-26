@@ -7,6 +7,7 @@
 const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-force-upgrade-list', ({ strapi }) => ({
+    
     async find() {
         return strapi.db.query('api::merchant-force-upgrade-list.merchant-force-upgrade-list').findOne({
            select: [],
@@ -28,7 +29,12 @@ module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-fo
                                 }
                             }
                         },
-                        new_version_info: true
+                        version_info: {
+                            select: [],
+                            populate: { 
+                                version_info: true
+                            }
+                        }
                     }
                 },
                 Android: {
@@ -47,7 +53,12 @@ module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-fo
                                 }
                             }
                         },
-                        new_version_info: true
+                        version_info: {
+                            select: [],
+                            populate: { 
+                                version_info: true
+                            }
+                        }
                     }
                 },
 

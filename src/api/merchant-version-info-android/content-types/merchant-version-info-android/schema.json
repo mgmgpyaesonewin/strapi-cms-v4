@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_version_info_androids",
+  "info": {
+    "singularName": "merchant-version-info-android",
+    "pluralName": "merchant-version-info-androids",
+    "displayName": "Merchant Android App Version Info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.force-upgrade-new-version-info"
+    }
+  }
+}
