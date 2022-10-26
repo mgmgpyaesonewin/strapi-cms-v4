@@ -19,6 +19,9 @@ COPY package-lock.json .
 # Copy .env to root directory inside Docker container of Strapi app
 COPY .env .
 
+# Copy license.txt to root directory inside Docker container of Strapi app
+COPY license.txt .
+
 # Install dependencies, but not generate a package-lock.json lockfile and fail if an update is needed.
 
 RUN npm ci
