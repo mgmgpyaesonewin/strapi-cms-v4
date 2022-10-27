@@ -15,7 +15,7 @@
     "version_info": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.force-upgrade-new-version-info",
+      "component": "merchant.new-version-info",
       "required": true
     }
   }

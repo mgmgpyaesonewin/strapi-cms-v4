@@ -35,7 +35,7 @@ module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-fo
                             populate: {
                                 version_info: {
                                     populate: {
-                                        v: {
+                                        version: {
                                             select: ["version_name", "version_code"]
                                         }
                                     }
@@ -67,7 +67,7 @@ module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-fo
                             populate: {
                                 version_info: {
                                     populate: {
-                                        v: {
+                                        version: {
                                             select: ["version_name", "version_code"]
                                         }
                                     }

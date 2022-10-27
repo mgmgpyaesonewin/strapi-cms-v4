@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_merchant_force_upgrade_new_version_infos",
+  "collectionName": "components_merchant_new_version_infos",
   "info": {
-    "displayName": "forceUpgrade- new_version_info",
-    "icon": "align-justify",
+    "displayName": "new_version_info",
     "description": ""
   },
   "options": {},
@@ -17,14 +16,13 @@
     },
     "directUrl": {
       "type": "text",
-      "default": "null",
       "required": true
     },
     "releasedDate": {
       "type": "date",
       "required": true
     },
-    "v": {
+    "version": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::merchant-app-version-list.merchant-app-version-list"

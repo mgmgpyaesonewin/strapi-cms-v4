@@ -11,7 +11,7 @@ module.exports = createCoreService('api::merchant-version-info-android.merchant-
             select: [],
             where: {
                 version_info: {
-                    v: {
+                    version: {
                         version_code: params
                     }
                 }
@@ -19,7 +19,7 @@ module.exports = createCoreService('api::merchant-version-info-android.merchant-
             populate: {
                 version_info: {
                     populate: {
-                        v: {
+                        version: {
                             select: ["version_name", "version_code"]
                         }
                     }
