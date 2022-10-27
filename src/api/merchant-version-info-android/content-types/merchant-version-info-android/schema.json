@@ -4,7 +4,7 @@
   "info": {
     "singularName": "merchant-version-info-android",
     "pluralName": "merchant-version-info-androids",
-    "displayName": "Merchant Android App Version Info",
+    "displayName": "Merchant App Version Info Android ",
     "description": ""
   },
   "options": {
@@ -15,7 +15,8 @@
     "version_info": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.force-upgrade-new-version-info"
+      "component": "merchant.force-upgrade-new-version-info",
+      "required": true
     }
   }
 }

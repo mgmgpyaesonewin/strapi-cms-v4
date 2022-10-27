@@ -11,11 +11,6 @@
       "type": "text",
       "required": true
     },
-    "version": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "highlights": {
       "type": "text",
       "required": true
@@ -29,8 +24,10 @@
       "type": "date",
       "required": true
     },
-    "versionCode": {
-      "type": "string"
+    "v": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-app-version-list.merchant-app-version-list"
     }
   }
 }

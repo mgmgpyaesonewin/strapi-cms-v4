@@ -15,7 +15,7 @@
     "build": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::merchant-force-upgrade-build-number.merchant-force-upgrade-build-number"
+      "target": "api::merchant-app-version-list.merchant-app-version-list"
     }
   }
 }
