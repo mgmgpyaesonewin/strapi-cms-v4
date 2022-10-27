@@ -27,7 +27,7 @@ module.exports = createCoreService('api::wp-error-mapping-list.wp-error-mapping-
             where: {
                 $and: [
                     {
-                        wp_app_version_list: {
+                        wp_app_version_lists: {
                             version_code: version,
                         },
                     },
