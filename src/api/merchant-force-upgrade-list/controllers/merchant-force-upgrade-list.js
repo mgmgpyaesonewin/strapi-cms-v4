@@ -9,8 +9,6 @@ module.exports = createCoreController('api::merchant-force-upgrade-list.merchant
     async find(ctx) {
         var platform = ctx.query.platform;
         var versionCode = ctx.query["version-code"];
-        console.log(platform);
-        console.log(versionCode);
 
         if (platform && versionCode) {
             if (platform == "android") {
@@ -30,7 +28,7 @@ module.exports = createCoreController('api::merchant-force-upgrade-list.merchant
         }
 
         var response = await strapi.service('api::merchant-force-upgrade-list.merchant-force-upgrade-list').find(ctx);
-        console.log(response)
+        
         response.iOS.new_version_info =  response.iOS.version_info.version_info;
         response.Android.new_version_info =  response.Android.version_info.version_info;
         delete response.iOS.version_info;

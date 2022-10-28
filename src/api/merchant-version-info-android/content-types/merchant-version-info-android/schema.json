@@ -17,6 +17,10 @@
       "repeatable": false,
       "component": "merchant.new-version-info",
       "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
     }
   }
 }
