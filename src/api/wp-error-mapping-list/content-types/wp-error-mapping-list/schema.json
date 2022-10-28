@@ -16,10 +16,11 @@
       "type": "json",
       "required": true
     },
-    "wp_app_version_list": {
+    "wp_app_version_lists": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wp-app-version.wp-app-version"
+      "relation": "oneToMany",
+      "target": "api::wp-app-version.wp-app-version",
+      "mappedBy": "wp_error_mapping_list"
     }
   }
 }
