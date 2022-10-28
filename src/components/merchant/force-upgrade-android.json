@@ -19,11 +19,10 @@
       "component": "merchant.forced-upgrade",
       "required": true
     },
-    "new_version_info": {
-      "type": "component",
-      "repeatable": false,
-      "component": "merchant.force-upgrade-new-version-info",
-      "required": true
+    "version_info": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-version-info-android.merchant-version-info-android"
     }
   }
 }
