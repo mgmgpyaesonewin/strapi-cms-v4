@@ -5,30 +5,43 @@
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
-
+//module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-force-upgrade-list');
 module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-force-upgrade-list', ({ strapi }) => ({
+
     async find() {
         return strapi.db.query('api::merchant-force-upgrade-list.merchant-force-upgrade-list').findOne({
-           select: [],
-            populate:{
+            select: [],
+            populate: {
                 iOS: {
                     populate: {
                         forcedUpgrade: {
-                            populate: { 
-                                build:{
-                                    select:['buildNumber']
+                            populate: {
+                                build: {
+                                    select: ["version_name", "version_code"]
                                 },
-                    
+
                             }
                         },
                         softUpgrade: {
                             populate: {
                                 build: {
-                                    select: ["buildNumber"]
+                                    select: ["version_name", "version_code"]
+
                                 }
                             }
                         },
-                        new_version_info: true
+                        version_info: {
+                            select: [],
+                            populate: {
+                                version_info: {
+                                    populate: {
+                                        version: {
+                                            select: ["version_name", "version_code"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 Android: {
@@ -36,22 +49,34 @@ module.exports = createCoreService('api::merchant-force-upgrade-list.merchant-fo
                         forcedUpgrade: {
                             populate: {
                                 build: {
-                                    select: ["buildNumber"]
+                                    select: ["version_name", "version_code"]
+
                                 }
                             }
                         },
                         softUpgrade: {
                             populate: {
                                 build: {
-                                    select: ["buildNumber"]
+                                    select: ["version_name", "version_code"]
+
                                 }
                             }
                         },
-                        new_version_info: true
+                        version_info: {
+                            select: [],
+                            populate: {
+                                version_info: {
+                                    populate: {
+                                        version: {
+                                            select: ["version_name", "version_code"]
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
-
-             },
+            },
         }
         );
     },
