@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wp-reject-list",
     "pluralName": "wp-reject-lists",
-    "displayName": "WP Reject List"
+    "displayName": "WP Reject List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,19 +19,17 @@
     "field_enum": {
       "type": "enumeration",
       "enum": [
-        "poi_image",
         "full_name",
         "dob",
         "father_name",
         "gender",
-        "primary_poi",
-        "secondary_poi",
+        "primary_poi [images field]",
+        "secondary_poi [image field]",
         "poi_number",
-        "poi_images",
         "occupation",
         "email",
-        "address",
-        "success"
+        "live_photo",
+        "address"
       ],
       "required": true
     }
