@@ -20,10 +20,12 @@
       "component": "merchant.forced-upgrade",
       "required": true
     },
-    "version_info": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::merchant-ios-app-version-info.merchant-ios-app-version-info"
+    "new_version_info": {
+      "displayName": "forceUpgrade- new_version_info",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.force-upgrade-new-version-info",
+      "required": true
     }
   }
 }
