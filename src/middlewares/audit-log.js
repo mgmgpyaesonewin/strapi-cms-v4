@@ -52,7 +52,7 @@ module.exports = (config, { strapi }) => {
     if (ctx.state && ctx.state.user) {
       const visitedRoutes = ctx._matchedRoute;
       const auditRoutes = ['/content-manager', '/upload', '/admin/webhooks', '/admin/api-tokens'];
-      auditRoutes.map(route => {
+      auditRoutes.map(async route => {
 
         if (visitedRoutes.includes(route)) {
           const entry = {
@@ -74,10 +74,10 @@ module.exports = (config, { strapi }) => {
             if (entry.action !== `${ctx.state.user.username} - view content`) {
               const removePwd = JSON.stringify(entry, removePasswords);
               const auditLog = JSON.parse(removePwd);
-              strapi.service('api::trail.trail').create(auditLog);
+              await strapi.service('api::trail.trail').create(auditLog);
               if (entry.action !== 'Other Activities') {
                 /* actionable message */
-                //sendActionableMessage(entry);
+                 sendActionableMessage(entry);
                 /* actionable message */
               }
             }
@@ -97,10 +97,10 @@ const sendActionableMessage = async (entry) => {
     const resp = await axios.post(webhookURL, {
       "themeColor": "0072C6",
       "title": entry.action,
-      "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br>**Author** - <code>${author}</code> <br> **Content** - ${content}`,
+      "text": `**Route** - ${entry.route} <br> **Param** - ${param}  <br>**Author** - ${author} <br> **Content** - ${content}`,
     });
     console.log(resp.data);
   } catch (err) {
-    console.error(err);
+    console.warm(err);
   }
 };
