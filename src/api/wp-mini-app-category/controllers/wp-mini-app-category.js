@@ -9,6 +9,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-category', ({ strapi }) => ({
   async find(ctx) {
     /* mini app category */
+    
     const categories = await strapi.service('api::wp-mini-app-category.wp-mini-app-category').find(ctx);
     categories.map(category => {
       category.icon = !!category.icon ? category.icon.url : '';
