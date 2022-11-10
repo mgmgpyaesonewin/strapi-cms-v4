@@ -95,6 +95,11 @@
       ],
       "required": true,
       "default": "mini_app"
+    },
+    "wp_app_version_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-app-version.wp-app-version"
     }
   }
 }
