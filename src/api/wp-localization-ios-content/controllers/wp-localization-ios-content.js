@@ -13,6 +13,13 @@ module.exports = createCoreController('api::wp-localization-ios-content.wp-local
         return {
             'contents': contents
         }
+    },
+    async findKey(ctx) {
+        const { key } = ctx.params;
+        let content = await strapi.service('api::wp-localization-ios-content.wp-localization-ios-content').findByKey(key);
+        return {
+            'contents': content
+        }
     }
 
 }));

@@ -19,6 +19,19 @@ module.exports = createCoreService('api::wp-localization-android-content.wp-loca
             },
             select: ['key', 'type']
         });
-    }
+    },
+    async findByKey(key) {
+        return await strapi.db.query('api::wp-localization-android-content.wp-localization-android-content').findOne({
+            where: {
+                key: {
+                    $eq: key,
+                },
+            },
+            populate: {
+                value: true,
+            },
+            select: ['type', 'key']
+        });
 
+    },
 }));
