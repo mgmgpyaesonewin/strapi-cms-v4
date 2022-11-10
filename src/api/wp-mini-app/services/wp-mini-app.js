@@ -8,7 +8,6 @@ const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) => ({
   async find(ctx) {
-    console.log(ctx.request.header.versioncode);
     if (ctx.request.header.versioncode) {
       let entriesMiniAPP = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
         populate: {
