@@ -8,7 +8,7 @@ const { createCoreService } = require('@strapi/strapi').factories;
 
 module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) => ({
   async find(ctx) {
-    if (ctx.request.header.versioncode) {
+    if (ctx.query.versionCode) {
       let entriesMiniAPP = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
         populate: {
           title: true,
@@ -24,7 +24,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           $and: [
             {
               wp_app_version_lists: {
-                version_code: ctx.request.header.versioncode,
+                version_code: ctx.query.versionCode,
               },
             },
             {
@@ -35,7 +35,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           ],
         },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
       });
       return entriesMiniAPP;
     } else {
@@ -56,7 +56,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           },
         },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
       });
       return entriesMiniAPP;
     }
