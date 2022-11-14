@@ -22,7 +22,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
   const myExtraRoutes = [
     {
       method: 'GET',
-      path: '/wp-localization-ios-content/key',
+      path: '/wp-localization-ios-contents/key/:key',
       handler: 'wp-localization-ios-content.findKey',
       config: {
         policies: [],
