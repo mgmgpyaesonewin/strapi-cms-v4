@@ -52,4 +52,3 @@ module.exports = createCoreController('api::config-region.config-region', ({ str
         return regions;
     }
 }));
-

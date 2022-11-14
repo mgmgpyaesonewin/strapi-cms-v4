@@ -1,16 +1,21 @@
-'use strict';
+"use strict";
 
 /**
- * wp-occupation-list service.
+ * wp-occupation-list service
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+const { createCoreService } = require("@strapi/strapi").factories;
 
-module.exports = createCoreService('api::wp-occupation-list.wp-occupation-list', ({ strapi }) => ({
+module.exports = createCoreService(
+  "api::wp-occupation-list.wp-occupation-list",
+  ({ strapi }) => ({
     async find(ctx) {
-        return await strapi.entityService.findMany('api::wp-occupation-list.wp-occupation-list', {
-            publicationState: 'live',
-        });
-    }
-
-}));
+      return await strapi.entityService.findMany(
+        "api::wp-occupation-list.wp-occupation-list",
+        {
+          publicationState: "live",
+        }
+      );
+    },
+  })
+);

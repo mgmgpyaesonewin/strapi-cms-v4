@@ -59,4 +59,3 @@ const myExtraRoutes = [
 ];
 
 module.exports = customRouter(defaultRouter, myExtraRoutes);
-

@@ -73,4 +73,3 @@ module.exports = createCoreService('api::config-city-district.config-city-distri
     },
 }));
 
-

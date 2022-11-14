@@ -23,4 +23,3 @@ module.exports = createCoreController('api::config-nrc.config-nrc', ({ strapi })
 
 
 }));
-

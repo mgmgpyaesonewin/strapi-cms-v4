@@ -4,8 +4,7 @@
   "info": {
     "singularName": "config-city-district",
     "pluralName": "config-city-districts",
-    "displayName": "Config City/District",
-    "description": ""
+    "displayName": "Config City/District"
   },
   "options": {
     "draftAndPublish": true

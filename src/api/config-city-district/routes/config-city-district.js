@@ -20,7 +20,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
     };
   };
   const myExtraRoutes = [
-   
+
     {
       method: 'GET',
       path: '/config-city-district/findByCode/:name',
@@ -31,7 +31,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
       },
     },
   ];
-  
+
   module.exports = customRouter(defaultRouter, myExtraRoutes);
-  
-  
+
+

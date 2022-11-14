@@ -10,6 +10,6 @@ module.exports = createCoreController('api::config-township.config-township', ({
     async find(ctx) {
       return  await strapi.service('api::config-township.config-township').find(ctx);
     }
-  
+
   }));
-  
+

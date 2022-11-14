@@ -54,9 +54,10 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
         // App-version-URLs
         /* find app url value by model*/
         const appURL = await strapi.service('api::strapi-model.strapi-model').findByModel(model);
-        
+
         let app = '';
         const pushNotiVersion = [];
+        const urlArr = appURL.app_urls.map(x => x.url);
         if (appURL) {
           for (const data of appURL.app_urls) {
             app = data.app ? data.app.name : '';
@@ -90,6 +91,10 @@ module.exports = createCoreController('api::api-version-history.api-version-hist
           };
         }
         /*firebase notification */
+
+        /* actionable message */
+        sendActionableMessage(urlArr, model, ctx);
+        /* actionable message */
       }
     }
   });
@@ -112,8 +117,21 @@ function sendNotificationToWp(topics) {
     }
   }).then(function (response) {
     console.log(response.data, topics);
-  })
-    .catch(function (error) {
+  }).catch(function (error) {
       console.log(error);
-    });
+  });
+}
+
+function sendActionableMessage(urlArr, model, ctx) {
+  const webhookURL = process.env.MS_WEBHOOK_URL;
+  let text = JSON.stringify(ctx.request.body);
+  axios.post(webhookURL, {
+    "themeColor": "0072C6",
+    "title": "Content Updated",
+    "text": `**Model** - ${model} <br> **URL** - ${urlArr} <br>**data** - ${text}`,
+  }).then(function (response) {
+    console.log(response.data);
+  }).catch(function (error) {
+      console.log(error);
+  });
 }

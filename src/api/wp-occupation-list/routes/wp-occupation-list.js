@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * wp-occupation-list router.
+ * wp-occupation-list router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
