@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "wp_notifications",
+  "info": {
+    "singularName": "wp-notification",
+    "pluralName": "wp-notifications",
+    "displayName": "WP Notification"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reject": {
+      "type": "json",
+      "required": true
+    },
+    "approve": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
