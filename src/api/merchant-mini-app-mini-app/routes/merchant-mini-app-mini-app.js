@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * merchant-mini-app-mini-app router.
+ * merchant-mini-app-mini-app router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
