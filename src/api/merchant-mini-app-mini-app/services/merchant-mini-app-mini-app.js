@@ -37,7 +37,7 @@ module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-min
             ],
           },
           orderBy: {position: 'asc'},
-          select: ['id', 'include_header', 'position', 'tag','is_login','screen_orientation','mini_app_type','color']
+          select: ['id', 'include_header', 'position', 'tag','is_login','screen_orientation','mini_app_type','color','display']
         });
     
         return entriesMiniAPP;
@@ -62,7 +62,7 @@ module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-min
             },
           },
           orderBy: {position: 'asc'},
-          select: ['id', 'include_header', 'position', 'tag','is_login','screen_orientation','mini_app_type','color']
+          select: ['id', 'include_header', 'position', 'tag','is_login','screen_orientation','mini_app_type','color','display']
         });
     
         return entriesMiniAPP;
