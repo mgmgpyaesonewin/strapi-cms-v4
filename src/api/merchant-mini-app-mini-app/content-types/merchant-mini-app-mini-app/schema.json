@@ -91,6 +91,18 @@
       "relation": "manyToOne",
       "target": "api::merchant-mini-app-category.merchant-mini-app-category",
       "inversedBy": "merchant_mini_apps"
+    },
+    "merchant_app_version_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchant-app-version-list.merchant-app-version-list"
+    },
+    "display": {
+      "type": "enumeration",
+      "enum": [
+        "fullscreen",
+        "native"
+      ]
     }
   }
 }
