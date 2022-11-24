@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wp-notification",
     "pluralName": "wp-notifications",
-    "displayName": "WP Notification"
+    "displayName": "WP Notification",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,11 @@
       "type": "json",
       "required": true
     },
-    "approve": {
+    "level2_success": {
+      "type": "json",
+      "required": true
+    },
+    "level2_missing_success": {
       "type": "json",
       "required": true
     }

@@ -15,7 +15,7 @@ module.exports = createCoreService('api::wp-notification.wp-notification',({ str
                     $notNull: true,
                 },
             },
-            select:['reject','approve']
+            select:['reject','level2_success','level2_missing_success']
         });
     }
 
