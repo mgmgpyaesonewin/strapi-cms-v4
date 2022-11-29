@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_feature_toggles",
+  "info": {
+    "singularName": "wp-feature-toggle",
+    "pluralName": "wp-feature-toggles",
+    "displayName": "WP Feature Toggle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "value": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
