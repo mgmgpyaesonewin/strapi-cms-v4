@@ -25,7 +25,7 @@ module.exports = createCoreService('api::wp-dynamic-list.wp-dynamic-list', ({ st
                 },
             },
             select:[
-                ['poi_types']
+                ['poi_types','occupations']
             ]
         });
     }

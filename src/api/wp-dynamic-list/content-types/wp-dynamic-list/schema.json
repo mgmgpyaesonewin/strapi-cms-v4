@@ -26,6 +26,9 @@
     },
     "poi_types": {
       "type": "json"
+    },
+    "occupations": {
+      "type": "json"
     }
   }
 }
