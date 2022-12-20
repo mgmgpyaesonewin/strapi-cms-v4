@@ -23,13 +23,14 @@
         "dob",
         "father_name",
         "gender",
-        "primary_poi [images field]",
-        "secondary_poi [image field]",
+        "primary_poi",
+        "secondary_poi",
         "poi_number",
         "occupation",
         "email",
         "live_photo",
-        "address"
+        "address",
+        "N/A"
       ],
       "required": true
     }
