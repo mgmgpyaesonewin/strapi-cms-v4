@@ -26,6 +26,9 @@
     },
     "poi_types": {
       "type": "json"
+    },
+    "other_poi_types": {
+      "type": "json"
     }
   }
 }
