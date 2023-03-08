@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_merchant_image_with_resolutions",
+  "info": {
+    "displayName": "Image with Resolutions",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "displayName": "Story Image",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.story-image",
+      "required": true
+    },
+    "my": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.story-image",
+      "required": true
+    }
+  }
+}
