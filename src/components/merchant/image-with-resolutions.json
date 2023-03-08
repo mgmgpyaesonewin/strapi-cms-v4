@@ -2,48 +2,22 @@
   "collectionName": "components_merchant_image_with_resolutions",
   "info": {
     "displayName": "Image with Resolutions",
-    "icon": "atlas"
+    "icon": "image",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "extra_large": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
+    "en": {
+      "displayName": "Story Image",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.story-image",
       "required": true
     },
-    "large": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "mid": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "small": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "extra_small": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
+    "my": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.story-image",
       "required": true
     }
   }

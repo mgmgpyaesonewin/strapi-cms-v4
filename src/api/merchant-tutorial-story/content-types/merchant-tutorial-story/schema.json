@@ -35,6 +35,12 @@
         "images"
       ]
     },
+    "stories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.image-with-resolutions",
+      "required": true
+    },
     "position": {
       "type": "biginteger",
       "required": true
@@ -48,13 +54,6 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.button-option-tutorial-story"
-    },
-    "stories": {
-      "displayName": "stories",
-      "type": "component",
-      "repeatable": true,
-      "component": "merchant.stories",
-      "required": true
     }
   }
 }
