@@ -107,6 +107,10 @@
         "fullscreen",
         "native"
       ]
+    },
+    "kyc_level_check": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
