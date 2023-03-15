@@ -56,7 +56,8 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
       promotion_code: promotion.promotion_code,
       is_external: promotion.is_external,
       external_deeplink: promotion.external_deeplink,
-      promotion_details: promotion.promotion_details
+      promotion_details: promotion.promotion_details,
+      kyc_level_check:promotion.kyc_level_check
     };
     return {status, responseMap};
   }
@@ -81,7 +82,8 @@ function responseMapping(promotionEntries) {
       "promotion_code": value.promotion_code,
       "is_external": value.is_external,
       "external_deeplink": value.external_deeplink,
-      "promotion_details": value.promotion_details
+      "promotion_details": value.promotion_details,
+      "kyc_level_check":value.kyc_level_check
     });
   });
   return mapping;
