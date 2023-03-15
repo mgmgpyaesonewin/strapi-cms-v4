@@ -69,6 +69,11 @@
     "promotion_details": {
       "type": "text",
       "required": false
+    },
+    "kyc_level_check": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
