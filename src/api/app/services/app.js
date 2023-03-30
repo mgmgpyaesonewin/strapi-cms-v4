@@ -10,23 +10,19 @@ module.exports = createCoreService('api::app.app', ({ strapi }) => ({
     async find(ctx) {
         const entriesMiniAPP = await strapi.db.query('api::app.app').findMany({
             populate: {
-
-                ["app_versions"]: {
-                    select: ["version_name"],
+                ["app_urls"]: {
+                    select: ["url"],
                     populate: {
-                        url: true,
+                        model: true,
                     },
                 },
-
             },
             where: {
                 publishedAt: {
                     $notNull: true,
                 },
             },
-
         });
-
         return entriesMiniAPP;
     }
 }));

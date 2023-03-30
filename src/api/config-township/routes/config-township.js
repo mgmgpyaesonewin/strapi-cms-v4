@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-township router
+ * config-township router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;

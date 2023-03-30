@@ -4,7 +4,8 @@
   "info": {
     "singularName": "config-township",
     "pluralName": "config-townships",
-    "displayName": "Config Township"
+    "displayName": "Config Township",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

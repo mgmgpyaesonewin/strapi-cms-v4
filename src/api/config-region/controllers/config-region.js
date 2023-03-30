@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-region controller
+ *  config-region controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;

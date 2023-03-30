@@ -1,5 +1,4 @@
 const axios = require('axios');
-
 const sendActionableMessage = (model, message) => {
   const webhookURL = process.env.MS_WEBHOOK_URL;
   let text = JSON.stringify(message);

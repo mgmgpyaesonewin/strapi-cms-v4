@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_app_version_lists",
+  "info": {
+    "singularName": "merchant-app-version-list",
+    "pluralName": "merchant-app-version-lists",
+    "displayName": "Merchant AppVersion List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version_name": {
+      "type": "string",
+      "required": true
+    },
+    "version_code": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    }
+  }
+}

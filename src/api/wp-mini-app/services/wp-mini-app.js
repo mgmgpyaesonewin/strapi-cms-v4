@@ -35,7 +35,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           ],
         },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display','kyc_level_check']
       });
       return entriesMiniAPP;
     } else {
@@ -56,7 +56,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           },
         },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display','kyc_level_check']
       });
       return entriesMiniAPP;
     }

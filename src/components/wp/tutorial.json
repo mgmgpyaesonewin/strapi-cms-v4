@@ -12,7 +12,7 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "image": {
+    "image_en": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -27,6 +27,14 @@
     },
     "indicatorColor": {
       "type": "text",
+      "required": true
+    },
+    "image_my": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }
