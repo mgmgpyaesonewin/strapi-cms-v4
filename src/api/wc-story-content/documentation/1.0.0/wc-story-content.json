@@ -80,7 +80,7 @@
         {
           "name": "pagination[withCount]",
           "in": "query",
-          "description": "Retun page/pageSize (default: true)",
+          "description": "Return page/pageSize (default: true)",
           "deprecated": false,
           "required": false,
           "schema": {
@@ -141,6 +141,27 @@
           "name": "populate",
           "in": "query",
           "description": "Relations to return",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "filters",
+          "in": "query",
+          "description": "Filters to apply",
+          "deprecated": false,
+          "required": false,
+          "schema": {
+            "type": "object"
+          },
+          "style": "deepObject"
+        },
+        {
+          "name": "locale",
+          "in": "query",
+          "description": "Locale to apply",
           "deprecated": false,
           "required": false,
           "schema": {
@@ -305,7 +326,7 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -385,7 +406,7 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
@@ -476,11 +497,93 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "string"
+            "type": "number"
           }
         }
       ],
       "operationId": "delete/wc-story-contents/{id}"
+    }
+  },
+  "/wc-story-contents/name/{name}": {
+    "get": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WcStoryContentResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Wc-story-content"
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "get/wc-story-contents/name/{name}"
     }
   }
 }
