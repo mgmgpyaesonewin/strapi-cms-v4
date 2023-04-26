@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-township service.
+ * config-township service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
@@ -40,6 +40,16 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
           }
         ],
       },
+      orderBy: [
+        {
+          city_district: {
+            code: 'asc',
+          },
+        },
+        {
+          name: 'asc',
+        }
+      ],
       select: ['name', 'code']
     });
   },
@@ -58,5 +68,3 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
     });
   }
 }));
-
-
