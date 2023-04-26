@@ -22,13 +22,22 @@ module.exports = createCoreService('api::config-city-district.config-city-distri
                     },
                     select: ['name', 'code']
                 }
-
             },
             where: {
                 publishedAt: {
                     $notNull: true,
                 }
             },
+            orderBy: [
+                {
+                    region: {
+                        code: 'asc',
+                    },
+                },
+                {
+                    name: 'asc',
+                }
+            ],
             select: ['name', 'code']
         });
 
@@ -36,7 +45,6 @@ module.exports = createCoreService('api::config-city-district.config-city-distri
     async findByService(ctx) {
         return await strapi.entityService.findMany('api::config-city-district.config-city-district', {
             populate: ['region', 'title'],
-            //populate: 'deep',
             publicationState: 'live',
             filters: {
                 $and: [
