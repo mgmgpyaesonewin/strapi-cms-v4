@@ -19,6 +19,20 @@ module.exports = createCoreService('api::merchant-localization-content.merchant-
             },
             select: ['key', 'type']
         });
-    }
+    },
+    async findByKey(key) {
+        return await strapi.db.query('api::merchant-localization-content.merchant-localization-content').findOne({
+            where: {
+                key: {
+                    $eq: key,
+                },
+            },
+            populate: {
+                value: true,
+            },
+            select: ['type', 'key']
+        });
+
+    },
 
 }));
