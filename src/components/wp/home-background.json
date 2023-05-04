@@ -21,9 +21,6 @@
         "videos",
         "audios"
       ]
-    },
-    "aspect_ratio": {
-      "type": "string"
     }
   }
 }
