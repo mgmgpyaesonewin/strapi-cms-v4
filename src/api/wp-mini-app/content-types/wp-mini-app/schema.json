@@ -117,11 +117,6 @@
       "default": false,
       "required": true
     },
-    "wp_mini_app_category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wp-mini-app-category.wp-mini-app-category"
-    },
     "wp_home_widget": {
       "type": "relation",
       "relation": "oneToOne",
