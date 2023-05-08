@@ -10,7 +10,7 @@ module.exports = createCoreController('api::wp-home-widget.wp-home-widget', ({ s
     async find(ctx) {
         const widgets = await strapi.service('api::wp-home-widget.wp-home-widget').find(ctx);
         return {
-            "data": widgets
+            "home_widgets": widgets
         };
     },
 
