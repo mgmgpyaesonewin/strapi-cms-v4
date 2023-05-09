@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wp-home-widget",
     "pluralName": "wp-home-widgets",
-    "displayName": "WP Home Widget "
+    "displayName": "WP Home Widget ",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -48,7 +49,8 @@
       "enum": [
         "mini_app",
         "promotion",
-        "generic"
+        "recent_activity",
+        "header"
       ],
       "required": true
     }
