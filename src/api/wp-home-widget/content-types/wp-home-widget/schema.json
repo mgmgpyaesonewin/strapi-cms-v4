@@ -26,12 +26,12 @@
       "default": true,
       "required": true
     },
-    "is_vertical_scroll": {
+    "is_horizontal_scroll": {
       "type": "boolean",
       "default": false,
       "required": true
     },
-    "theme_color": {
+    "text_color": {
       "type": "string",
       "required": true
     },

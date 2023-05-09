@@ -19,7 +19,7 @@ module.exports = createCoreService('api::wp-home-widget.wp-home-widget', ({ stra
                 },
                 title:true,
             },
-            select: ['id', 'is_hide','is_vertical_scroll','type', 'position', 'theme_color'],
+            select: ['id', 'is_hide','is_horizontal_scroll','type', 'position', 'text_color'],
             where: {
                 publishedAt: {
                     $notNull: true,
