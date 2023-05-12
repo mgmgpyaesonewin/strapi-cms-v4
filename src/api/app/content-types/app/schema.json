@@ -21,6 +21,9 @@
       "relation": "oneToMany",
       "target": "api::app-url.app-url",
       "mappedBy": "app"
+    },
+    "token": {
+      "type": "text"
     }
   }
 }

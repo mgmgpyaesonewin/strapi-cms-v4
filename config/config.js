@@ -1,101 +1,19 @@
-module.exports = {
-  models: {
-    /* general */
-  
-    /* merchant */
-    "merchant-on-boarding": {
-      url: ["/merchant-core-config"],
-      app: "merchant",
+module.exports = ({ env }) => ({
+  app: {
+    "merchant": {
+      client_id:env('MERCHANT_CLIENT_ID', 'key'),
+      client_secret: env('MERCHANT_CLIENT_SECRET', 'value'),
+      secret_key:env('MERCHANT_SECRET_KEY', 'f6298a18c678e5e683f407169c59e721ff6bd33b1995d74e78039f4fca0b8044'),
     },
-    "merchant-onboarding-page": {
-      url: ["/merchant-core-config"],
-      app: "merchant",
+    "wp": {
+      client_id:env('WP_CLIENT_ID', 'key'),
+      client_secret: env('WP_CLIENT_SECRET', 'value'),
+      secret_key:env('WP_SECRET_KEY', 'f6298a18c678e5e683f407169c59e721ff6bd33b1995d74e78039f4fca0b8044'),
     },
-    "merchant-core-config": {
-      url: ["/merchant-core-config"],
-      app: "merchant",
+    "wc": {
+      client_id:env('WC_CLIENT_ID', 'key'),
+      client_secret: env('WC_CLIENT_SECRET', 'value'),
+      secret_key:env('WC_SECRET_KEY', 'f6298a18c678e5e683f407169c59e721ff6bd33b1995d74e78039f4fca0b8044'),
     },
-    "merchant-login": {
-      url: ["/merchant-core-config"],
-      app: "merchant",
-    },
-    "merchant-home":{
-      url: ["/merchant-home"],
-      app: "merchant"
-    },
-    "merchant-deeplink": {
-      url: ["/merchant-home","/merchant-tutorial-stories"],
-      app: "merchant",
-    },
-    "merchant-tutorial-story":{
-      url: ["/merchant-home","/merchant-tutorial-stories"],
-      app: "merchant",
-    },
-    "merchant-term-and-condition-version":{
-      url:["/merchant-term-and-condition-content","/merchant-term-and-condition-versions"],
-      app: "merchant",
-    },
-    "merchant-term-and-condition-content":{
-      url:["/merchant-term-and-condition-content"],
-      app: "merchant",
-    },
-    /* Wave Pay */
-    "deeplink": {
-      url: ["/wp-mini-app-categories","/wp-tutorial-lists","/wp-tutorial-stories"],
-      app: "wp",
-    },
-    "wp-mini-app": {
-      url: ["/wp-mini-app-categories"],
-      app: "wp",
-    },
-    "wp-mini-app-category": {
-      url: ["/wp-mini-app-categories"],
-      app: "wp",
-    },
-    "wp-category": {
-      url: ["/wp-categories","/wp-promotions"],
-      app: "wp"
-    },
-    "wp-promotion": {
-      url: ["/wp-promotions"],
-      app: "wp"
-    },
-
-    "wp-tutorial-list": {
-      url: ["/wp-tutorial-lists"],
-      app: "wp"
-    },
-
-    "wp-subcategories-tutorial": {
-      url: ["/wp-tutorial-lists"],
-      app: "wp"
-    },
-    "wp-tutorial": {
-      url: ["/wp-tutorial-lists", "/wp-tutorials"],
-      app: "wp"
-    },
-    "wp-tutorial-story-list": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","/wp-tutorial-story-lists"],
-      app: "wp"
-    },
-
-    "wp-tutorial-story": {
-      url: ["/wp-tutorial-stories", "/wp-tutorial-lists","/wp-tutorial-story-lists"],
-      app: "wp"
-    },
-    "wp-term-and-condition": {
-      url: ["/wp-term-and-conditions"],
-      app: "wp"
-    },
-    "wp-term-and-condition-version":{
-      url: ["/wp-mobile-app-versions","/wp-term-and-conditions"],
-      app: "wp"
-    },
-    /* Wave Chanel  EKYC */
-    "wc-localization-content":{
-      url: ["/wc-localization-contents"],
-      app: "wc"
-    }
-
   },
-};
+});
