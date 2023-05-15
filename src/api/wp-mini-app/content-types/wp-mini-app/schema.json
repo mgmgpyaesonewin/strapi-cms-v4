@@ -77,11 +77,9 @@
     "mini_app_type": {
       "type": "enumeration",
       "enum": [
-        "popular",
-        "core",
-        "service"
+        "popular"
       ],
-      "required": true
+      "required": false
     },
     "color": {
       "type": "string",

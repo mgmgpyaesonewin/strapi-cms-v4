@@ -14,6 +14,8 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
     categories.map(category => {
       category.icon = !!category.icon ? category.icon.url : '';
       category.color =category.color == null ? '#000000' :category.color;
+      category.widget_id =!!category.wp_home_widget ? category.wp_home_widget.id : null;
+      delete category.wp_home_widget;
 
     });
     /* mini app */
@@ -25,9 +27,9 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
         miniApp.category_name = !!miniApp.mini_app_category ? miniApp.mini_app_category.name : '';
         miniApp.color = miniApp.color == null ? '#000000' :miniApp.color;
         miniApp.icon = !! miniApp.icon ? miniApp.icon.url :'';
+        miniApp.widget_id = !!miniApp.wp_home_widget ? miniApp.wp_home_widget.id : null;
         paths.map(path => {
           path.value = path.value_injector === "static" ? path.value : null;
-
         });
         delete miniApp.mini_app_category;
       });
