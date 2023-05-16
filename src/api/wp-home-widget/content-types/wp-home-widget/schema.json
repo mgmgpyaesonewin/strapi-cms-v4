@@ -21,7 +21,7 @@
       "repeatable": false,
       "component": "wp.default-label"
     },
-    "is_hide": {
+    "show_title": {
       "type": "boolean",
       "default": true,
       "required": true
