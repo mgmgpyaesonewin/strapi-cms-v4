@@ -74,13 +74,6 @@
       ],
       "required": false
     },
-    "mini_app_type": {
-      "type": "enumeration",
-      "enum": [
-        "popular"
-      ],
-      "required": false
-    },
     "color": {
       "type": "string",
       "required": true,
@@ -119,6 +112,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::wp-home-widget.wp-home-widget"
+    },
+    "mini_app_type": {
+      "type": "enumeration",
+      "enum": [
+        "popular"
+      ]
     }
   }
 }
