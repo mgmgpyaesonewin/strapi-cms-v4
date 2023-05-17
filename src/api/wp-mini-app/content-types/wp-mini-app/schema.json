@@ -74,15 +74,6 @@
       ],
       "required": false
     },
-    "mini_app_type": {
-      "type": "enumeration",
-      "enum": [
-        "popular",
-        "core",
-        "service"
-      ],
-      "required": true
-    },
     "color": {
       "type": "string",
       "required": true,
@@ -111,6 +102,22 @@
     "kyc_level_check": {
       "type": "boolean",
       "default": false
+    },
+    "is_service": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "wp_home_widget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-home-widget.wp-home-widget"
+    },
+    "mini_app_type": {
+      "type": "enumeration",
+      "enum": [
+        "popular"
+      ]
     }
   }
 }

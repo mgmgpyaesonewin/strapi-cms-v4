@@ -49,19 +49,26 @@
       "default": "category",
       "required": true
     },
-    "mini_app_category_type": {
-      "type": "enumeration",
-      "enum": [
-        "popular",
-        "core",
-        "service"
-      ],
-      "required": true
-    },
     "color": {
       "type": "string",
       "required": true,
       "default": "#00000"
+    },
+    "is_service": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "wp_home_widget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-home-widget.wp-home-widget"
+    },
+    "mini_app_category_type": {
+      "type": "enumeration",
+      "enum": [
+        "popular"
+      ]
     }
   }
 }
