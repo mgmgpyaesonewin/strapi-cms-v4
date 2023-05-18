@@ -57,7 +57,7 @@ module.exports = (config, { strapi }) => {
         if (visitedRoutes.includes(route)) {
           const entry = {
             contentType: getContentType(visitedRoutes),
-            action: getActionType(ctx.request.method, visitedRoutes, ctx.state.user.username),
+            action: getActionType(ctx.request.method, visitedRoutes, ctx.state.user.firstname),
             statusCode: ctx.response.status,
             author: {
               id: ctx.state.user.id, email: ctx.state.user.email, ip: ctx.request.ip,
@@ -68,16 +68,15 @@ module.exports = (config, { strapi }) => {
             request: ctx.request.body,
             content: ctx.request.body,
           };
-
           // isAudtiTrailCollection
           if (checkModel("trail", ctx)) {
-            if (entry.action !== `${ctx.state.user.username} - view content`) {
+            if (entry.action !== `${ctx.state.user.firstname } - view content`) {
               const removePwd = JSON.stringify(entry, removePasswords);
               const auditLog = JSON.parse(removePwd);
               await strapi.service('api::trail.trail').create(auditLog);
               if (entry.action !== 'Other Activities') {
                 /* actionable message */
-                 sendActionableMessage(entry);
+                sendActionableMessage(entry);
                 /* actionable message */
               }
             }
