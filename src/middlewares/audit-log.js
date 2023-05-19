@@ -90,9 +90,9 @@ module.exports = (config, { strapi }) => {
 const sendActionableMessage = async (entry) => {
   try {
     const webhookURL = process.env.MS_WEBHOOK_AUDIT_LOG_URL;
-    let content = JSON.stringify(entry.content).length > 18000 ? JSON.stringify(entry.content).substring(0, 3000) + '...' : JSON.stringify(entry.content);
-    let author = JSON.stringify(entry.author);
-    let param = JSON.stringify(entry.params);
+    const content = JSON.stringify(entry.content).length > 18000 ? JSON.stringify(entry.content).substring(0, 3000) + '...' : JSON.stringify(entry.content);
+    const author = JSON.stringify(entry.author);
+    const param = JSON.stringify(entry.params);
     const resp = await axios.post(webhookURL, {
       "themeColor": "0072C6",
       "title": entry.action,
@@ -100,6 +100,6 @@ const sendActionableMessage = async (entry) => {
     });
     console.log(resp.data);
   } catch (err) {
-    console.warm(err);
+    console.warn(err);
   }
 };
