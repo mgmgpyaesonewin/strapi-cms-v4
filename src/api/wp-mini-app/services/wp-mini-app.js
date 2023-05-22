@@ -64,9 +64,18 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           },
         },
         where: {
-          publishedAt: {
-            $notNull: true,
-          },
+          $and: [
+            {
+              wp_app_version_lists: {
+                version_code: 'mini_app_v1',
+              },
+            },
+            {
+              publishedAt: {
+                $notNull: true,
+              },
+            },
+          ],
         },
         orderBy: { position: 'asc' },
         select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display',"is_service"]
