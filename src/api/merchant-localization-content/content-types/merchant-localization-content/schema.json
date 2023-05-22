@@ -4,7 +4,8 @@
   "info": {
     "singularName": "merchant-localization-content",
     "pluralName": "merchant-localization-contents",
-    "displayName": "Merchant Localization Content"
+    "displayName": "Merchant Localization Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -31,6 +32,11 @@
       "repeatable": false,
       "component": "merchant.translation",
       "required": true
+    },
+    "merchant_feature": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-feature.merchant-feature"
     }
   }
 }
