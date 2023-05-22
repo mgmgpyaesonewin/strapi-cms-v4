@@ -11,6 +11,9 @@ module.exports = createCoreService('api::merchant-localization-content.merchant-
         return await strapi.db.query('api::merchant-localization-content.merchant-localization-content').findMany({
             populate: {
                 value: true,
+                ["merchant_feature"]: {
+                    select: ["id", "feature"],
+                },
             },
             where: {
                 publishedAt: {
