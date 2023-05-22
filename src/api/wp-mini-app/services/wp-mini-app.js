@@ -31,6 +31,13 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
               },
             },
             {
+              mini_app_category:{
+                publishedAt: {
+                  $notNull: true,
+                },
+              }
+            },
+            {
               publishedAt: {
                 $notNull: true,
               },
