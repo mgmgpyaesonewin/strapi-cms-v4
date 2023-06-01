@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchant_mini_app_mini_apps",
+  "info": {
+    "singularName": "merchant-mini-app-mini-app",
+    "pluralName": "merchant-mini-app-mini-apps",
+    "displayName": "Merchant MiniApp MiniApp",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation",
+      "required": true
+    },
+    "position": {
+      "type": "biginteger"
+    },
+    "include_header": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "paths": {
+      "displayName": "MiniApp-paths",
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.mini-app-paths"
+    },
+    "parameters": {
+      "displayName": "MiniApp-parameters",
+      "type": "component",
+      "repeatable": true,
+      "component": "merchant.mini-app-parameters"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "mini_app"
+      ],
+      "default": "mini_app",
+      "required": true
+    },
+    "screen_orientation": {
+      "type": "enumeration",
+      "enum": [
+        "portrait",
+        "landscape",
+        "neutral"
+      ]
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "is_login": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "mini_app_type": {
+      "type": "enumeration",
+      "enum": [
+        "popular",
+        "core",
+        "service"
+      ],
+      "required": true
+    },
+    "merchant_deeplink": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::merchant-deeplink.merchant-deeplink",
+      "inversedBy": "merchant_mini_app_mini_apps"
+    },
+    "merchant_mini_app_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::merchant-mini-app-category.merchant-mini-app-category",
+      "inversedBy": "merchant_mini_apps"
+    }
+  }
+}
+
