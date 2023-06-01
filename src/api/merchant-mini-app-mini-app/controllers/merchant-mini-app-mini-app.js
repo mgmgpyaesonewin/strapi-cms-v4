@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- *  merchant-mini-app-mini-app controller
+ *  merchant-mini-app-mini-app controller.
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;

@@ -6,30 +6,29 @@
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-mini-app-mini-app', ({strapi}) => ({
-    async find(ctx) {
-      const entriesMiniAPP = await strapi.db.query('api::merchant-mini-app-mini-app.merchant-mini-app-mini-app').findMany({
-        populate: {
-          title: true,
-          ["icon"]:{
-            select:['url']
-          },
-          ["merchant_deeplink"]: {
-            select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url","client_id"],
-          },
-          paths: true,
-          parameters: true,
-          merchant_mini_app_category: true,
+module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-mini-app-mini-app', ({ strapi }) => ({
+  async find(ctx) {
+    const entriesMiniAPP = await strapi.db.query('api::merchant-mini-app-mini-app.merchant-mini-app-mini-app').findMany({
+      populate: {
+        title: true,
+        ["icon"]: {
+          select: ['url']
         },
-        where: {
-          publishedAt: {
-            $notNull: true,
-          },
+        ["merchant_deeplink"]: {
+          select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "client_id"],
         },
-        orderBy: {position: 'asc'},
-        select: ['id', 'include_header', 'position', 'tag','is_login','screen_orientation','mini_app_type','color']
-      });
-  
-      return entriesMiniAPP;
-    }
-  }));
+        paths: true,
+        parameters: true,
+        merchant_mini_app_category: true,
+      },
+      where: {
+        publishedAt: {
+          $notNull: true,
+        },
+      },
+      orderBy: { position: 'asc' },
+      select: ['id', 'include_header', 'position', 'tag', 'is_login', 'screen_orientation', 'mini_app_type', 'color']
+    });
+    return entriesMiniAPP;
+  }
+}));
