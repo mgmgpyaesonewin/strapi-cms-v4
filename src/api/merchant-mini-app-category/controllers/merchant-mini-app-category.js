@@ -13,6 +13,7 @@ module.exports = createCoreController('api::merchant-mini-app-category.merchant-
       categories.map(category => {
         category.icon = !!category.icon ? category.icon.url : '';
     });
+    
     /* mini app */
       const miniApps = await strapi.service('api::merchant-mini-app-mini-app.merchant-mini-app-mini-app').find(ctx);
       if (miniApps.length > 0) {
