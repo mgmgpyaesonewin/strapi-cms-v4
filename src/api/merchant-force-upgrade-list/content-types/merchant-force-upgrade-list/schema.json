@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_force_upgrade_lists",
+  "info": {
+    "singularName": "merchant-force-upgrade-list",
+    "pluralName": "merchant-force-upgrade-lists",
+    "displayName": "Merchant ForceUpgrade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "iOS": {
+      "displayName": "forceupgrade-ios",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.forceupgrade-ios",
+      "required": true
+    },
+    "Android": {
+      "displayName": "forceUpgrade- Android",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.force-upgrade-android",
+      "required": true
+    }
+  }
+}

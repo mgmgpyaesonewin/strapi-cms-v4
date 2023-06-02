@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_merchant_force_upgrade_androids",
+  "info": {
+    "displayName": "forceUpgrade- Android",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "forcedUpgrade": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.forced-upgrade",
+      "required": true
+    },
+    "softUpgrade": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.forced-upgrade",
+      "required": true
+    },
+    "version_info": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::merchant-version-info-android.merchant-version-info-android"
+    }
+  }
+}
