@@ -22,8 +22,8 @@ const customRouter = (innerRouter, extraRoutes = []) => {
 const myExtraRoutes = [
     {
         method: 'GET',
-        path: '/wp-features/feature/:feature',
-        handler: 'wp-feature.findFeature',
+        path: '/merchant-features/feature/:feature',
+        handler: 'merchant-feature.findFeature',
         config: {
             policies: [],
             middlewares: [],
