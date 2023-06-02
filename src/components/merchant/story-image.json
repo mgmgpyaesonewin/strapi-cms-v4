@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_merchant_story_images",
+  "info": {
+    "displayName": "Story Image",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
