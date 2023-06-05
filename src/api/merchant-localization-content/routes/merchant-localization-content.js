@@ -22,7 +22,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
   const myExtraRoutes = [
     {
       method: 'GET',
-      path: '/merchant-localization-content/key/:key',
+      path: '/merchant-localization-contents/key/:key',
       handler: 'merchant-localization-content.findKey',
       config: {
         policies: [],
