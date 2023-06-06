@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "wc_configs",
+  "info": {
+    "singularName": "wc-config",
+    "pluralName": "wc-configs",
+    "displayName": "WC Config"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "app_config": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
