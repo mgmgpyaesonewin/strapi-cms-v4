@@ -32,6 +32,7 @@ module.exports = createCoreController('api::wp-mini-app-category.wp-mini-app-cat
           path.value = path.value_injector === "static" ? path.value : null;
         });
         delete miniApp.mini_app_category;
+        delete miniApp.wp_home_widget;
       });
     }
     return {
