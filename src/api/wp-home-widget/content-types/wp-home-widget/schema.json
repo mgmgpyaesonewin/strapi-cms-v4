@@ -38,7 +38,8 @@
     "background": {
       "type": "component",
       "repeatable": false,
-      "component": "wp.home-background"
+      "component": "wp.home-background",
+      "required": true
     },
     "position": {
       "type": "biginteger",
