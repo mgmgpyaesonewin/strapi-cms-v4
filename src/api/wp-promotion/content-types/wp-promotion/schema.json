@@ -74,6 +74,9 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "new_action_link_android": {
+      "type": "text"
     }
   }
 }
