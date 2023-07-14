@@ -116,7 +116,8 @@
     "mini_app_type": {
       "type": "enumeration",
       "enum": [
-        "popular"
+        "popular",
+        "service"
       ]
     }
   }
