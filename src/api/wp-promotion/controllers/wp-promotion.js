@@ -12,7 +12,6 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
   async find(ctx) {
     let status = "Success";
     let types = ['NORMAL', 'SPECIAL'];
-
     let promotionType = ctx.query.promotionType;
     const promotions = await strapi.service('api::wp-promotion.wp-promotion').find(ctx);
     var finalData;
@@ -23,7 +22,7 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     } else {
       finalData = promotions;
     }
-    let responseMap = responseMapping(finalData);
+    let responseMap = responseMapping(finalData,ctx.request.header);
     return {status, responseMap};
   },
 
@@ -31,12 +30,12 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
     let status = "Success";
     let {id} = ctx.params;
     const promotions = await strapi.service('api::wp-promotion.wp-promotion').filterByCategoryID(id);
-    let responseMap = responseMapping(promotions);
+    let responseMap = responseMapping(promotions,ctx.request.header);
     return {status, responseMap};
   },
 
 
-  async findOne(ctx) {
+  async findOne(ctx,requestHeader) {
     let status = "Success";
     const {id} = ctx.params;
     const {query} = ctx;
@@ -50,13 +49,14 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
       category_title: !promotion.wp_category ? '' : promotion.wp_category.category_title,
       hasDetails: promotion.hasDetails,
       action_link_ios: promotion.action_link_ios,
-      action_link_android: promotion.action_link_android,
+      action_link_android:  ctx.request.header.versioncode ? promotion.new_action_link_android :promotion.action_link_android , 
       promotion_title: promotion.promotion_title,
       position: promotion.position,
       promotion_code: promotion.promotion_code,
       is_external: promotion.is_external,
       external_deeplink: promotion.external_deeplink,
-      promotion_details: promotion.promotion_details
+      promotion_details: promotion.promotion_details,
+      kyc_level_check:promotion.kyc_level_check
     };
     return {status, responseMap};
   }
@@ -64,7 +64,7 @@ module.exports = createCoreController('api::wp-promotion.wp-promotion', ({strapi
 
 }));
 
-function responseMapping(promotionEntries) {
+function responseMapping(promotionEntries,requestHeader) {
   let mapping = [];
   promotionEntries.map((value, index) => {
     mapping.push({
@@ -76,12 +76,13 @@ function responseMapping(promotionEntries) {
       "category_title": !value.wp_category ? '' : value.wp_category.category_title,
       "hasDetails": value.hasDetails,
       "action_link_ios": value.action_link_ios,
-      "action_link_android": value.action_link_android,
+      "action_link_android": requestHeader.versioncode ? value.new_action_link_android : value.action_link_android,
       "position": value.position,
       "promotion_code": value.promotion_code,
       "is_external": value.is_external,
       "external_deeplink": value.external_deeplink,
-      "promotion_details": value.promotion_details
+      "promotion_details": value.promotion_details,
+      "kyc_level_check":value.kyc_level_check
     });
   });
   return mapping;

@@ -26,6 +26,15 @@
     },
     "poi_types": {
       "type": "json"
+    },
+    "occupations": {
+      "type": "json"
+    },
+    "other_poi_types": {
+      "type": "json"
+    },
+    "qr_denomination": {
+      "type": "json"
     }
   }
 }

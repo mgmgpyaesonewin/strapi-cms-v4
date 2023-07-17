@@ -38,7 +38,7 @@
     "stories": {
       "type": "component",
       "repeatable": true,
-      "component": "wp.stories",
+      "component": "merchant.image-with-resolutions",
       "required": true
     },
     "position": {

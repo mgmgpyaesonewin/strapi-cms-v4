@@ -19,6 +19,9 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           paths: true,
           parameters: true,
           mini_app_category: true,
+          ['wp_home_widget']: {
+            select: ["id","name"],
+          },
         },
         where: {
           $and: [
@@ -28,6 +31,13 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
               },
             },
             {
+              mini_app_category:{
+                publishedAt: {
+                  $notNull: true,
+                },
+              }
+            },
+            {
               publishedAt: {
                 $notNull: true,
               },
@@ -35,7 +45,7 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           ],
         },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display','kyc_level_check','is_service']
       });
       return entriesMiniAPP;
     } else {
@@ -49,14 +59,26 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           paths: true,
           parameters: true,
           mini_app_category: true,
-        },
-        where: {
-          publishedAt: {
-            $notNull: true,
+          ['wp_home_widget']: {
+            select: ["id","name"],
           },
         },
+        where: {
+          $and: [
+            {
+              wp_app_version_lists: {
+                version_code: 'mini_app_v1',
+              },
+            },
+            {
+              publishedAt: {
+                $notNull: true,
+              },
+            },
+          ],
+        },
         orderBy: { position: 'asc' },
-        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display']
+        select: ['id', 'mini_app_type', 'include_header', 'position', 'is_login', 'screen_orientation', 'color', 'tag','display','kyc_level_check','is_service']
       });
       return entriesMiniAPP;
     }

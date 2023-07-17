@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_home_widgets",
+  "info": {
+    "singularName": "wp-home-widget",
+    "pluralName": "wp-home-widgets",
+    "displayName": "WP Home Widget ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "show_title": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "is_horizontal_scroll": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "text_color": {
+      "type": "string",
+      "required": true
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.home-background",
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "mini_app",
+        "promotion",
+        "recent_activity",
+        "header"
+      ],
+      "required": true
+    }
+  }
+}

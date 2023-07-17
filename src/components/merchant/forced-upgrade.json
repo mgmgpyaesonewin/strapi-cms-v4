@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_merchant_forced_upgrades",
+  "info": {
+    "displayName": "forcedUpgrade",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "required": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "build": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchant-app-version-list.merchant-app-version-list"
+    }
+  }
+}
