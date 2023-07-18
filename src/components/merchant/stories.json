@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_merchant_stories",
+  "info": {
+    "displayName": "stories",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "en": {
+      "displayName": "Image with Localization",
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.image-with-localization",
+      "required": true
+    },
+    "my": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.image-with-localization",
+      "required": true
+    }
+  }
+}

@@ -14,6 +14,11 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
         ["city_district"]: {
           populate: {
             title: true,
+            ["region"]: {
+              populate: {
+                title: true,
+              }
+            },
           },
           where: {
             publishedAt: {

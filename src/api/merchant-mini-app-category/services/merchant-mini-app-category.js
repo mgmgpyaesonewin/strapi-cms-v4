@@ -23,6 +23,5 @@ module.exports = createCoreService('api::merchant-mini-app-category.merchant-min
     });
 
     return categories;
-
   }
 }));

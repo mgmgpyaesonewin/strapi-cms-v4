@@ -1,5 +1,5 @@
 {
-  "/wc-app-versions": {
+  "/merchant-mini-app-categories": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcAppVersionListResponse"
+                "$ref": "#/components/schemas/MerchantMiniAppCategoryListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Wc-app-version"
+        "Merchant-mini-app-category"
       ],
       "parameters": [
         {
@@ -80,7 +80,7 @@
         {
           "name": "pagination[withCount]",
           "in": "query",
-          "description": "Return page/pageSize (default: true)",
+          "description": "Retun page/pageSize (default: true)",
           "deprecated": false,
           "required": false,
           "schema": {
@@ -146,30 +146,9 @@
           "schema": {
             "type": "string"
           }
-        },
-        {
-          "name": "filters",
-          "in": "query",
-          "description": "Filters to apply",
-          "deprecated": false,
-          "required": false,
-          "schema": {
-            "type": "object"
-          },
-          "style": "deepObject"
-        },
-        {
-          "name": "locale",
-          "in": "query",
-          "description": "Locale to apply",
-          "deprecated": false,
-          "required": false,
-          "schema": {
-            "type": "string"
-          }
         }
       ],
-      "operationId": "get/wc-app-versions"
+      "operationId": "get/merchant-mini-app-categories"
     },
     "post": {
       "responses": {
@@ -178,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcAppVersionResponse"
+                "$ref": "#/components/schemas/MerchantMiniAppCategoryResponse"
               }
             }
           }
@@ -235,23 +214,23 @@
         }
       },
       "tags": [
-        "Wc-app-version"
+        "Merchant-mini-app-category"
       ],
       "parameters": [],
-      "operationId": "post/wc-app-versions",
+      "operationId": "post/merchant-mini-app-categories",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WcAppVersionRequest"
+              "$ref": "#/components/schemas/MerchantMiniAppCategoryRequest"
             }
           }
         }
       }
     }
   },
-  "/wc-app-versions/{id}": {
+  "/merchant-mini-app-categories/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -259,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcAppVersionResponse"
+                "$ref": "#/components/schemas/MerchantMiniAppCategoryResponse"
               }
             }
           }
@@ -316,7 +295,7 @@
         }
       },
       "tags": [
-        "Wc-app-version"
+        "Merchant-mini-app-category"
       ],
       "parameters": [
         {
@@ -326,11 +305,11 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "number"
+            "type": "string"
           }
         }
       ],
-      "operationId": "get/wc-app-versions/{id}"
+      "operationId": "get/merchant-mini-app-categories/{id}"
     },
     "put": {
       "responses": {
@@ -339,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WcAppVersionResponse"
+                "$ref": "#/components/schemas/MerchantMiniAppCategoryResponse"
               }
             }
           }
@@ -396,7 +375,7 @@
         }
       },
       "tags": [
-        "Wc-app-version"
+        "Merchant-mini-app-category"
       ],
       "parameters": [
         {
@@ -406,17 +385,17 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "number"
+            "type": "string"
           }
         }
       ],
-      "operationId": "put/wc-app-versions/{id}",
+      "operationId": "put/merchant-mini-app-categories/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WcAppVersionRequest"
+              "$ref": "#/components/schemas/MerchantMiniAppCategoryRequest"
             }
           }
         }
@@ -487,7 +466,7 @@
         }
       },
       "tags": [
-        "Wc-app-version"
+        "Merchant-mini-app-category"
       ],
       "parameters": [
         {
@@ -497,11 +476,11 @@
           "deprecated": false,
           "required": true,
           "schema": {
-            "type": "number"
+            "type": "string"
           }
         }
       ],
-      "operationId": "delete/wc-app-versions/{id}"
+      "operationId": "delete/merchant-mini-app-categories/{id}"
     }
   }
 }
