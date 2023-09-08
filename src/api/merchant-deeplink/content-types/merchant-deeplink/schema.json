@@ -38,6 +38,10 @@
       "relation": "oneToMany",
       "target": "api::merchant-mini-app-mini-app.merchant-mini-app-mini-app",
       "mappedBy": "merchant_deeplink"
+    },
+    "deeplink_IOS": {
+      "type": "text",
+      "required": true
     }
   }
 }

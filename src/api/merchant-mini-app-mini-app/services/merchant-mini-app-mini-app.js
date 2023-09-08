@@ -16,7 +16,7 @@ module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-min
             select: ['url']
           },
           ["merchant_deeplink"]: {
-            select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "client_id"],
+            select: ["name", "deeplink", "deeplink_IOS", "is_external", "is_webURL", "alternative_url", "client_id"],
           },
           paths: true,
           parameters: true,
@@ -50,7 +50,7 @@ module.exports = createCoreService('api::merchant-mini-app-mini-app.merchant-min
             select: ['url']
           },
           ["merchant_deeplink"]: {
-            select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "client_id"],
+            select: ["name", "deeplink","deeplink_IOS", "is_external", "is_webURL", "alternative_url", "client_id"],
           },
           paths: true,
           parameters: true,
