@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_otc_profiling_flags",
+  "info": {
+    "singularName": "wc-otc-profiling-flag",
+    "pluralName": "wc-otc-profiling-flags",
+    "displayName": "WC OTC Profiling Flag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "value": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
