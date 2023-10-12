@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_localization_contents",
+  "info": {
+    "singularName": "wp-localization-content",
+    "pluralName": "wp-localization-contents",
+    "displayName": "WP Localization Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "button",
+        "label",
+        "placeholder",
+        "inline"
+      ],
+      "required": true
+    },
+    "value": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "wp_feature": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-feature.wp-feature"
+    }
+  }
+}

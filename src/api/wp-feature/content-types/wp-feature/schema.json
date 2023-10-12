@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_features",
+  "info": {
+    "singularName": "wp-feature",
+    "pluralName": "wp-features",
+    "displayName": "WP Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "feature": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
