@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchant_qrs",
+  "info": {
+    "singularName": "merchant-qr",
+    "pluralName": "merchant-qrs",
+    "displayName": "Merchant QR",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "minimum_amount": {
+      "type": "biginteger",
+      "required": true,
+      "default": "1000"
+    },
+    "maximum_amount": {
+      "type": "biginteger",
+      "required": true,
+      "default": "10000000"
+    },
+    "use_mmpay_qr_design": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
