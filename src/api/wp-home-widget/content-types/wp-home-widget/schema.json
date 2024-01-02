@@ -54,6 +54,9 @@
         "header"
       ],
       "required": true
+    },
+    "icon_theme_color": {
+      "type": "string"
     }
   }
 }
