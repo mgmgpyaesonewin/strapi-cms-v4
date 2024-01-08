@@ -54,6 +54,9 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.button-option-tutorial-story"
+    },
+    "rbac_key": {
+      "type": "string"
     }
   }
 }
