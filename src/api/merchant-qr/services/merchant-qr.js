@@ -13,7 +13,7 @@ module.exports = createCoreService(
             return await strapi.entityService.findMany(
                 "api::merchant-qr.merchant-qr", {
                     publicationState: "live",
-                    fields: ["minimum_amount", "maximum_amount", "use_mmpay_qr_design"],
+                    fields: ["minimum_amount", "maximum_amount", "use_mmpay_qr_design","is_time_unlimited"],
                 }
             );
         },
