@@ -26,6 +26,11 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "is_time_unlimited": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
