@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_faq_lists",
+  "info": {
+    "singularName": "wc-faq-list",
+    "pluralName": "wc-faq-lists",
+    "displayName": "WC FAQ List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wc.wc-translation"
+    }
+  }
+}
