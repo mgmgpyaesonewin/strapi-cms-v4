@@ -22,6 +22,10 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           ['wp_home_widget']: {
             select: ["id","name"],
           },
+         
+          ['wp_feature_id']:{
+            select: ["feature_id"],
+          }
         },
         where: {
           $and: [
