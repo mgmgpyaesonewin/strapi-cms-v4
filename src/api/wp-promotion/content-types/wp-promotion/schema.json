@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "promotion_title": {
-      "type": "string",
-      "required": true
-    },
     "photo_path": {
       "type": "media",
       "multiple": false,
@@ -77,6 +73,54 @@
     },
     "new_action_link_android": {
       "type": "text"
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "paths": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.path"
+    },
+    "parameters": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.parameters"
+    },
+    "is_login": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "display": {
+      "type": "enumeration",
+      "enum": [
+        "fullscreen",
+        "native"
+      ]
+    },
+    "include_header": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "wp_deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deeplink.deeplink"
+    },
+    "wp_feature_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-feature-id.wp-feature-id"
+    },
+    "wp_home_widget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-home-widget.wp-home-widget"
     }
   }
 }

@@ -10,20 +10,34 @@ module.exports = createCoreService(
   "api::wp-promotion.wp-promotion",
   ({ strapi }) => ({
     async find(ctx) {
-      const promotions = await strapi.entityService.findMany(
-        "api::wp-promotion.wp-promotion",
+      const promotions = await strapi.db.query("api::wp-promotion.wp-promotion").findMany(
+        
         {
           populate: {
             photo_path: {
               select: ["url"],
             },
-            wp_category: true,
+            title: true,
+            wp_category: {
+              select: ["id", "name"],
+            },
             wp_promotion_type: true,
+            wp_deeplink: {
+              select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "alternative_url_IOS", "deeplink_IOS", "client_id", "deeplink_id"]
+            },
+            wp_feature_id: {
+              select: ["feature_id"]
+            },
+            paths: true,
+            parameters: true,
+            wp_home_widget: {
+              select: ["id"]
+            },
           },
 
           publicationState: "live",
           sort: { position: "asc" },
-          filters: {
+          where: {
             $and: [
               {
                 wp_category: {
