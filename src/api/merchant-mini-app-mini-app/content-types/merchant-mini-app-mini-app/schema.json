@@ -42,25 +42,17 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "tag": {
       "type": "enumeration",
-      "enum": [
-        "mini_app"
-      ],
+      "enum": ["mini_app"],
       "default": "mini_app",
       "required": true
     },
     "screen_orientation": {
       "type": "enumeration",
-      "enum": [
-        "portrait",
-        "landscape",
-        "neutral"
-      ]
+      "enum": ["portrait", "landscape", "neutral"]
     },
     "color": {
       "type": "string",
@@ -73,11 +65,7 @@
     },
     "mini_app_type": {
       "type": "enumeration",
-      "enum": [
-        "popular",
-        "core",
-        "service"
-      ],
+      "enum": ["popular", "core", "service"],
       "required": true
     },
     "merchant_deeplink": {
@@ -99,10 +87,10 @@
     },
     "display": {
       "type": "enumeration",
-      "enum": [
-        "fullscreen",
-        "native"
-      ]
+      "enum": ["fullscreen", "native"]
+    },
+    "rbac_key": {
+      "type": "string"
     }
   }
 }
