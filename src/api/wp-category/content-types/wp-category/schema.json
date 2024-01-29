@@ -44,7 +44,7 @@
     "wp_promotions": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::wp-promotion.wp-promotion",
+      "target": "api::wp-new-promotion.wp-new-promotion",
       "mappedBy": "wp_category"
     },
     "category_title": {
