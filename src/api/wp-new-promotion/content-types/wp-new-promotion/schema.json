@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wp-new-promotion",
     "pluralName": "wp-new-promotions",
-    "displayName": "WP New Promotion"
+    "displayName": "WP New Promotion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,26 +25,6 @@
       "default": false,
       "required": true
     },
-    "action_link_android": {
-      "type": "text"
-    },
-    "action_link_ios": {
-      "type": "text",
-      "required": false
-    },
-    "is_external": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "external_deeplink": {
-      "type": "text"
-    },
-    "promotion_code": {
-      "type": "string",
-      "required": false,
-      "unique": true
-    },
     "position": {
       "type": "integer",
       "min": 1,
@@ -55,12 +36,6 @@
       "target": "api::wp-category.wp-category",
       "inversedBy": "wp_promotions"
     },
-    "wp_promotion_type": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::wp-promotion-type.wp-promotion-type",
-      "inversedBy": "wp_promotions"
-    },
     "promotion_details": {
       "type": "text",
       "required": false
@@ -69,9 +44,6 @@
       "type": "boolean",
       "default": false,
       "required": true
-    },
-    "new_action_link_android": {
-      "type": "text"
     },
     "title": {
       "type": "component",
