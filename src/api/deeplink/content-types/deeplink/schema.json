@@ -46,6 +46,15 @@
     },
     "client_id": {
       "type": "text"
+    },
+    "deeplink_id": {
+      "type": "string",
+      "required": true
+    },
+    "wp_feature_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-feature-id.wp-feature-id"
     }
   }
 }
