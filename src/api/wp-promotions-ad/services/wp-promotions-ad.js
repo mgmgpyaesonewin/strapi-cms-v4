@@ -1,18 +1,17 @@
 'use strict';
 
 /**
- * wp-new-promotion service
+ * wp-promotions-ad service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::wp-new-promotion.wp-new-promotion');
-
+module.exports = createCoreService('api::wp-promotions-ad.wp-promotions-ad');
 module.exports = createCoreService(
-    "api::wp-new-promotion.wp-new-promotion",
+    "api::wp-promotions-ad.wp-promotions-ad",
     ({ strapi }) => ({
       async find(ctx) {
-        const promotions = await strapi.entityService.findMany("api::wp-new-promotion.wp-new-promotion",
+        const promotions = await strapi.entityService.findMany("api::wp-promotions-ad.wp-promotions-ad",
           {
             populate: {
               photo_path: {
@@ -24,12 +23,7 @@ module.exports = createCoreService(
               },
               wp_promotion_type: true,
               wp_deeplink: {
-                fields: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "alternative_url_IOS", "deeplink_IOS", "client_id", "deeplink_id"],
-                populate: {
-                  wp_feature_id: {
-                    fields: ["feature_id"],
-                  }
-                }
+                fields: ["deeplink_id"],
               },
               wp_feature_id: {
                 fields: ["feature_id"]
@@ -67,7 +61,7 @@ module.exports = createCoreService(
       },
       async findOne(id) {
         const promotion = await strapi.entityService.findOne(
-          "api::wp-promotion.wp-promotion",
+          "api::wp-promotions-ad.wp-promotions-ad",
           id,
           {
             populate: {
@@ -91,7 +85,7 @@ module.exports = createCoreService(
       },
       async filterByCategoryID(id) {
         const promotion = await strapi.entityService.findMany(
-          "api::wp-promotion.wp-promotion",
+          "api::wp-promotions-ad.wp-promotions-ad",
           {
             populate: {
               photo_path: {

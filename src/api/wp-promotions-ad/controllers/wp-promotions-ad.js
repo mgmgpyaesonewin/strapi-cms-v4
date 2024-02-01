@@ -1,18 +1,16 @@
 'use strict';
 
 /**
- * wp-new-promotion controller
+ * wp-promotions-ad controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion');
-
-module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', ({strapi}) => ({
+module.exports = createCoreController('api::wp-promotions-ad.wp-promotions-ad', ({strapi}) => ({
     async find(ctx) {
       let types = ['NORMAL', 'SPECIAL'];
       let promotionType = ctx.query.promotionType;
-      const promotionList = await strapi.service('api::wp-new-promotion.wp-new-promotion').find(ctx);
+      const promotionList = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').find(ctx);
       var finalData;
       if (types.includes(ctx.query.promotionType)) {
         finalData = promotionList.filter(function (filterType) {
@@ -28,7 +26,7 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
     async filterByCategory(ctx, next) {
       let status = "Success";
       let {id} = ctx.params;
-      const promotions = await strapi.service('api::wp-promotion.wp-promotion').filterByCategoryID(id);
+      const promotions = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').filterByCategoryID(id);
       let responseMap = responseMapping(promotions,ctx.request.header);
       
       return {status, responseMap};
@@ -39,7 +37,7 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
       let status = "Success";
       const {id} = ctx.params;
       const {query} = ctx;
-      const promotion = await strapi.service('api::wp-promotion.wp-promotion').findOne(id);
+      const promotion = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').findOne(id);
       if(promotion){    
         const responseMap = {
         promotion_id: promotion.id,
@@ -67,10 +65,6 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
   function responseMapping(promotionEntries,requestHeader) {
     let mapping = [];
     promotionEntries.map((value, index) => {
-      if(value.wp_deeplink){
-        value.wp_deeplink.feature_id = value.wp_deeplink.wp_feature_id ? value.wp_deeplink.wp_feature_id.feature_id : null
-        delete value.wp_deeplink.wp_feature_id;
-      } 
       mapping.push({
         "id": value.id,
         "position": value.position,
@@ -80,8 +74,8 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
         // "include_header": value.include_header,
         "is_login": value.is_login,
         "kyc_level_check":value.kyc_level_check,
-        "deep_link": value.wp_deeplink, 
-        "feature_id": !value.wp_feature_id ? null : value.wp_feature_id.feature_id, 
+        "deeplink_id": value.wp_deeplink ? value.wp_deeplink.deeplink_id : null, 
+        "feature_id": value.wp_feature_id ? value.wp_feature_id.feature_id : null, 
         "hasDetails": value.hasDetails,
         "promotion_details": value.promotion_details,
         "paths": value.paths,
