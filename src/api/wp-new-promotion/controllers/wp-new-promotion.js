@@ -67,10 +67,6 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
   function responseMapping(promotionEntries,requestHeader) {
     let mapping = [];
     promotionEntries.map((value, index) => {
-      if(value.wp_deeplink){
-        value.wp_deeplink.feature_id = value.wp_deeplink.wp_feature_id ? value.wp_deeplink.wp_feature_id.feature_id : null
-        delete value.wp_deeplink.wp_feature_id;
-      } 
       mapping.push({
         "id": value.id,
         "position": value.position,
@@ -80,8 +76,8 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
         // "include_header": value.include_header,
         "is_login": value.is_login,
         "kyc_level_check":value.kyc_level_check,
-        "deep_link": value.wp_deeplink, 
-        "feature_id": !value.wp_feature_id ? null : value.wp_feature_id.feature_id, 
+        "deeplink_id": value.wp_deeplink ? value.wp_deeplink.deeplink_id : null, 
+        "feature_id": value.wp_feature_id ? value.wp_feature_id.feature_id : null, 
         "hasDetails": value.hasDetails,
         "promotion_details": value.promotion_details,
         "paths": value.paths,

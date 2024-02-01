@@ -24,12 +24,7 @@ module.exports = createCoreService(
               },
               wp_promotion_type: true,
               wp_deeplink: {
-                fields: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "alternative_url_IOS", "deeplink_IOS", "client_id", "deeplink_id"],
-                populate: {
-                  wp_feature_id: {
-                    fields: ["feature_id"],
-                  }
-                }
+                fields: ["deeplink_id"],
               },
               wp_feature_id: {
                 fields: ["feature_id"]
