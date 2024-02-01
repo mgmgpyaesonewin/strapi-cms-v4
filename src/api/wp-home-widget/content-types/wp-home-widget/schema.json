@@ -51,7 +51,8 @@
         "mini_app",
         "promotion",
         "recent_activity",
-        "header"
+        "header",
+        "featured_promotions"
       ],
       "required": true
     }
