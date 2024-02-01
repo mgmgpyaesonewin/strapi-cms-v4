@@ -67,6 +67,10 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
   function responseMapping(promotionEntries,requestHeader) {
     let mapping = [];
     promotionEntries.map((value, index) => {
+      if(value.wp_deeplink){
+        value.wp_deeplink.feature_id = value.wp_deeplink.wp_feature_id ? value.wp_deeplink.wp_feature_id.feature_id : null
+        delete value.wp_deeplink.wp_feature_id;
+      } 
       mapping.push({
         "id": value.id,
         "position": value.position,
