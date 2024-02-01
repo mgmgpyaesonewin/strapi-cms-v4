@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "wp_new_promotions",
+  "collectionName": "wp_promotions_ads",
   "info": {
-    "singularName": "wp-new-promotion",
-    "pluralName": "wp-new-promotions",
-    "displayName": "WP New Promotion",
+    "singularName": "wp-promotions-ad",
+    "pluralName": "wp-promotions-ads",
+    "displayName": "WP Promotions Ad",
     "description": ""
   },
   "options": {
@@ -32,9 +32,8 @@
     },
     "wp_category": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::wp-category.wp-category",
-      "inversedBy": "wp_promotions"
+      "relation": "oneToOne",
+      "target": "api::wp-category.wp-category"
     },
     "promotion_details": {
       "type": "text",
@@ -62,18 +61,6 @@
       "component": "wp.parameters"
     },
     "is_login": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "display": {
-      "type": "enumeration",
-      "enum": [
-        "fullscreen",
-        "native"
-      ]
-    },
-    "include_header": {
       "type": "boolean",
       "default": false,
       "required": true

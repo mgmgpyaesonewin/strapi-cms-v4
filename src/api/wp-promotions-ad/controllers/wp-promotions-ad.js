@@ -1,18 +1,16 @@
 'use strict';
 
 /**
- * wp-new-promotion controller
+ * wp-promotions-ad controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion');
-
-module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', ({strapi}) => ({
+module.exports = createCoreController('api::wp-promotions-ad.wp-promotions-ad', ({strapi}) => ({
     async find(ctx) {
       let types = ['NORMAL', 'SPECIAL'];
       let promotionType = ctx.query.promotionType;
-      const promotionList = await strapi.service('api::wp-new-promotion.wp-new-promotion').find(ctx);
+      const promotionList = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').find(ctx);
       var finalData;
       if (types.includes(ctx.query.promotionType)) {
         finalData = promotionList.filter(function (filterType) {
@@ -28,7 +26,7 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
     async filterByCategory(ctx, next) {
       let status = "Success";
       let {id} = ctx.params;
-      const promotions = await strapi.service('api::wp-promotion.wp-promotion').filterByCategoryID(id);
+      const promotions = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').filterByCategoryID(id);
       let responseMap = responseMapping(promotions,ctx.request.header);
       
       return {status, responseMap};
@@ -39,7 +37,7 @@ module.exports = createCoreController('api::wp-new-promotion.wp-new-promotion', 
       let status = "Success";
       const {id} = ctx.params;
       const {query} = ctx;
-      const promotion = await strapi.service('api::wp-promotion.wp-promotion').findOne(id);
+      const promotion = await strapi.service('api::wp-promotions-ad.wp-promotions-ad').findOne(id);
       if(promotion){    
         const responseMap = {
         promotion_id: promotion.id,
