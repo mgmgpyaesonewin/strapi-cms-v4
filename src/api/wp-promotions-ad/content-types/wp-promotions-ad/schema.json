@@ -79,6 +79,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::wp-home-widget.wp-home-widget"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
