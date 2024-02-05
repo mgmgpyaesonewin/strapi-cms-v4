@@ -84,6 +84,14 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
     }
   }
 }
