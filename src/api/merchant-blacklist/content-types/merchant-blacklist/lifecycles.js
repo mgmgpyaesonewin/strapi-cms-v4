@@ -34,11 +34,11 @@ module.exports = {
     }).then(function (response) {
  
       console.log(response.data,'MW response');
-      sendActionableMessage('merchant-blacklist', response)
+      sendActionableMessage('merchant-blacklist', response.data)
 
     }).catch(function (error) {
       console.log(error.response);
-      sendActionableMessage('merchant-blacklist', error.response)
+      sendActionableMessage('merchant-blacklist', error.response.data)
 
     });
 
@@ -65,11 +65,11 @@ module.exports = {
     }).then(function (response) {
  
       console.log(response.data,'MW response');
-      sendActionableMessage('merchant-blacklist', response)
+      sendActionableMessage('merchant-blacklist', response.data)
 
     }).catch(function (error) {
       console.log(error.response);
-      sendActionableMessage('merchant-blacklist', error.response)
+      sendActionableMessage('merchant-blacklist', error.response.data)
 
     });
   },
