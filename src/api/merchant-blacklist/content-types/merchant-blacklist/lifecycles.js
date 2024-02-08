@@ -26,6 +26,11 @@ module.exports = {
 
     axios.post(process.env.MW_MERCHANT_FEATURE_BLACKLIST_URL, allData
     , {
+      headers: {
+        'client_id': process.env.MW_CLIENT_ID,
+        'client_secret': process.env.MW_CLIENT_SECRET,
+        'Content-Type': 'application/json'
+      }
     }).then(function (response) {
  
       console.log(response.data,'MW response');
@@ -52,6 +57,11 @@ module.exports = {
 
     axios.post(process.env.MW_MERCHANT_FEATURE_BLACKLIST_URL, allData
     , {
+      headers: {
+        'client_id': process.env.MW_CLIENT_ID,
+        'client_secret': process.env.MW_CLIENT_SECRET,
+        'Content-Type': 'application/json'
+      }
     }).then(function (response) {
  
       console.log(response.data,'MW response');
