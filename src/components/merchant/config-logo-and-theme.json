@@ -28,6 +28,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "expired_duration": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "unique": true
     }
   }
 }
