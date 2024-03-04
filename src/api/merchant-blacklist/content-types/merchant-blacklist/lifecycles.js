@@ -16,14 +16,7 @@ module.exports = {
 
   async afterUpdate(event)  {
     const { result, params, data } = event;
-    console.log("After Update");
-    console.log(result, 'Event data:');
-
     const allData = await strapi.service('api::merchant-blacklist.merchant-blacklist').find(); 
-
-    console.log(allData, 'All Data');
-
-
     axios.post(process.env.MW_MERCHANT_FEATURE_BLACKLIST_URL, allData
     , {
       headers: {
@@ -32,13 +25,11 @@ module.exports = {
         'Content-Type': 'application/json'
       }
     }).then(function (response) {
- 
-      console.log(response.data,'MW response');
-      sendActionableMessage('merchant-blacklist', response)
+      sendActionableMessage('merchant-blacklist', response.data)
 
     }).catch(function (error) {
       console.log(error.response);
-      sendActionableMessage('merchant-blacklist', error.response)
+      sendActionableMessage('merchant-blacklist', error.response.data)
 
     });
 
@@ -47,14 +38,8 @@ module.exports = {
 
   async  afterDelete(event) {
     const { result, params, data } = event;
-    console.log("After Delete");
-    console.log(result, 'Event data:');
-
+ 
     const allData = await strapi.service('api::merchant-blacklist.merchant-blacklist').find(); 
-
-    console.log(allData, 'All Data');
-
-
     axios.post(process.env.MW_MERCHANT_FEATURE_BLACKLIST_URL, allData
     , {
       headers: {
@@ -64,12 +49,12 @@ module.exports = {
       }
     }).then(function (response) {
  
-      console.log(response.data,'MW response');
-      sendActionableMessage('merchant-blacklist', response)
+     
+      sendActionableMessage('merchant-blacklist', response.data)
 
     }).catch(function (error) {
       console.log(error.response);
-      sendActionableMessage('merchant-blacklist', error.response)
+      sendActionableMessage('merchant-blacklist', error.response.data)
 
     });
   },
