@@ -14,7 +14,8 @@ module.exports = createCoreService('api::merchant-core-config.merchant-core-conf
          populate: {
             theme: true,
             header_logo: true,
-            footer_logo:true
+            footer_logo:true,
+            expired_duration: true
           },
         },
       },
