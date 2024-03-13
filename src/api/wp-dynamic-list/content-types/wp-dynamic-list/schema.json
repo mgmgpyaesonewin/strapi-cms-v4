@@ -35,6 +35,9 @@
     },
     "qr_denomination": {
       "type": "json"
+    },
+    "config": {
+      "type": "json"
     }
   }
 }
