@@ -49,7 +49,8 @@
     },
     "deeplink_id": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "wp_feature_id": {
       "type": "relation",
