@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     tasks: {
       ...cronTasks,
-      ...cronPromotions,
+      //...cronPromotions,
     } ,
 
   },
