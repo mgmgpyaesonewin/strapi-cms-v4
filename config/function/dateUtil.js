@@ -15,26 +15,20 @@ function isSameWithDateOfToday({startDate}){
       console.log("End Date:", endDate)
       /**
        * startDate = 12-03-24
-       * endDate = 01-04-24
-       * todayDate = 01-04-24 or 01-05-24
+       * endDate = 13-04-24
+       * todayDate = 12-04-24
        */ 
-      if(startDate.getMonth() == endDate.getMonth() && todayDate.getDate() == "01"){
-        console.log("@> First Condition")
-        return true;  
+      if(todayDate.getDate() == startDate.getDate()){
+        return false;  
       }
+
       /**
        * startDate = 12-03-24
-       * endDate = 15-03-24
-       * todayDate = 16-03-24 or 16-04-24
+       * endDate = 31-03-24
+       * todayDate = 01-04-24 or 01-05-24
        */
-      else if(startDate.getMonth() == endDate.getMonth() && todayDate.getDate() != "01"){
-       
-        
-        if(todayDate.getDate() > endDate.getDate()) {
-        console.log("@> Second Condition")
-
-          return true;
-        }
+      else if(todayDate.getDate() == "01" && startDate.getMonth() == endDate.getMonth()){
+        return true;
       }
       
       /**
@@ -42,16 +36,14 @@ function isSameWithDateOfToday({startDate}){
        * endDate = 05-04-24
        * todDate = 06-04-24 or 06-05-24
        */
-      else if(startDate.getMonth() != endDate.getMonth()){
-
-        
-        if (todayDate.getDate() > endDate.getDate() && todayDate.getDate() != startDate.getDate()) {
-          console.log("@> Third Condition")
-          return true;
-        }
-      } 
-      console.log("@> ELSE")
-      return false;
+      else if (todayDate.getDate() > endDate.getDate()) {
+        return true;
+      }
+      
+      else {
+        return false;
+      }
+      
       
     } catch (error) {
       console.log(error);
