@@ -38,13 +38,13 @@ module.exports = async () => {
           where: { id: monthlyPromo.id },  
           data: { publishedAt: todayISODate }
         });
-        if(result) publishCount++; 
+        publishCount++; 
       } else if (monthlyPromo.publishedAt != null && isExpired({startDate: monthlyPromo.start_date, endDate: monthlyPromo.end_date})){
           let result = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').update({
             where: { id: monthlyPromo.id },
             data: { publishedAt: null } 
         });
-        if(result) unpublishCount++; 
+        unpublishCount++; 
       }
     })
 

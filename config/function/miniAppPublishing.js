@@ -36,16 +36,13 @@ module.exports = async () => {
           where: { id: monthlyMiniApp.id },
           data: { publishedAt: todayISODate }
         });
-        console.log("@>result: ", result);
-
-        if (result) publishCount++;
+        publishCount++;
       } else if (monthlyMiniApp.publishedAt != null && isExpired({ startDate: monthlyMiniApp.start_date, endDate: monthlyMiniApp.end_date })) {
         let result = await strapi.db.query('api::wp-mini-app.wp-mini-app').update({
           where: { id: monthlyMiniApp.id },
           data: { publishedAt: null }
         });
-        console.log("@>result: ", result);
-        if (result) unpublishCount++;
+        unpublishCount++;
       }
     })
 
