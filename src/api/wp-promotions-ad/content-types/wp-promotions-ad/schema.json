@@ -118,6 +118,19 @@
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "is_monthly": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
