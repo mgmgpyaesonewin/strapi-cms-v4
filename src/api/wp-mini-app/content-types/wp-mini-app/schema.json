@@ -127,6 +127,18 @@
     },
     "name": {
       "type": "string"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "is_monthly": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
