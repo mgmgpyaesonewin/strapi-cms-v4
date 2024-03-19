@@ -1,4 +1,6 @@
+"use strict";
 const axios = require("axios");
+const { v4: uuid } = require("uuid");
 
 const sendActionableMessage = (model, message) => {
   const webhookURL = process.env.MS_WEBHOOK_URL;
@@ -14,6 +16,10 @@ const sendActionableMessage = (model, message) => {
 };
 
 module.exports = {
+  async beforeCreate(model) {
+    model.params.data.uuid = uuid();
+  },
+
   async afterUpdate(event) {
     const { result, params, data } = event;
     const allData = await strapi
