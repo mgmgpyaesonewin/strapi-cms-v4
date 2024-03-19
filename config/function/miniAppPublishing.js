@@ -30,21 +30,21 @@ module.exports = async () => {
       where: { is_monthly: { $eq: true } }
     });
 
-    monthlyMiniApps.forEach( async (monthlyMiniApp)  =>  {
+    for(monthlyMiniApp in monthlyMiniApps ) {
       if (monthlyMiniApp.publishedAt == null && isSameWithDateOfToday({ startDate: monthlyMiniApp.start_date })) {
         let result = await strapi.db.query('api::wp-mini-app.wp-mini-app').update({
           where: { id: monthlyMiniApp.id },
           data: { publishedAt: todayISODate }
         });
-        publishCount++;
+        publishCount.count++;
       } else if (monthlyMiniApp.publishedAt != null && isExpired({ startDate: monthlyMiniApp.start_date, endDate: monthlyMiniApp.end_date })) {
         let result = await strapi.db.query('api::wp-mini-app.wp-mini-app').update({
           where: { id: monthlyMiniApp.id },
           data: { publishedAt: null }
         });
-        unpublishCount++;
+        unpublishCount.count++;
       }
-    })
+    }
 
     console.log("@> PublishMiniAppCount:" , publishCount.count);
     console.log("@> UnpublishMiniAppCount:", unpublishCount.count);
