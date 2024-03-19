@@ -15,9 +15,22 @@ const sendActionableMessage = (model, message) => {
     .catch(function (error) {});
 };
 
+const generateUUID = async () => {
+  const generatedUUID = uuid();
+  const isUUIDInDb = await strapi
+        .service("api::wc-corporate-bank-list.wc-corporate-bank-list")
+        .findByUUID(generatedUUID);
+  
+  if (isUUIDInDb) {
+    generateUUID();
+  }
+  return generatedUUID;
+};
+
 module.exports = {
   async beforeCreate(model) {
-    model.params.data.uuid = uuid();
+    const generatedUUID = await generateUUID();
+    model.params.data.uuid = generatedUUID;
   },
 
   async afterUpdate(event) {

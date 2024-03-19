@@ -39,6 +39,25 @@ module.exports = createCoreService('api::wc-corporate-bank-list.wc-corporate-ban
         } catch (error) {
             throw new Error('Failed to fetch banks');
         }
-    }
+    },
 
+    async findByUUID(uuid) {
+        try {
+            const bank = await strapi.entityService.findMany(
+                'api::wc-corporate-bank-list.wc-corporate-bank-list', {
+                filters: {
+                    uuid: {
+                        $eq: uuid
+                    }
+                }
+            });
+
+            if (bank.length === 0) {
+                return false;
+            }
+            return true;
+        } catch (error) {
+            throw new Error('Failed to fetch bank');
+        }
+    }
 }));
