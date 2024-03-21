@@ -9,5 +9,41 @@ test('Get Wave Chanel localization contents List', async () => {
     expect(data).toHaveProperty('cash_out_yoma_denomination');
     expect(data).toHaveProperty('mpu_denomination');
     expect(data).toHaveProperty('poi_types');
+
+    expect(data.township_data).toEqual(
+        expect.arrayContaining([
+            expect.objectContaining({
+                name: expect.any(String),
+                code: expect.any(String),
+                title: expect.objectContaining({
+                    en: expect.any(String),
+                    my: expect.any(String),
+                    zw: expect.any(String)
+                }),
+                districts: expect.arrayContaining([
+                    expect.objectContaining({
+                        name: expect.any(String),
+                        code: expect.any(String),
+                        title: expect.objectContaining({
+                            en: expect.any(String),
+                            my: expect.any(String),
+                            zw: expect.any(String)
+                        }),
+                        townships: expect.arrayContaining([
+                            expect.objectContaining({
+                                name: expect.any(String),
+                                code: expect.any(String),
+                                title: expect.objectContaining({
+                                    en: expect.any(String),
+                                    my: expect.any(String),
+                                    zw: expect.any(String)
+                                }),
+                            })
+                        ]),
+                    }),
+                ])
+            })
+        ])
+    );
 });
 

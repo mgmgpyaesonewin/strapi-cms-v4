@@ -4,7 +4,8 @@
   "info": {
     "singularName": "config-region",
     "pluralName": "config-regions",
-    "displayName": "Config Region"
+    "displayName": "Config Region",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,8 +14,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "code": {
       "type": "string",
@@ -27,15 +27,15 @@
       "component": "wp.default-label",
       "required": true
     },
-    "position": {
-      "type": "biginteger",
-      "required": true
-    },
     "districts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::config-city-district.config-city-district",
       "mappedBy": "region"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true
     }
   }
 }

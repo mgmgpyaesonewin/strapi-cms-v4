@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-city-district router
+ * config-city-district router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
@@ -20,7 +20,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
     };
   };
   const myExtraRoutes = [
-   
+
     {
       method: 'GET',
       path: '/config-city-district/findByCode/:name',
@@ -31,6 +31,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
       },
     },
   ];
-  
+
   module.exports = customRouter(defaultRouter, myExtraRoutes);
-  
+
+
