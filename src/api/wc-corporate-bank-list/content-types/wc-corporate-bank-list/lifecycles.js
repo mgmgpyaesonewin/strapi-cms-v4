@@ -24,56 +24,59 @@ const generateUUID = async () => {
   if (isUUIDInDb) {
     generateUUID();
   }
+
   return generatedUUID;
 };
 
+const setUUID = (params, UUID) => params.data.uuid = UUID;
+
+const generateAndSetUUID = async (params) => {
+  const generatedUUID = await generateUUID();
+  setUUID(params, generatedUUID)
+}
+
+const updateDataToMiddleware = async () => {
+  const allData = await strapi
+    .service("api::wc-corporate-bank-list.wc-corporate-bank-list")
+    .find();
+  const requestData = JSON.stringify(allData);
+  axios
+    .post(process.env.MW_WC_CORPORATE_BANK_LIST_URL, requestData, {
+      headers: {
+        clientId: process.env.MW_WC_CLIENT_ID,
+        clientSecret: process.env.MW_WC_CLIENT_SECRET,
+        "Content-Type": "application/json",
+      },
+    })
+    .then(function (response) {
+      sendActionableMessage("wc-corporate-bank-list", response.data.message);
+    })
+    .catch(function (error) {
+      sendActionableMessage("wc-corporate-bank-list", error.data.message);
+    });
+}
+
 module.exports = {
-  async beforeCreate(model) {
-    const generatedUUID = await generateUUID();
-    model.params.data.uuid = generatedUUID;
+
+  async beforeCreate(event) {
+      await generateAndSetUUID(event.params);
   },
 
-  async afterUpdate(event) {
-    const { result, params, data } = event;
-    const allData = await strapi
-      .service("api::wc-corporate-bank-list.wc-corporate-bank-list")
-      .find();
-    const requestData = JSON.stringify(allData);
-    axios
-      .post(process.env.MW_WC_CORPORATE_BANK_LIST_URL, requestData, {
-        headers: {
-          clientId: process.env.MW_WC_CLIENT_ID,
-          clientSecret: process.env.MW_WC_CLIENT_SECRET,
-          "Content-Type": "application/json",
-        },
-      })
-      .then(function (response) {
-        sendActionableMessage("wc-corporate-bank-list", response.data.message);
-      })
-      .catch(function (error) {
-        sendActionableMessage("wc-corporate-bank-list", error.data.message);
-      });
+  async beforeUpdate(event) {
+    if (event.params.data.uuid !== undefined) {
+      await generateAndSetUUID(event.params);
+    }
   },
 
-  async afterDelete(event) {
-    const { result, params, data } = event;
-    const allData = await strapi
-      .service("api::wc-corporate-bank-list.wc-corporate-bank-list")
-      .find();
-    const requestData = JSON.stringify(allData);
-    axios
-      .post(process.env.MW_WC_CORPORATE_BANK_LIST_URL, requestData, {
-        headers: {
-          clientId: process.env.MW_WC_CLIENT_ID,
-          clientSecret: process.env.MW_WC_CLIENT_SECRET,
-          "Content-Type": "application/json",
-        },
-      })
-      .then(function (response) {
-        sendActionableMessage("wc-corporate-bank-list", response.data.message);
-      })
-      .catch(function (error) {
-        sendActionableMessage("wc-corporate-bank-list", error.data.message);
-      });
+  async afterUpdate() {
+    updateDataToMiddleware();
+  },
+
+  async afterDelete() {
+    updateDataToMiddleware();
+  },
+
+  async afterDeleteMany() {
+    updateDataToMiddleware();
   }
 };
