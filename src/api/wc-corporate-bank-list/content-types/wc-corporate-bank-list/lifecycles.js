@@ -52,7 +52,8 @@ const updateDataToMiddleware = async () => {
       sendActionableMessage("wc-corporate-bank-list", response.data.message);
     })
     .catch(function (error) {
-      sendActionableMessage("wc-corporate-bank-list", error.data.message);
+       console.log(error.response.data);
+       sendActionableMessage("wc-corporate-bank-list", error.response.data);
     });
 }
 
