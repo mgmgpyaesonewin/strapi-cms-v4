@@ -35,6 +35,12 @@
     },
     "qr_denomination": {
       "type": "json"
+    },
+    "config": {
+      "type": "json"
+    },
+    "tutorial_1W1D": {
+      "type": "json"
     }
   }
 }
