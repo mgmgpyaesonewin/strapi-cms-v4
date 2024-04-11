@@ -43,8 +43,8 @@ const updateDataToMiddleware = async () => {
   axios
     .post(process.env.MW_WC_CORPORATE_BANK_LIST_URL, requestData, {
       headers: {
-        clientId: process.env.MW_WC_CLIENT_ID,
-        clientSecret: process.env.MW_WC_CLIENT_SECRET,
+        clientId: process.env.MW_CLIENT_ID,
+        clientSecret: process.env.MW_CLIENT_SECRET,
         "Content-Type": "application/json",
       },
     })
