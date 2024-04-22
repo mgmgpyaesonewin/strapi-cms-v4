@@ -17,6 +17,8 @@ module.exports = createCoreService('api::wp-dynamic-list.wp-dynamic-list', ({ st
             }
         });
     },
+    
+    /* this one is for EKYC */
     async findConfig(ctx) {
         return await strapi.db.query('api::wp-dynamic-list.wp-dynamic-list').findOne({
             where: {
