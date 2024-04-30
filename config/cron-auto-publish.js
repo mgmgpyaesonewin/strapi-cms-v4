@@ -32,11 +32,11 @@ module.exports = {
                 }
             }
         },
-        // options: {
-        //     //  rule: '0 0 0 * * *',
-        //     rule: '*/30 * * * * *',
-        //     tz: 'Asia/Rangoon',
-        // },
-        options: new Date(Date.now() + 5000),
+        options: {
+            
+            rule: '1 0 * * *',
+            tz: 'Asia/Rangoon',
+        },
+        //options: new Date(Date.now() + 5000),
     },
 };
