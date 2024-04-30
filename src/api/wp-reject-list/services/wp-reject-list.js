@@ -17,5 +17,4 @@ module.exports = createCoreService('api::wp-reject-list.wp-reject-list', ({ stra
             select: ['code', 'field_enum']
         });
     }
-
 }));

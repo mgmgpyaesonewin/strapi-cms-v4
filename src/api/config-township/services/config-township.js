@@ -73,4 +73,3 @@ module.exports = createCoreService('api::config-township.config-township', ({ st
     });
   }
 }));
-
