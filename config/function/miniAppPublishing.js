@@ -1,13 +1,11 @@
 const { isSameWithDateOfToday, isExpired } = require('./dateUtil');
-
 module.exports = async () => {
   try {
-    
     const todayISODate = new Date().toISOString();
     /*
     * Auto Publish and Unpublish with Start Date - End Date
     */
-    let publishCount = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').updateMany({
+    let publishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
         data: { publishedAt: todayISODate },
         where: {
           $and: [
@@ -17,7 +15,7 @@ module.exports = async () => {
           ],
         },
     });
-    let unpublishCount = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').updateMany({
+    let unpublishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
       data: { publishedAt: null },
       where: {
         $and: [
@@ -28,27 +26,29 @@ module.exports = async () => {
       },
     });
 
-    var monthlyPromotions = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').findMany({
+    var monthlyMiniApps = await strapi.db.query('api::wp-mini-app.wp-mini-app').findMany({
       where: { is_monthly: { $eq: true } }
     });
-   
-    for (const monthlyPromo of monthlyPromotions) { {
-      if (monthlyPromo.publishedAt == null && isSameWithDateOfToday({ startDate: monthlyPromo.start_date })) {
-        console.log("____________IS SAME DATE___________");
-        let result = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').update({
-          where: { id: monthlyPromo.id },
+
+    for(monthlyMiniApp in monthlyMiniApps ) {
+      if (monthlyMiniApp.publishedAt == null && isSameWithDateOfToday({ startDate: monthlyMiniApp.start_date })) {
+        let result = await strapi.db.query('api::wp-mini-app.wp-mini-app').update({
+          where: { id: monthlyMiniApp.id },
           data: { publishedAt: todayISODate }
         });
         publishCount.count++;
-      } else if (monthlyPromo.publishedAt != null && isExpired({ startDate: monthlyPromo.start_date, endDate: monthlyPromo.end_date })) {
-        let result = await strapi.db.query('api::wp-promotions-ad.wp-promotions-ad').update({
-          where: { id: monthlyPromo.id },
+      } else if (monthlyMiniApp.publishedAt != null && isExpired({ startDate: monthlyMiniApp.start_date, endDate: monthlyMiniApp.end_date })) {
+        let result = await strapi.db.query('api::wp-mini-app.wp-mini-app').update({
+          where: { id: monthlyMiniApp.id },
           data: { publishedAt: null }
         });
         unpublishCount.count++;
       }
     }
-  }
+
+    console.log("@> PublishMiniAppCount:" , publishCount.count);
+    console.log("@> UnpublishMiniAppCount:", unpublishCount.count);
+
     return publishCount.count + unpublishCount.count;
   } catch (error) {
     console.log(error);
