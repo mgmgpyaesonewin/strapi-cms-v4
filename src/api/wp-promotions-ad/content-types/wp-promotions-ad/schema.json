@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_promotions_ads",
+  "info": {
+    "singularName": "wp-promotions-ad",
+    "pluralName": "wp-promotions-ads",
+    "displayName": "WP Promotions Ad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photo_path": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hasDetails": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "position": {
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    "wp_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-category.wp-category"
+    },
+    "promotion_details": {
+      "type": "text",
+      "required": false
+    },
+    "kyc_level_check": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "paths": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.path"
+    },
+    "parameters": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.parameters"
+    },
+    "is_login": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "wp_deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deeplink.deeplink"
+    },
+    "wp_feature_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-feature-id.wp-feature-id"
+    },
+    "wp_home_widget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-home-widget.wp-home-widget"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

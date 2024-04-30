@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wc_corporate_bank_lists",
+  "info": {
+    "singularName": "wc-corporate-bank-list",
+    "pluralName": "wc-corporate-bank-lists",
+    "displayName": "WC Corporate Bank List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "account_no": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "uuid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
