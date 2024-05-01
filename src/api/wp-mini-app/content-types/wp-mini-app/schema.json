@@ -130,11 +130,11 @@
     },
     "start_date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "end_date": {
       "type": "date",
-      "required": true
+      "required": false
     },
     "is_monthly": {
       "type": "boolean",
