@@ -27,8 +27,9 @@ function isSameWithDateOfToday({startDate}){
        * endDate = 31-03-24
        * todayDate = 01-04-24 or 01-05-24
        */
-      else if(todayDate.getDate() == "01" && startDate.getMonth() == endDate.getMonth()){
-        return true;
+      
+      else if(startDate.getDate() > endDate.getDate() && todayDate.getDate() > startDate.getDate()){
+        return false;
       }
       
       /**
