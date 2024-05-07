@@ -1,5 +1,5 @@
 const cronTasks = require("./cron-tasks");
-const cronPromotions = require("./cron-promotions");
+const cronAutoPublish = require("./cron-auto-publish");
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
@@ -7,8 +7,8 @@ module.exports = ({ env }) => ({
     enabled: true,
     tasks: {
       ...cronTasks,
-      //...cronPromotions,
-    } ,
+      ...cronAutoPublish,
+    },
 
   },
   app: {
