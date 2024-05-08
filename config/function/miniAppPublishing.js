@@ -32,7 +32,7 @@ module.exports = async () => {
       where: { is_monthly: { $eq: true } }
     });
 
-    for(monthlyMiniApp in monthlyMiniApps ) {
+    for(const monthlyMiniApp of monthlyMiniApps ) {
       let startDate = monthlyMiniApp.start_date;
       let endDate = monthlyMiniApp.end_date;
       if (monthlyMiniApp.publishedAt == null && startDate != null && isSameWithDateOfToday({ startDate: monthlyMiniApp.start_date })) {

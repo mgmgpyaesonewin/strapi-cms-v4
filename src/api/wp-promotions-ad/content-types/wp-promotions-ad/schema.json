@@ -99,7 +99,7 @@
     "is_monthly": {
       "type": "boolean",
       "default": false,
-      "required": false
+      "required": true
     }
   }
 }
