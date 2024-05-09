@@ -1,7 +1,7 @@
 const { isSameWithDateOfToday, isExpired } = require('./dateUtil');
 module.exports = async () => {
   try {
-    const todayISODate = new Date().toISOString();
+    const todayISODate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' })).toISOString();
     /*
     * Auto Publish and Unpublish with Start Date - End Date
     */
