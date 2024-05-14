@@ -1,6 +1,6 @@
 function isSameWithDateOfToday({startDate}){
     try {
-      return new Date(startDate).getDate() == new Date().getDate();
+      return new Date(startDate).getDate() == new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' })).getDate();
     } catch (error) {
       console.log(error);
     }
@@ -10,7 +10,7 @@ function isSameWithDateOfToday({startDate}){
     try {
       startDate = new Date(startDate);
       endDate = new Date(endDate);
-      todayDate = new Date();
+      todayDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' }));
       console.log("Start Date:", startDate)
       console.log("End Date:", endDate)
       /**

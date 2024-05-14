@@ -21,6 +21,9 @@
     },
     "app": {
       "type": "string"
+    },
+    "position": {
+      "type": "integer"
     }
   }
 }

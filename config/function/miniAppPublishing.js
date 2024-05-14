@@ -1,20 +1,20 @@
 const { isSameWithDateOfToday, isExpired } = require('./dateUtil');
 module.exports = async () => {
   try {
-    const todayISODate = new Date().toISOString();
+    const todayISODate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' })).toISOString();
     /*
     * Auto Publish and Unpublish with Start Date - End Date
     */
     let publishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
-        data: { publishedAt: todayISODate },
-        where: {
-          $and: [
-            { is_monthly: { $eq: false } },
-            { publishedAt: { $null: true } },
-            { start_date: { $notNull: true } },
-            { start_date: { $eq: todayISODate } },
-          ],
-        },
+      data: { publishedAt: todayISODate },
+      where: {
+        $and: [
+          { is_monthly: { $eq: false } },
+          { publishedAt: { $null: true } },
+          { start_date: { $notNull: true } },
+          { start_date: { $eq: todayISODate } },
+        ],
+      },
     });
     let unpublishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
       data: { publishedAt: null },
@@ -32,7 +32,7 @@ module.exports = async () => {
       where: { is_monthly: { $eq: true } }
     });
 
-    for(monthlyMiniApp in monthlyMiniApps ) {
+    for(const monthlyMiniApp of monthlyMiniApps ) {
       let startDate = monthlyMiniApp.start_date;
       let endDate = monthlyMiniApp.end_date;
       if (monthlyMiniApp.publishedAt == null && startDate != null && isSameWithDateOfToday({ startDate: monthlyMiniApp.start_date })) {
