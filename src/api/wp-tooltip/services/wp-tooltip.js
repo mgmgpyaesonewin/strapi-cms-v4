@@ -9,6 +9,7 @@ const { createCoreService } = require("@strapi/strapi").factories;
 module.exports = createCoreService(
   "api::wp-tooltip.wp-tooltip",
   ({ strapi }) => ({
+
     async find(ctx) {
       let firstJson = await strapi.db
         .query("api::wp-tooltip.wp-tooltip")
@@ -41,5 +42,6 @@ module.exports = createCoreService(
         data: firstJson,
       };
     },
+    
   })
 );

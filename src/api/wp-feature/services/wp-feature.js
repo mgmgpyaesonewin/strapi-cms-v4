@@ -19,6 +19,7 @@ module.exports = createCoreService(
         select: ["name", "feature", "id"],
       });
     },
+    
     async getTooltipByFeature(ctx) {
       let data = await strapi.db.query("api::wp-feature.wp-feature").findMany({
         populate: {
