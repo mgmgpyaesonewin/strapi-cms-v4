@@ -37,7 +37,7 @@ module.exports = createCoreService(
             "autoPlaySpeed",
             "toColor",
             "fromColor",
-            "gbColor",
+            "bgColor",
           ],
           orderBy: {
             position: "asc",
