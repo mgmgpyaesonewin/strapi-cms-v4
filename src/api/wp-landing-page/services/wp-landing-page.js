@@ -15,7 +15,6 @@ module.exports = createCoreService(
         .findMany({
           populate: {
             title: true,
-            sub_title: true,
             ["image"]: {
               select: ["url"],
             },
@@ -38,6 +37,7 @@ module.exports = createCoreService(
             "autoPlaySpeed",
             "toColor",
             "fromColor",
+            "gbColor",
           ],
           orderBy: {
             position: "asc",

@@ -22,35 +22,23 @@
       "component": "wp.default-label",
       "required": true
     },
-    "sub_title": {
-      "type": "component",
-      "repeatable": false,
-      "component": "wp.default-label",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "logo": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "icon": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "fromColor": {
       "type": "string",
@@ -70,6 +58,10 @@
       "required": true
     },
     "autoPlaySpeed": {
+      "type": "string",
+      "required": true
+    },
+    "gbColor": {
       "type": "string",
       "required": true
     }
