@@ -16,13 +16,13 @@ module.exports = createCoreController(
 
       if (contents.length > 0) {
         contents = contents.map((content) => {
-          const { fromColor, toColor, gbColor, ...rest } = content;
+          const { fromColor, toColor, bgColor, ...rest } = content;
           return {
             ...rest,
             theme: {
               fromColor,
               toColor,
-              gbColor,
+              bgColor,
             },
           };
         });

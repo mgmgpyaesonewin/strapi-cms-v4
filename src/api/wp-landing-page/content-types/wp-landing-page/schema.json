@@ -61,7 +61,7 @@
       "type": "string",
       "required": true
     },
-    "gbColor": {
+    "bgColor": {
       "type": "string",
       "required": true
     }
