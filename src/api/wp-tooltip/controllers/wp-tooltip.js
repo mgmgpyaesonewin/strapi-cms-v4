@@ -23,7 +23,7 @@ module.exports = createCoreController(
         tooltips.data.map((item) => [item.id, item])
       );
 
-      const mergedJson = features.data.map((feature) => ({
+      const tooltipArr = features.data.map((feature) => ({
         ...feature,
         wp_tooltips: feature.wp_tooltips
           .filter((tooltip) => tooltip.id in tooltipMap)
@@ -33,7 +33,7 @@ module.exports = createCoreController(
           })),
       }));
 
-      return mergedJson;
+      return tooltipArr;
     },
   })
 );
