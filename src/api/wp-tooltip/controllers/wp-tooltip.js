@@ -33,7 +33,7 @@ module.exports = createCoreController(
           })),
       }));
 
-      return tooltipArr;
+      return { data: tooltipArr };
     },
   })
 );
