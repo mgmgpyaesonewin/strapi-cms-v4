@@ -9,13 +9,15 @@ const { createCoreService } = require("@strapi/strapi").factories;
 module.exports = createCoreService(
   "api::wp-tooltip.wp-tooltip",
   ({ strapi }) => ({
-
     async find(ctx) {
       let firstJson = await strapi.db
         .query("api::wp-tooltip.wp-tooltip")
         .findMany({
           populate: {
             title: true,
+            ["icon"]: {
+              select: ["url"],
+            },
             description: true,
             ["wp_app_version_lists"]: {
               select: ["version_code", "version_name"],
@@ -42,6 +44,5 @@ module.exports = createCoreService(
         data: firstJson,
       };
     },
-    
   })
 );
