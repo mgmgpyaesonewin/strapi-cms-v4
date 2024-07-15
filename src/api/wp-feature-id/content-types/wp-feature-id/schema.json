@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_feature_ids",
+  "info": {
+    "singularName": "wp-feature-id",
+    "pluralName": "wp-feature-ids",
+    "displayName": "WP Feature Id"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feature_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

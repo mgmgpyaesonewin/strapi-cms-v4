@@ -14,7 +14,14 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           title: true,
           icon: true,
           ["deep_link"]: {
-            select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "alternative_url_IOS", "deeplink_IOS", "client_id"],
+            populate: {
+              wp_feature_id: {
+                select:["feature_id"]
+              }
+              
+            },
+            select: ["name", "deeplink", "is_external", "is_webURL", "alternative_url", "alternative_url_IOS", "deeplink_IOS", "client_id", "deeplink_id"],
+            
           },
           paths: true,
           parameters: true,
@@ -22,6 +29,10 @@ module.exports = createCoreService('api::wp-mini-app.wp-mini-app', ({ strapi }) 
           ['wp_home_widget']: {
             select: ["id","name"],
           },
+         
+          ['wp_feature_id']:{
+            select: ["feature_id"],
+          }
         },
         where: {
           $and: [
