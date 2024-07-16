@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_merchant_login_id_tf_validations",
+  "info": {
+    "displayName": "login_id_tf_validation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pattern": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "error_message": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.translation",
+      "required": true
+    }
+  }
+}
