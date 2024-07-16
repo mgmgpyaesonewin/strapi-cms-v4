@@ -42,6 +42,11 @@
       "type": "component",
       "repeatable": false,
       "component": "merchant.validation-with-translation"
+    },
+    "login_id_tf_validation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "merchant.validations"
     }
   }
 }
