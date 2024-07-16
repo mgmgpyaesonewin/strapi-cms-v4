@@ -46,7 +46,7 @@
     "login_id_tf_validation": {
       "type": "component",
       "repeatable": false,
-      "component": "merchant.validations"
+      "component": "merchant.login-id-tf-validation"
     }
   }
 }
