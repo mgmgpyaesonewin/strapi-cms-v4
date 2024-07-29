@@ -10,7 +10,7 @@ module.exports = createCoreController("api::merchant-feature-toggle.merchant-fea
     async find(ctx) {
       let data = await strapi.service("api::merchant-feature-toggle.merchant-feature-toggle").find(ctx);
       return {
-        data: data,
+        'data': data,
       };
     },
   })

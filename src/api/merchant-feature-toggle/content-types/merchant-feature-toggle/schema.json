@@ -24,6 +24,11 @@
     },
     "description": {
       "type": "text"
+    },
+    "merchant_app_version_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchant-app-version-list.merchant-app-version-list"
     }
   }
 }
