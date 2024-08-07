@@ -17,7 +17,6 @@ module.exports = createCoreService(
             title: true,
             description: true,
             cta_button: true,
-            wp_app_version_lists: true,
             ["wp_deeplink"]: {
               select: [
                 "name",
