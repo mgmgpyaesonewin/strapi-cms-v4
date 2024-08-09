@@ -25,8 +25,7 @@ const customRouter = (innerRouter, extraRoutes = []) => {
 const myExtraRoutes = [
   {
     method: "GET",
-    path: "/wp-feature-reminder/get-latest",
-
+    path: "/wp-feature-reminders/version/:versionCode",
     handler: "wp-feature-reminder.filterByVersion",
     config: {
       policies: [],
