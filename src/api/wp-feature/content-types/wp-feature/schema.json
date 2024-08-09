@@ -20,6 +20,12 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "wp_tooltips": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tooltip.wp-tooltip",
+      "mappedBy": "wp_feature"
     }
   }
 }

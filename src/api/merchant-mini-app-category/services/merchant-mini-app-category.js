@@ -21,6 +21,7 @@ module.exports = createCoreService('api::merchant-mini-app-category.merchant-min
       orderBy: { position: 'asc' },
       select: ['id', 'position', 'tag', 'mini_app_category_type', 'color']
     });
+
     return categories;
   }
 }));

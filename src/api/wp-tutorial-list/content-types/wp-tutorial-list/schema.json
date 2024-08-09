@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_tutorial_lists",
+  "info": {
+    "singularName": "wp-tutorial-list",
+    "pluralName": "wp-tutorial-lists",
+    "displayName": "WP Tutorial List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "tutorial "
+      ],
+      "required": true,
+      "default": "tutorial "
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true,
+      "min": "1"
+    },
+    "wp_tutorial_contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-tutorial.wp-tutorial",
+      "mappedBy": "wp_tutorial_list"
+    }
+  }
+}

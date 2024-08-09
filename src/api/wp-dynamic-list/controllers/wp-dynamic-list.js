@@ -7,7 +7,7 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::wp-dynamic-list.wp-dynamic-list', ({ strapi }) => ({
-    
+
     async find(ctx) {
       
         let dynamicList = await strapi.service('api::wp-dynamic-list.wp-dynamic-list').find(ctx);
@@ -21,5 +21,5 @@ module.exports = createCoreController('api::wp-dynamic-list.wp-dynamic-list', ({
         let merged = {...dynamicList, ...region,...notification};
         return merged;
     }
-        
+
 }));

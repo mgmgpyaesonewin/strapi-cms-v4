@@ -2,13 +2,14 @@
   "collectionName": "components_wc_tutorials",
   "info": {
     "displayName": "tutorials",
-    "icon": "asterisk"
+    "icon": "asterisk",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "wc.wc-translation"
     },
     "description": {
@@ -16,17 +17,25 @@
       "repeatable": false,
       "component": "wc.wc-translation"
     },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
+    "image_en": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "indicatorColor": {
       "type": "text",
       "required": true
+    },
+    "image_my": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

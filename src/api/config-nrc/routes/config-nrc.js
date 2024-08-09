@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-nrc router
+ * config-nrc router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;

@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_tutorials",
+  "info": {
+    "singularName": "wp-tutorial",
+    "pluralName": "wp-tutorials",
+    "displayName": "WP Tutorial Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tutorials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.tutorial",
+      "required": true
+    },
+    "position": {
+      "type": "biginteger",
+      "required": true,
+      "min": "1"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "wp.button",
+      "required": true
+    },
+    "wp_tutorial_list": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-tutorial-list.wp-tutorial-list",
+      "inversedBy": "wp_tutorial_contents"
+    }
+  }
+}

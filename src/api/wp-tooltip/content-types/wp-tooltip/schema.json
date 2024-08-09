@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_tooltips",
+  "info": {
+    "singularName": "wp-tooltip",
+    "pluralName": "wp-tooltips",
+    "displayName": "WP tooltip",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "position": {
+      "type": "integer",
+      "required": true
+    },
+    "wp_feature": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::wp-feature.wp-feature",
+      "inversedBy": "wp_tooltips"
+    },
+    "wp_app_version_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-app-version.wp-app-version"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_wc_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary ",
+        "secondary"
+      ],
+      "required": true
+    },
+    "bgColor": {
+      "type": "string",
+      "required": true
+    },
+    "textColor": {
+      "type": "string",
+      "required": true
+    },
+    "en": {
+      "type": "string",
+      "required": true
+    },
+    "my": {
+      "type": "string",
+      "required": true
+    },
+    "zw": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * config-nrc controller
+ *  config-nrc controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
