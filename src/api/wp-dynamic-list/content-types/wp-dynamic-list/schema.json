@@ -38,6 +38,9 @@
     },
     "config": {
       "type": "json"
+    },
+    "tutorial_1W1D": {
+      "type": "json"
     }
   }
 }
