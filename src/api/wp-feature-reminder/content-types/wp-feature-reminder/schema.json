@@ -51,6 +51,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::wp-app-version.wp-app-version"
+    },
+    "info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
     }
   }
 }
