@@ -16,6 +16,7 @@ module.exports = createCoreService(
           populate: {
             title: true,
             description: true,
+            info: true,
             cta_button: true,
             ["wp_deeplink"]: {
               select: [
