@@ -33,6 +33,9 @@ module.exports = createCoreService(
               wp_home_widget: {
                 fields: ["id"]
               },
+              sub_title: true,
+              description: true,
+              terms_and_conditions:true
             },
   
             publicationState: "live",
@@ -70,6 +73,9 @@ module.exports = createCoreService(
               },
               wp_category: true,
               wp_promotion_type: true,
+              sub_title: true,
+              description: true,
+              terms_and_conditions:true
             },
             publicationState: "live",
             filters: {
@@ -93,6 +99,9 @@ module.exports = createCoreService(
               },
               wp_category: true,
               wp_promotion_type: true,
+              sub_title: true,
+              description: true,
+              terms_and_conditions:true
             },
             publicationState: "live",
             sort: { position: "asc" },
