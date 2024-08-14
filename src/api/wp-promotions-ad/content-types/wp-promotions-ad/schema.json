@@ -87,6 +87,21 @@
     },
     "name": {
       "type": "string"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "terms_and_conditions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
+    },
+    "sub_title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
     }
   }
 }
