@@ -41,6 +41,9 @@
     },
     "tutorial_1W1D": {
       "type": "json"
+    },
+    "locale_setting": {
+      "type": "json"
     }
   }
 }
