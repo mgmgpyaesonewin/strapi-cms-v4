@@ -53,7 +53,7 @@ module.exports = createCoreService(
           },
 
           orderBy: { publishedAt: "desc" },
-          select: ["id"],
+          select: ["id","kyc_level_check"],
         });
 
       return reminders;

@@ -26,7 +26,7 @@
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",
@@ -45,7 +45,7 @@
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label",
-      "required": true
+      "required": false
     },
     "wp_app_version_lists": {
       "type": "relation",
@@ -56,12 +56,17 @@
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label",
-      "required": true
+      "required": false
     },
     "wp_feature_id": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::wp-feature-id.wp-feature-id"
+    },
+    "kyc_level_check": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
