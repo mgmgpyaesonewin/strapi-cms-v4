@@ -102,6 +102,11 @@
       "type": "component",
       "repeatable": false,
       "component": "wp.default-label"
+    },
+    "cta_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label"
     }
   }
 }
