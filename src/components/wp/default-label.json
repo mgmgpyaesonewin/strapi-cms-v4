@@ -17,6 +17,9 @@
     },
     "zw": {
       "type": "text"
+    },
+    "zh": {
+      "type": "text"
     }
   }
 }
