@@ -42,6 +42,11 @@ module.exports = createCoreService('api::merchant-login.merchant-login', ({strap
           populate:{
             error_message:true
           }
+        },
+        login_id_tf_validation:{
+          populate:{
+            error_message:true
+          }
         }
       },
       publicationState: 'live',
