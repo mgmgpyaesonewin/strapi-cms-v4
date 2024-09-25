@@ -13,35 +13,37 @@ function isSameWithDateOfToday({startDate}){
       todayDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' }));
       console.log("Start Date:", startDate)
       console.log("End Date:", endDate)
-      /**
-       * startDate = 12-03-24
-       * endDate = 13-04-24
-       * todayDate = 12-04-24
-       */ 
-      if(todayDate.getDate() == startDate.getDate()){
-        return false;  
-      }
-
-      /**
-       * startDate = 12-03-24
-       * endDate = 31-03-24
-       * todayDate = 01-04-24 or 01-05-24
-       */
       
-      else if(startDate.getDate() > endDate.getDate() && todayDate.getDate() > startDate.getDate()){
+      //if start date and today date same, it is valid 
+      if(todayDate.getDate() == startDate.getDate()){
+        console.log("Same Start Date")
+        console.log(">>>>>Valid")
         return false;
       }
-      
-      /**
-       * startDate = 12-03-24
-       * endDate = 05-04-24
-       * todDate = 06-04-24 or 06-05-24
-       */
-      else if ((!(todayDate.getDate() >= startDate.getDate() && todayDate.getDate() <= endDate.getDate()) )) {
+
+      //if month different and today date is after start date, it is valid
+      else if(startDate.getMonth() != endDate.getMonth() && todayDate.getDate() > startDate.getDate()){
+        console.log("Month Diff and First Month Valid ")
+        console.log(">>>>>Valid")
+        return false;
+      }
+
+      //if month different and today date is before end date, it is valid
+      else if(startDate.getMonth() != endDate.getMonth() && todayDate.getDate() <= endDate.getDate()){
+        console.log("Month Diff and Second Month Valid")
+        console.log(">>>>>Valid")
+        return false;
+      }
+
+      //if today date is not between start date and end date, it is expired
+      else if (!(todayDate.getDate() >= startDate.getDate() && todayDate.getDate() <= endDate.getDate())) {
+        console.log("It is not between start date and end date");
+        console.log(">>>>>Expired")
         return true;
       }
       
       else {
+        console.log(">>>>>Expired");
         return false;
       }
       
