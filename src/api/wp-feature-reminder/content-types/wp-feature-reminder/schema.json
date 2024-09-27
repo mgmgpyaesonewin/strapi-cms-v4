@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wp_feature_reminders",
+  "info": {
+    "singularName": "wp-feature-reminder",
+    "pluralName": "wp-feature-reminders",
+    "displayName": "WP Feature Reminder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wp_deeplink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::deeplink.deeplink"
+    },
+    "cta_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": false
+    },
+    "wp_app_version_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wp-app-version.wp-app-version"
+    },
+    "info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wp.default-label",
+      "required": false
+    },
+    "wp_feature_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wp-feature-id.wp-feature-id"
+    },
+    "kyc_level_check": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
