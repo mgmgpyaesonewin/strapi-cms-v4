@@ -3,7 +3,10 @@ const { isSameWithDateOfToday, isExpired } = require('./dateUtil');
 module.exports = async () => {
   try {
     
-    const todayISODate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Yangon' })).toISOString();
+    const today = new Date();
+    const formattedToday = today.toISOString().split("T")[0]; // "2024-09-26"
+
+    const todayISODate = new Date().toISOString();
     /*
     * Auto Publish and Unpublish with Start Date - End Date
     */
@@ -14,7 +17,7 @@ module.exports = async () => {
             { is_monthly: { $eq: false } },
             { publishedAt: { $null: true } },
             { start_date: { $notNull: true }},
-            { start_date: { $eq: todayISODate } },
+            { start_date: { $eq: formattedToday } },
           ],
         },
     });
@@ -25,7 +28,7 @@ module.exports = async () => {
           { is_monthly: { $eq: false } },
           { publishedAt: { $notNull: true } },
           { end_date: { $notNull: true }},
-          { end_date: { $lt: todayISODate } },
+          { end_date: { $lt: formattedToday } },
         ],
       },
     });
