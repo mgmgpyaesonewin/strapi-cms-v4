@@ -1,10 +1,19 @@
 const { isSameWithDateOfToday, isExpired } = require('./dateUtil');
 module.exports = async () => {
   try {
-    const today = new Date();
-    const formattedToday = today.toISOString().split("T")[0]; // "2024-09-26"
+    // const today = new Date();
+    // const formattedToday = today.toISOString().split("T")[0]; // "2024-09-26"
+    // const todayISODate = new Date().toISOString();
 
-    const todayISODate = new Date().toISOString();
+
+    const now = new Date();
+    const myanmarOffset = 6 * 60 + 30; // 6 hours and 30 minutes = 390 minutes
+    const myanmarTime = new Date(now.getTime() + myanmarOffset * 60000);
+    const formattedToday = myanmarTime.toISOString().split("T")[0];  //"2024-09-26"
+    const timePart = myanmarTime.toTimeString().split(" ")[0];
+    
+    const todayISODate = `${formattedToday}T${timePart}+06:30`;
+
     /*
     * Auto Publish and Unpublish with Start Date - End Date
     */
