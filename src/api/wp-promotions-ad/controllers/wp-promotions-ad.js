@@ -84,6 +84,7 @@ module.exports = createCoreController('api::wp-promotions-ad.wp-promotions-ad', 
         "paths": value.paths,
         "parameters": value.parameters,
         "widget_id": !value.wp_home_widget ? null : value.wp_home_widget.id,
+        "cta_button":!value.cta_button ? {} : value.cta_button,
         
       });
     });
