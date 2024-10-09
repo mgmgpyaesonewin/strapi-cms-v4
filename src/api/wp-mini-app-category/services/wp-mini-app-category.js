@@ -17,9 +17,19 @@ module.exports = createCoreService('api::wp-mini-app-category.wp-mini-app-catego
         },
       },
       where: {
-        publishedAt: {
-          $notNull: true,
-        },
+        $and: [
+          {
+            wp_app_version_lists: {
+              version_code: ctx.query.versionCode,
+            },
+          },
+      
+          {
+            publishedAt: {
+              $notNull: true,
+            },
+          },
+        ],
       },
       orderBy: { position: 'asc' },
       select: ['id', 'position', 'tag', 'mini_app_category_type', 'color', 'is_service']
