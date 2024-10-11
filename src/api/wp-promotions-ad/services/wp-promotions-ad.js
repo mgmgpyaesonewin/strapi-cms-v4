@@ -18,7 +18,10 @@ module.exports = createCoreService(
               },
               title: true,
               wp_category: {
-                fields: ["id", "name"],
+                fields: ["id", , "name"],
+                populate: {
+                  category_title: true,
+                },
               },
               wp_promotion_type: true,
               wp_deeplink: {
