@@ -18,15 +18,15 @@ module.exports = async () => {
     * Auto Publish and Unpublish with Start Date - End Date
     */
     let publishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
-      data: { publishedAt: todayISODate },
-      where: {
-        $and: [
-          { is_monthly: { $eq: false } },
-          { publishedAt: { $null: true } },
-          { start_date: { $notNull: true } },
-          { start_date: { $eq: todayISODate } },
-        ],
-      },
+        data: { publishedAt: todayISODate },
+        where: {
+          $and: [
+            { is_monthly: { $eq: false } },
+            { publishedAt: { $null: true } },
+            { start_date: { $notNull: true } },
+            { start_date: { $eq: formattedToday } },
+          ],
+        },
     });
     let unpublishCount = await strapi.db.query('api::wp-mini-app.wp-mini-app').updateMany({
       data: { publishedAt: null },
